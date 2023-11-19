@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://carmaster-landing.vercel.app
+
+# Sitemaps
+Sitemap: https://carmaster-landing.vercel.app/sitemap.xml

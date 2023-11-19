@@ -1,0 +1,7 @@
+.layout {
+  display: grid;
+  grid-template-columns: 265px 1fr;
+  gap: 50px;
+  margin: 70px auto;
+  flex: 1;
+}

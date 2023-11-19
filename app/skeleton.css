@@ -1,0 +1,55 @@
+@keyframes react-loading-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.react-loading-skeleton {
+  --base-color: var(--grey-5);
+  --highlight-color: var(--white);
+  --animation-duration: 1s;
+  --animation-direction: normal;
+  --pseudo-element-display: block;
+  /* Enable animation */
+  background-color: var(--base-color);
+  width: 100%;
+  display: inline-flex;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  /* Necessary for overflow: hidden to work correctly in Safari */
+  margin-top: 12px;
+  border-radius: 16px;
+}
+.react-loading-skeleton::after {
+  content: ' ';
+  display: var(--pseudo-element-display);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, var(--base-color), var(--highlight-color), var(--base-color));
+  transform: translateX(-100%);
+  animation-name: react-loading-skeleton;
+  animation-direction: var(--animation-direction);
+  animation-duration: var(--animation-duration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.react-loading-skeleton--small-text {
+  width: 70px;
+}
+.react-loading-skeleton--no-m {
+  margin: 0;
+}
+.react-loading-skeleton--grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.react-loading-skeleton__padding-h {
+  padding-left: 12px;
+  padding-right: 12px;
+}

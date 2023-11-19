@@ -1,0 +1,37 @@
+.header {
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.05);
+  background: var(--text);
+  color: var(--white);
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logoLink {
+  color: var(--white);
+}
+.urlsContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.urlItem {
+  padding: 7px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.socialMediaContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.socialMediaContainer a:hover {
+  scale: 1.25;
+}
+
+.logo {
+  margin-right: 12px;
+}

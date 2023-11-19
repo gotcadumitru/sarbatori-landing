@@ -1,0 +1,47 @@
+.statistics {
+  margin-bottom: 50px;
+}
+
+.title {
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  gap: 80px;
+}
+
+.itemHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 16px;
+}
+
+.itemIcon {
+  fill: white;
+  stroke: white;
+  padding: 12px;
+  background: var(--red-1);
+  box-sizing: content-box;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+.itemTitle {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.9;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  text-align: right;
+}

@@ -1,0 +1,9 @@
+.listItem {
+  margin-top: 15px;
+  list-style: none;
+}
+
+.sectionHeader {
+  margin-top: 40px;
+  font-weight: 700;
+}

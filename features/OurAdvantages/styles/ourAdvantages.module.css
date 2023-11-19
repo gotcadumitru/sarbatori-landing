@@ -1,0 +1,15 @@
+.ourAdvantages {
+  margin-bottom: 50px;
+}
+.title {
+  text-transform: uppercase;
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  gap: 80px;
+}

@@ -1,0 +1,8 @@
+export { INPUT_LABEL } from './inputLabel/inputLabel'
+export { INPUT_PLACEHOLDER } from './inputPlaceholder/inputPlaceholder'
+export { SECTION_TITLE } from './sectionTitle/sectionTitle'
+export { MODAL_TITLE } from './modalTitle/modalTitle'
+export { BUTTON_TEXT } from './buttonText/buttonText'
+export { TOAST_MESSAGE } from './toastMessage/toastMessage'
+export { REQUEST_MESSAGES } from './requestMessages/requestMessages'
+export { ERROR_MESSAGES } from './errorMessages/errorMessages'

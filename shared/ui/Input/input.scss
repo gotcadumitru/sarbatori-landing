@@ -1,0 +1,144 @@
+.input {
+  padding: 12px;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 20px;
+  height: 48px;
+  background: transparent;
+  transition: color 0.2s ease;
+  overflow: hidden;
+  width: 100%;
+  caret-color: var(--black);
+
+  &__field-group {
+    margin-bottom: 25px;
+
+    &--error {
+      margin-bottom: 2px;
+    }
+  }
+
+  &:hover {
+    border-color: var(--input-border-hover);
+    transition: border-color 0.1s ease;
+  }
+
+  &:focus {
+    border: 2px solid var(--blue-1);
+    outline: none;
+    margin: 0;
+    box-shadow: 0 0 0 1px var(--blue-1);
+    transition: border 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  &--small-size {
+    width: 60px;
+
+    &::-webkit-inner-spin-button {
+      opacity: 1;
+    }
+  }
+
+  &--error {
+    border: 2px solid var(--red-3);
+    box-shadow: 0 0 0 1px var(--red-3);
+
+    &:focus {
+      box-shadow: 0 0 0 1px var(--red-3);
+      border: solid 2px var(--red-3);
+    }
+
+    &:hover {
+      border-color: var(--red-3);
+    }
+  }
+
+  &--select-grey {
+    font-size: 16px;
+    color: var(--grey-1);
+  }
+
+  &::placeholder {
+    color: var(--grey-1);
+  }
+
+  &__info-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-bottom: -5px;
+  }
+
+  &__info-text {
+    color: var(--gray-3);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px 8px;
+  }
+
+  &__error-message {
+    margin: 2px 0 5px;
+    font-size: 16px;
+    min-height: 15px;
+    color: var(--red-3);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    svg {
+      margin-right: 8px;
+      font-size: 22px;
+    }
+  }
+
+  &__label {
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 18px;
+    top: 50%;
+    left: 13px;
+    font-weight: 300;
+    transform: translateY(-50%);
+    transition: top 0.1s linear, font-size 0.1s linear;
+    color: var(--text);
+    &--top {
+      top: 0;
+      font-size: 14px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: var(--white);
+        width: calc(100% + 6px);
+        left: -3px;
+        height: 4px;
+        margin-top: 0;
+        top: 7px;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    background-color: var(--white);
+    flex-wrap: wrap;
+    border-radius: 4px;
+  }
+
+  &__icons {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+  }
+}
