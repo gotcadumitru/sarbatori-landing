@@ -1,3 +1,5 @@
+'use client'
+
 export const getLocalStorage = (key: string, defaultValue: any) => {
   const stickyValue = localStorage.getItem(key)
 

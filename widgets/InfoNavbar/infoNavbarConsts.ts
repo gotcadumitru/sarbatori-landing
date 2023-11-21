@@ -1,8 +1,9 @@
+/* eslint-disable quotes */
 export const infoNavbarUrls = [
   {
     text: 'Despre noi',
     href: 'despre-noi',
-    pageTitle: 'Despre CarMaster',
+    pageTitle: "Despre DIMA'S SOFTWARE",
   },
   {
     text: 'Avantaje',

@@ -62,14 +62,6 @@ export const MainDescription: FC = () => (
               </li>
             ))}
           </ul>
-          <div className={classes.playMarketImages}>
-            <a href='https://google.com' target='_blank' rel='noreferrer'>
-              <Image className={classes.playMarketImage} src={GooglePlay} alt='GooglePlay' />
-            </a>
-            <a href='https://apple.com' target='_blank' rel='noreferrer'>
-              <Image className={classes.playMarketImage} src={AppStore} alt='AppStore' />
-            </a>
-          </div>
         </div>
       </div>
     </div>

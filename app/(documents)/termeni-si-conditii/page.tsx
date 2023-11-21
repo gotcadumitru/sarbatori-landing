@@ -5,14 +5,14 @@ const TermsAndConditions = () => (
     <h2>
       <strong className={classes.strong}>Termeni și Condiții</strong>
     </h2>
-    <p className={classes.paragraph}>Bun venit la CarMaster!</p>
+    <p className={classes.paragraph}>Bun venit la DIMA'S SOFTWARE!</p>
     <p className={classes.paragraph}>
       Acești termeni și condiții stabilesc regulile și regulamentele pentru utilizarea site-ului web
-      CarMaster, situat la adresa https://carmaster.guru/.
+      DIMA'S SOFTWARE, situat la adresa https://www.sarbatori365.info/.
     </p>
     <p className={classes.paragraph}>
       Accesând acest site web, presupunem că acceptați acești termeni și condiții. Nu continuați să
-      utilizați CarMaster dacă nu sunteți de acord să respectați toți termenii și condițiile
+      utilizați DIMA'S SOFTWARE dacă nu sunteți de acord să respectați toți termenii și condițiile
       menționate pe această pagină.
     </p>
     <p className={classes.paragraph}>
@@ -32,8 +32,8 @@ const TermsAndConditions = () => (
       <strong className={classes.strong}>Cookie-uri</strong>
     </h3>
     <p className={classes.paragraph}>
-      Folosim cookie-uri. Accesând CarMaster, sunteți de acord să utilizați cookie-urile în
-      conformitate cu Politica de Confidențialitate a CarMaster.
+      Folosim cookie-uri. Accesând DIMA'S SOFTWARE, sunteți de acord să utilizați cookie-urile în
+      conformitate cu Politica de Confidențialitate a DIMA'S SOFTWARE.
     </p>
     <p className={classes.paragraph}>
       Majoritatea site-urilor web interactive folosesc cookie-uri pentru a ne permite să obținem
@@ -46,31 +46,32 @@ const TermsAndConditions = () => (
       <strong className={classes.strong}>Licență</strong>
     </h3>
     <p className={classes.paragraph}>
-      În afară de cazul în care se specifică altfel, CarMaster și/sau licențiatorii săi dețin
-      drepturile de proprietate intelectuală asupra tuturor materialelor de pe CarMaster. Toate
-      drepturile de proprietate intelectuală sunt rezervate. Puteți accesa aceste materiale de pe
-      CarMaster în scopul dvs. personal, cu condițiile stabilite în acești termeni și condiții.
+      În afară de cazul în care se specifică altfel, DIMA'S SOFTWARE și/sau licențiatorii săi dețin
+      drepturile de proprietate intelectuală asupra tuturor materialelor de pe DIMA'S SOFTWARE.
+      Toate drepturile de proprietate intelectuală sunt rezervate. Puteți accesa aceste materiale de
+      pe DIMA'S SOFTWARE în scopul dvs. personal, cu condițiile stabilite în acești termeni și
+      condiții.
     </p>
     <p className={classes.paragraph}>Nu trebuie să:</p>
     <ul>
-      <li>Republicați materiale de pe CarMaster</li>
-      <li>Vindeți, închiriați sau sublicențați materiale de pe CarMaster</li>
-      <li>Reproduceți, duplicați sau copiați materiale de pe CarMaster</li>
-      <li>Redistribuiți conținutul de pe CarMaster</li>
+      <li>Republicați materiale de pe DIMA'S SOFTWARE</li>
+      <li>Vindeți, închiriați sau sublicențați materiale de pe DIMA'S SOFTWARE</li>
+      <li>Reproduceți, duplicați sau copiați materiale de pe DIMA'S SOFTWARE</li>
+      <li>Redistribuiți conținutul de pe DIMA'S SOFTWARE</li>
     </ul>
     <p className={classes.paragraph}>Acest acord va începe la data prezentului</p>
     <p className={classes.paragraph}>
       Părți ale acestui site web oferă oportunitatea utilizatorilor de a posta și schimba opinii și
-      informații în anumite zone ale site-ului. CarMaster nu filtrează, editează, publică sau
+      informații în anumite zone ale site-ului. DIMA'S SOFTWARE nu filtrează, editează, publică sau
       revizuiți Comentariile înainte de a fi prezente pe site. Comentariile nu reflectă opiniile și
-      punctele de vedere ale CarMaster, agenților săi și/sau afiliaților. Comentariile reflectă
-      opiniile și punctele de vedere ale persoanei care postează opiniile și punctele de vedere. În
-      măsura în care legea aplicabilă o permite, CarMaster nu va fi răspunzător pentru Comentarii
-      sau pentru orice răspundere, daune sau cheltuieli cauzate și/sau suferite ca urmare a oricărei
-      utilizări și/sau postări și/sau apariție a Comentariilor pe acest site web.
+      punctele de vedere ale DIMA'S SOFTWARE, agenților săi și/sau afiliaților. Comentariile
+      reflectă opiniile și punctele de vedere ale persoanei care postează opiniile și punctele de
+      vedere. În măsura în care legea aplicabilă o permite, DIMA'S SOFTWARE nu va fi răspunzător
+      pentru Comentarii sau pentru orice răspundere, daune sau cheltuieli cauzate și/sau suferite ca
+      urmare a oricărei utilizări și/sau postări și/sau apariție a Comentariilor pe acest site web.
     </p>
     <p className={classes.paragraph}>
-      CarMaster își rezervă dreptul de a monitoriza toate Comentariile și de a elimina orice
+      DIMA'S SOFTWARE își rezervă dreptul de a monitoriza toate Comentariile și de a elimina orice
       Comentarii care pot fi considerate nepotrivite, ofensive sau care încalcă acești Termeni și
       Condiții.
     </p>
@@ -94,9 +95,9 @@ const TermsAndConditions = () => (
       </li>
     </ul>
     <p className={classes.paragraph}>
-      Prin prezenta, acordați CarMaster o licență non-exclusivă pentru a utiliza, reproduce, edita
-      și autoriza alții să utilizeze, reproduca și editeze oricare dintre Comentariile dvs. în orice
-      formă, format sau media.
+      Prin prezenta, acordați DIMA'S SOFTWARE o licență non-exclusivă pentru a utiliza, reproduce,
+      edita și autoriza alții să utilizeze, reproduca și editeze oricare dintre Comentariile dvs. în
+      orice formă, format sau media.
     </p>
     <h3>
       <strong className={classes.strong}>Link-uri către conținutul nostru</strong>
@@ -142,7 +143,8 @@ const TermsAndConditions = () => (
       Vom aproba solicitările de link-uri de la aceste organizații dacă decidem că: (a) link-ul nu
       ne face să arătăm nefavorabil nouă sau afacerilor noastre acreditate; (b) organizația nu are
       înregistrări negative cu noi; (c) beneficiul pentru noi din vizibilitatea link-ului
-      compensează absența CarMaster; și (d) link-ul se află în contextul informațiilor generale.
+      compensează absența DIMA'S SOFTWARE; și (d) link-ul se află în contextul informațiilor
+      generale.
     </p>
     <p className={classes.paragraph}>
       Aceste organizații pot realiza link-uri către pagina noastră de start, atâta timp cât link-ul:
@@ -153,10 +155,10 @@ const TermsAndConditions = () => (
     <p className={classes.paragraph}>
       Dacă sunteți una dintre organizațiile enumerate în paragraful 2 de mai sus și sunteți
       interesat de realizarea de link-uri către site-ul nostru web, trebuie să ne informați
-      trimitând un e-mail la CarMaster. Vă rugăm să includeți numele dvs., numele organizației dvs.,
-      informații de contact, precum și URL-ul site-ului dvs., o listă cu orice URL-uri de la care
-      intenționați să realizați link către site-ul nostru web și o listă cu URL-urile de pe site-ul
-      nostru către care doriți să realizați link. Așteptați 2-3 săptămâni pentru o răspuns.
+      trimitând un e-mail la DIMA'S SOFTWARE. Vă rugăm să includeți numele dvs., numele organizației
+      dvs., informații de contact, precum și URL-ul site-ului dvs., o listă cu orice URL-uri de la
+      care intenționați să realizați link către site-ul nostru web și o listă cu URL-urile de pe
+      site-ul nostru către care doriți să realizați link. Așteptați 2-3 săptămâni pentru o răspuns.
     </p>
     <p className={classes.paragraph}>
       Organizațiile aprobate pot realiza link-uri către site-ul nostru web în următoarele moduri:
@@ -170,8 +172,8 @@ const TermsAndConditions = () => (
       </li>
     </ul>
     <p className={classes.paragraph}>
-      Nu se va permite utilizarea logo-ului CarMaster sau a altor elemente grafice pentru link fără
-      un acord de licență de marcă comercială.
+      Nu se va permite utilizarea logo-ului DIMA'S SOFTWARE sau a altor elemente grafice pentru link
+      fără un acord de licență de marcă comercială.
     </p>
     <h3>
       <strong className={classes.strong}>iFrames</strong>

@@ -30,7 +30,7 @@ const whyYouNeedUsAdvantages = [
 
 export const Statistics: FC = () => (
   <section className={classNames(classes.whyYouNeedUs, 'container')}>
-    <h2 className={classes.title}>De ce ai nevoie de CarMaster</h2>
+    <h2 className={classes.title}>De ce ai nevoie de DIMA'S SOFTWARE</h2>
     <div className={classes.container}>
       <div>
         {whyYouNeedUsAdvantages.map(({ Icon, ...advantage }) => (

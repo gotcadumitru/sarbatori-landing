@@ -3,13 +3,14 @@ import styles from '../page.module.css'
 const PrivacyPolicy = () => (
   <div className={styles.page}>
     <h1>
-      <strong className={styles.strong}>Politica de Confidențialitate pentru CarMaster SRL</strong>
+      <strong className={styles.strong}>
+        Politica de Confidențialitate pentru DIMA'S SOFTWARE SRL
+      </strong>
     </h1>
     <p className={styles.paragraph}>
-      La CarMaster, accesibil de la https://carmaster.guru/, una dintre prioritățile noastre
-      principale este confidențialitatea vizitatorilor noștri. Acest document de Politică de
-      Confidențialitate conține tipurile de informații colectate și înregistrate de CarMaster și
-      modul în care le utilizăm.
+      La Dimas's Software, una dintre prioritățile noastre principale este confidențialitatea
+      vizitatorilor noștri. Acest document de Politică de Confidențialitate conține tipurile de
+      informații colectate și înregistrate de DIMA'S SOFTWARE și modul în care le utilizăm.
     </p>
     <p className={styles.paragraph}>
       Dacă aveți întrebări suplimentare sau aveți nevoie de mai multe informații despre Politica
@@ -18,7 +19,7 @@ const PrivacyPolicy = () => (
     <p className={styles.paragraph}>
       Această Politică de Confidențialitate se aplică numai activităților noastre online și este
       valabilă pentru vizitatorii site-ului nostru web în ceea ce privește informațiile pe care
-      le-au partajat și/sau le-au colectat în CarMaster. Această politică nu este aplicabilă
+      le-au partajat și/sau le-au colectat în DIMA'S SOFTWARE. Această politică nu este aplicabilă
       informațiilor colectate offline sau prin intermediul altor canale decât acest site web.
     </p>
     <h2>
@@ -68,20 +69,21 @@ const PrivacyPolicy = () => (
       <strong className={styles.strong}> Fișierele de Jurnal (Log Files)</strong>
     </h2>
     <p className={styles.paragraph}>
-      CarMaster urmează o procedură standard de utilizare a fișierelor de jurnal. Aceste fișiere
-      înregistrează vizitatorii atunci când accesează site-urile web. Toate companiile de găzduire
-      fac acest lucru și fac parte din analiza serviciilor de găzduire. Informațiile colectate de
-      fișierele de jurnal includ adresele protocolului Internet (IP), tipul browserului, furnizorul
-      de servicii Internet (ISP), marca de timp a datei și orei, paginile de referință/ieșire și,
-      posibil, numărul de clicuri. Acestea nu sunt legate de nicio informație care este personal
-      identificabilă. Scopul informațiilor este de a analiza tendințele, de a administra site-ul, de
-      a urmări mișcarea utilizatorilor pe site și de a colecta informații demografice.
+      DIMA'S SOFTWARE urmează o procedură standard de utilizare a fișierelor de jurnal. Aceste
+      fișiere înregistrează vizitatorii atunci când accesează site-urile web. Toate companiile de
+      găzduire fac acest lucru și fac parte din analiza serviciilor de găzduire. Informațiile
+      colectate de fișierele de jurnal includ adresele protocolului Internet (IP), tipul
+      browserului, furnizorul de servicii Internet (ISP), marca de timp a datei și orei, paginile de
+      referință/ieșire și, posibil, numărul de clicuri. Acestea nu sunt legate de nicio informație
+      care este personal identificabilă. Scopul informațiilor este de a analiza tendințele, de a
+      administra site-ul, de a urmări mișcarea utilizatorilor pe site și de a colecta informații
+      demografice.
     </p>
     <h2>
       <strong className={styles.strong}> Cookies și Beacon-uri Web</strong>
     </h2>
     <p className={styles.paragraph}>
-      La fel ca oricare alt site web, CarMaster folosește "cookie-uri". Aceste cookie-uri sunt
+      La fel ca oricare alt site web, DIMA'S SOFTWARE folosește "cookie-uri". Aceste cookie-uri sunt
       utilizate pentru a stoca informații, inclusiv preferințele vizitatorilor și paginile de pe
       site-ul web pe care vizitatorul le-a accesat sau le-a vizitat. Informațiile sunt utilizate
       pentru a optimiza experiența utilizatorilor prin personalizarea conținutului paginii noastre
@@ -128,28 +130,28 @@ const PrivacyPolicy = () => (
     </h2>
     <p className={styles.paragraph}>
       Puteți consulta această listă pentru a găsi Politica de Confidențialitate pentru fiecare
-      dintre partenerii noștri de publicitate de la CarMaster.
+      dintre partenerii noștri de publicitate de la DIMA'S SOFTWARE.
     </p>
     <p className={styles.paragraph}>
       Serverele terților furnizori de publicitate sau rețelele de publicitate utilizează tehnologii
       precum cookie-uri, JavaScript sau Beacon-uri Web care sunt folosite în reclamele și link-urile
-      lor respective care apar pe CarMaster, care sunt trimise direct către browserul
+      lor respective care apar pe DIMA'S SOFTWARE, care sunt trimise direct către browserul
       utilizatorilor. Aceste tehnologii sunt utilizate pentru a măsura eficacitatea campaniilor lor
       de publicitate și/sau pentru a personaliza conținutul de publicitate pe care îl vedeți pe
       site-urile pe care le vizitați.
     </p>
     <p className={styles.paragraph}>
-      Rețineți că CarMaster nu are acces la aceste cookie-uri care sunt utilizate de reclamani
+      Rețineți că DIMA'S SOFTWARE nu are acces la aceste cookie-uri care sunt utilizate de reclamani
       terți.
     </p>
     <h2>
       <strong className={styles.strong}> Politici de Confidențialitate ale Terților</strong>
     </h2>
     <p className={styles.paragraph}>
-      Politica de Confidențialitate a CarMaster nu se aplică altor reclamanți sau site-uri web. Prin
-      urmare, vă sfătuim să consultați Politicile de Confidențialitate corespunzătoare ale acestor
-      servere de publicitate terțe pentru informații mai detaliate. Aceasta poate include practicile
-      lor și instrucțiunile referitoare la modul de renunțare la anumite opțiuni.
+      Politica de Confidențialitate a DIMA'S SOFTWARE nu se aplică altor reclamanți sau site-uri
+      web. Prin urmare, vă sfătuim să consultați Politicile de Confidențialitate corespunzătoare ale
+      acestor servere de publicitate terțe pentru informații mai detaliate. Aceasta poate include
+      practicile lor și instrucțiunile referitoare la modul de renunțare la anumite opțiuni.
     </p>
     <p className={styles.paragraph}>
       Puteți alege să dezactivați cookie-urile prin intermediul opțiunilor individuale ale
@@ -227,8 +229,8 @@ const PrivacyPolicy = () => (
       să îndrume activitatea lor online.
     </p>
     <p className={styles.paragraph}>
-      CarMaster nu colectează în mod cunoscut nicio informație personal identificabilă de la copii
-      cu vârsta sub 13 ani. Dacă credeți că copilul dvs. a furnizat acest tip de informații pe
+      DIMA'S SOFTWARE nu colectează în mod cunoscut nicio informație personal identificabilă de la
+      copii cu vârsta sub 13 ani. Dacă credeți că copilul dvs. a furnizat acest tip de informații pe
       site-ul nostru, vă încurajăm în mod categoric să ne contactați imediat și vom face toate
       eforturile noastre pentru a elimina în mod prompt astfel de informații din înregistrările
       noastre.

@@ -5,7 +5,7 @@ const AboutUs = () => (
     <p>
       Suntem o companie de dezvoltare software dedicată creării și implementării unor soluții
       tehnologice complexe și inovatoare. Cu o experiență deosebită în domeniul IT, am pus mereu
-      accent pe excelența tehnică, inovație și satisfacția clienților noștri. La CarMaster, nu
+      accent pe excelența tehnică, inovație și satisfacția clienților noștri. La DIMA'S SOFTWARE, nu
       suntem doar programatori și dezvoltatori, suntem creatori de soluții de top, deschiși
       provocărilor și dedicați rezolvării problemelor din lumea reală prin tehnologie.
     </p>
@@ -19,8 +19,8 @@ const AboutUs = () => (
       </li>
 
       <li className={classes.listItem}>
-        <strong>1. Echipă Excepțională:</strong> La CarMaster, echipa noastră este cel mai valoros
-        activ pe care îl avem. Fiecare membru al echipei noastre este ales cu grijă pentru
+        <strong>1. Echipă Excepțională:</strong> La DIMA'S SOFTWARE, echipa noastră este cel mai
+        valoros activ pe care îl avem. Fiecare membru al echipei noastre este ales cu grijă pentru
         cunoștințele și abilitățile lor de top, creativitatea și pasiunea pentru tehnologie. Aceasta
         este sursa forței noastre.
       </li>

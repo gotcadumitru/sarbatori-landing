@@ -2,9 +2,9 @@ import classes from '../info.module.css'
 
 const Partners = () => (
   <div>
-    La CarMaster, suntem mândri de colaborările noastre solide și parteneriatele strategice care au
-    contribuit la succesul nostru și la oferirea de soluții de înaltă calitate clienților noștri.
-    Iată câțiva dintre partenerii noștri de încredere:
+    La DIMA'S SOFTWARE, suntem mândri de colaborările noastre solide și parteneriatele strategice
+    care au contribuit la succesul nostru și la oferirea de soluții de înaltă calitate clienților
+    noștri. Iată câțiva dintre partenerii noștri de încredere:
     <ol>
       <li className={classes.listItem}>
         <strong className={classes.sectionHeader}>XYZ Soluții</strong>

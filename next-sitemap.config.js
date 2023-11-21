@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://carmaster-landing.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://www.sarbatori365.info',
   generateRobotsTxt: true,
 }

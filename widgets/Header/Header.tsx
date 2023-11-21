@@ -1,8 +1,6 @@
 import CarMasterCar from '@/shared/assets/icons/CarMasterCar'
 import FacebookIcon from '@/shared/assets/icons/Facebook'
 import InstagramIcon from '@/shared/assets/icons/Instagram'
-import TwitterIcon from '@/shared/assets/icons/Twitter'
-import VkIcon from '@/shared/assets/icons/Vk'
 import classNames from 'classnames'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -26,19 +24,13 @@ const urls = [
     href: '/cookies',
   },
   {
-    text: 'Documentatie',
-    href: '/documentatie',
-  },
-  {
     text: 'Contact',
     href: '/info/contact',
   },
 ]
 const socialMediaUrl = [
   { href: '/Instagram', title: 'Instagram', Icon: InstagramIcon },
-  { href: '/Twitter', title: 'Twitter', Icon: TwitterIcon },
   { href: '/Facebook', title: 'Facebook', Icon: FacebookIcon },
-  { href: '/Vk', title: 'Vk', Icon: VkIcon },
 ]
 export const Header: FC<HeaderProps> = ({ className }) => (
   <div className={classNames(classes.header, className)}>

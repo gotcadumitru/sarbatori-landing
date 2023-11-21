@@ -2,10 +2,10 @@ import classes from '../info.module.css'
 
 const Advantages = () => (
   <div>
-    La CarMaster, suntem mândri să oferim o gamă de avantaje distincte care ne plasează în fruntea
-    industriei de dezvoltare software. De la experiența tehnică profundă până la angajamentul nostru
-    pentru inovație și satisfacția clientului, iată câteva dintre motivele pentru care suntem
-    partenerul potrivit pentru proiectul dvs. de dezvoltare software:
+    La DIMA'S SOFTWARE, suntem mândri să oferim o gamă de avantaje distincte care ne plasează în
+    fruntea industriei de dezvoltare software. De la experiența tehnică profundă până la
+    angajamentul nostru pentru inovație și satisfacția clientului, iată câteva dintre motivele
+    pentru care suntem partenerul potrivit pentru proiectul dvs. de dezvoltare software:
     <ol>
       <li className={classes.listItem}>
         <strong className={classes.sectionHeader}>1. Expertiza Tehnică de Top</strong>
@@ -68,7 +68,7 @@ const Advantages = () => (
       <li className={classes.listItem}>
         <strong className={classes.sectionHeader}>8. Dedicare pentru Calitate</strong>
         <p>
-          La CarMaster, suntem dedicați calității în tot ceea ce facem. De la codul sursă la
+          La DIMA'S SOFTWARE, suntem dedicați calității în tot ceea ce facem. De la codul sursă la
           experiența utilizatorului final, căutăm constant excelența și ne străduim să oferim
           produse software de înaltă calitate.
         </p>
