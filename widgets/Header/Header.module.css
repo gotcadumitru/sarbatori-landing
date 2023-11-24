@@ -1,38 +1,82 @@
 .header {
+  position: absolute;
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.05);
-  background: var(--text);
-  color: var(--white);
-}
-.headerContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: var(--menu-bg);
+  height: 100vh;
+  width: 70%;
+  left: -100%;
+  top: 0;
   padding: 0;
+  transition: all 0.2s linear;
 }
+
+.show {
+  left: 0;
+}
+
+.headerContainer {
+  height: 100%;
+  position: relative;
+  color: var(--white);
+  width: 100%;
+  padding: 90px 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
 .logoLink {
   color: var(--white);
+  margin: 0 auto;
 }
+
 .urlsContainer {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+  z-index: 1;
 }
+
 .urlItem {
-  padding: 7px 15px;
-  font-size: 14px;
-  font-weight: 500;
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
   color: var(--white);
 }
 
-.socialMediaContainer {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.socialMediaContainer a:hover {
-  scale: 1.25;
+.urlItem:hover,
+.urlItemActive {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.logo {
-  margin-right: 12px;
+.languageContainer {
+  display: flex;
+  align-items: center;
+  width: min-content;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: var(--white);
+  font-size: 14px;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.languageContainer.selected {
+  color: var(--orange);
+}
+
+.languageContainer a {
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 700;
 }

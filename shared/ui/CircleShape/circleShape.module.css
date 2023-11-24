@@ -1,0 +1,77 @@
+.circleShape {
+  width: 200px;
+  height: 200px;
+  background-color: var(--circleShape1);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circleShapeDouble {
+  position: absolute;
+}
+
+.circleShapeDoubleContainer {
+  position: relative;
+  width: 300px;
+  height: 270px;
+}
+
+.doubleShapeOne {
+  right: 0;
+  top: 0;
+}
+
+.doubleShapeTwo {
+  left: 0;
+  bottom: 0;
+}
+
+.circleShapeTopLeft {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.circleShapeTopRight {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.circleShapeBottomLeft {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+.circleShapeBottomRight {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.circleShapeDoubleTopLeft {
+  top: 0;
+  left: 0;
+  translate: -45% -45%;
+}
+
+.circleShapeDoubleTopRight {
+  top: 0;
+  right: 0;
+  translate: 45% -45%;
+  rotate: 90deg;
+}
+
+.circleShapeDoubleBottomLeft {
+  bottom: 0;
+  left: 0;
+  translate: -45% 45%;
+  rotate: 90deg;
+}
+
+.circleShapeDoubleBottomRight {
+  bottom: 0;
+  right: 0;
+  translate: 45% 45%;
+}
