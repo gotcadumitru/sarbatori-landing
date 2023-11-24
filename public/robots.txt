@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://carmaster-landing.vercel.app
+Host: https://www.sarbatori365.info
 
 # Sitemaps
-Sitemap: https://carmaster-landing.vercel.app/sitemap.xml
+Sitemap: https://www.sarbatori365.info/sitemap.xml
