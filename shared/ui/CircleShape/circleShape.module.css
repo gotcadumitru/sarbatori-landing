@@ -1,6 +1,4 @@
 .circleShape {
-  width: 200px;
-  height: 200px;
   background-color: var(--circleShape1);
   border-radius: 50%;
   position: absolute;

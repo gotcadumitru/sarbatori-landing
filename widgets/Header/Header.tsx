@@ -56,6 +56,10 @@ export const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <>
       <VscMenu className={classes.headerMenuIcon} onClick={() => setIsHeaderDisplayed(true)} />
+      <CircleShapeDouble
+        isDisplayed={!isHeaderDisplayed}
+        position={CircleShapePosition.TOP_RIGHT}
+      />
       <div
         onClick={() => setIsHeaderDisplayed(false)}
         className={classNames(
@@ -68,8 +72,14 @@ export const Header: FC<HeaderProps> = ({ className }) => {
         )}
       >
         <div onClick={(e) => e.stopPropagation()} className={classes.headerContainer}>
-          <CircleShapeDouble position={CircleShapePosition.TOP_LEFT} />
-          <CircleShapeDouble position={CircleShapePosition.BOTTOM_LEFT} />
+          <CircleShapeDouble
+            isDisplayed={isHeaderDisplayed}
+            position={CircleShapePosition.TOP_LEFT}
+          />
+          <CircleShapeDouble
+            isDisplayed={isHeaderDisplayed}
+            position={CircleShapePosition.BOTTOM_LEFT}
+          />
           <Link href='/' className={classes.logoLink}>
             <WebsiteLogo />
           </Link>
