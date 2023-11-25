@@ -15,6 +15,9 @@
 
 .circleShapeDouble {
   position: absolute;
+  height: 135px;
+  width: 150px;
+  overflow: hidden;
 }
 
 .circleShapeDoubleContainer {
@@ -61,9 +64,6 @@
   top: 0;
   left: 0;
   scale: -1 -1;
-  height: 121px;
-  width: 135px;
-  overflow: hidden;
 }
 
 .circleShapeDoubleTopRight {
@@ -71,20 +71,15 @@
   right: 0;
   rotate: 180deg;
   scale: -1 1;
-  height: 121px;
-  width: 135px;
-  overflow: hidden;
 }
 
 .circleShapeDoubleBottomLeft {
   bottom: 0;
   left: 0;
-  translate: -45% 45%;
-  rotate: 90deg;
+  scale: -1 1;
 }
 
 .circleShapeDoubleBottomRight {
   bottom: 0;
   right: 0;
-  translate: 45% 45%;
 }
