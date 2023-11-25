@@ -98,9 +98,7 @@ const PrivacyPolicy = () => (
       noștri pe baza vizitelor acestora pe www.website.com și pe alte site-uri de pe internet. Cu
       toate acestea, vizitatorii pot alege să refuze utilizarea cookie-urilor DART vizitând Politica
       de Confidențialitate a rețelei de publicitate Google la URL-ul următor -{' '}
-      <a href='https://policies.google.com/technologies/ads'>
-        https://policies.google.com/technologies/ads
-      </a>
+      <a href='https://policies.google.com/technologies/ads'>google ads</a>
     </p>
     <h2>
       <strong className={styles.strong}> Partenerii noștri de Publicitate</strong>
@@ -116,9 +114,7 @@ const PrivacyPolicy = () => (
       <li>
         <p className={styles.paragraph}>Google</p>
         <p className={styles.paragraph}>
-          <a href='https://policies.google.com/technologies/ads'>
-            https://policies.google.com/technologies/ads
-          </a>
+          <a href='https://policies.google.com/technologies/ads'>google ads</a>
         </p>
       </li>
     </ul>

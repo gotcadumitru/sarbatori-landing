@@ -60,14 +60,20 @@
 .circleShapeDoubleTopLeft {
   top: 0;
   left: 0;
-  translate: -45% -45%;
+  scale: -1 -1;
+  height: 121px;
+  width: 135px;
+  overflow: hidden;
 }
 
 .circleShapeDoubleTopRight {
   top: 0;
   right: 0;
-  translate: 45% -45%;
-  rotate: 90deg;
+  rotate: 180deg;
+  scale: -1 1;
+  height: 121px;
+  width: 135px;
+  overflow: hidden;
 }
 
 .circleShapeDoubleBottomLeft {
