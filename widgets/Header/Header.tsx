@@ -3,11 +3,10 @@
 import { roboto } from '@/app/fonts'
 import VscMenu from '@/shared/assets/icons/VscMenu'
 import WebsiteLogo from '@/shared/assets/icons/WebsiteLogo'
-import useOnClickOutside from '@/shared/lib/hooks/useOnClickOutside'
 import { CircleShapeDouble, CircleShapePosition } from '@/shared/ui/CircleShape'
 import classNames from 'classnames'
 import Link from 'next/link'
-import { FC, useRef, useState } from 'react'
+import { FC, useState } from 'react'
 import classes from './Header.module.css'
 
 interface HeaderProps {
@@ -54,25 +53,21 @@ const languageUrls = [
 
 export const Header: FC<HeaderProps> = ({ className }) => {
   const [isHeaderDisplayed, setIsHeaderDisplayed] = useState(false)
-  const headerRef = useRef(null)
-  useOnClickOutside(headerRef, () => {
-    setIsHeaderDisplayed(false)
-  })
   return (
     <>
-      {!isHeaderDisplayed && <VscMenu onClick={() => setIsHeaderDisplayed(true)} />}
+      <VscMenu className={classes.headerMenuIcon} onClick={() => setIsHeaderDisplayed(true)} />
       <div
-        ref={headerRef}
+        onClick={() => setIsHeaderDisplayed(false)}
         className={classNames(
           classes.header,
           'container',
           {
-            [classes.show]: isHeaderDisplayed,
+            [classes.headerActive]: isHeaderDisplayed,
           },
           className,
         )}
       >
-        <div className={classes.headerContainer}>
+        <div onClick={(e) => e.stopPropagation()} className={classes.headerContainer}>
           <CircleShapeDouble position={CircleShapePosition.TOP_LEFT} />
           <CircleShapeDouble position={CircleShapePosition.BOTTOM_LEFT} />
           <Link href='/' className={classes.logoLink}>
@@ -80,7 +75,12 @@ export const Header: FC<HeaderProps> = ({ className }) => {
           </Link>
           <div className={classes.urlsContainer}>
             {urls.map((url) => (
-              <Link className={classes.urlItem} key={url.href} href={url.href}>
+              <Link
+                onClick={() => setIsHeaderDisplayed(false)}
+                className={classes.urlItem}
+                key={url.href}
+                href={url.href}
+              >
                 {url.text}
               </Link>
             ))}

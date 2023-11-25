@@ -47,7 +47,7 @@
   --grey-text: #e2e2e2;
   --menu-bg: #5451d6;
   --orange: #f88500;
-
+  --header-bg: rgba(69, 48, 179, 0.6);
   /* Gaps */
   --gap-5xs: 8px;
   --gap-10xs: 3px;
@@ -172,6 +172,7 @@ select option:first-child {
   padding: 20px;
   margin: 0 auto;
 }
+
 p {
   line-height: 1.9;
 }
