@@ -1,1 +1,1 @@
-export { HolidayCard } from 'shared/ui/HolidayCard/ui/HolidayCard'
+export { HolidayCard } from './ui/HolidayCard'
