@@ -27,6 +27,7 @@
 .headerActive {
   left: 0;
 }
+
 body:has(.headerActive) {
   overflow: hidden;
 }
@@ -35,8 +36,13 @@ body:has(.headerActive) {
   opacity: 1;
   transition: all 0.2s linear;
 }
+
 .headerMenuIcon {
   cursor: pointer;
+}
+
+.headerMenuIconContainer {
+  padding-bottom: 10px;
 }
 
 .headerContainer {

@@ -169,7 +169,7 @@ select option:first-child {
 .container {
   width: 100%;
   max-width: 1340px;
-  padding: 20px;
+  padding: 25px;
   margin: 0 auto;
 }
 

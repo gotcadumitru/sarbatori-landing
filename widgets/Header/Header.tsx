@@ -15,6 +15,10 @@ interface HeaderProps {
 
 const urls = [
   {
+    text: 'Sarbatorile de astazi',
+    href: '/',
+  },
+  {
     text: 'Calendar',
     href: '/calendar',
   },
@@ -55,7 +59,9 @@ export const Header: FC<HeaderProps> = ({ className }) => {
   const [isHeaderDisplayed, setIsHeaderDisplayed] = useState(false)
   return (
     <>
-      <VscMenu className={classes.headerMenuIcon} onClick={() => setIsHeaderDisplayed(true)} />
+      <div className={classNames(classes.headerMenuIconContainer, 'container')}>
+        <VscMenu className={classes.headerMenuIcon} onClick={() => setIsHeaderDisplayed(true)} />
+      </div>
       <CircleShapeDouble
         isDisplayed={!isHeaderDisplayed}
         position={CircleShapePosition.TOP_RIGHT}
@@ -80,7 +86,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
             isDisplayed={isHeaderDisplayed}
             position={CircleShapePosition.BOTTOM_LEFT}
           />
-          <Link href='/' className={classes.logoLink}>
+          <Link onClick={() => setIsHeaderDisplayed(false)} href='/' className={classes.logoLink}>
             <WebsiteLogo />
           </Link>
           <div className={classes.urlsContainer}>
