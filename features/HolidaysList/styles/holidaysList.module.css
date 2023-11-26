@@ -1,0 +1,22 @@
+.calendarCarousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--blue-light);
+}
+
+.rightIcon,
+.leftIcon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+}

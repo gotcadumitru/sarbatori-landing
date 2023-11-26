@@ -11,34 +11,11 @@ import classes from './Header.module.css'
 
 interface HeaderProps {
   className?: string
+  urls: {
+    text: string
+    href: string
+  }[]
 }
-
-const urls = [
-  {
-    text: 'Sarbatorile de astazi',
-    href: '/',
-  },
-  {
-    text: 'Calendar',
-    href: '/calendar',
-  },
-  {
-    text: 'Contact',
-    href: '/contact',
-  },
-  {
-    text: 'Politica de confidențialitate',
-    href: '/politica-de-confidentialitate',
-  },
-  {
-    text: 'Cookies',
-    href: '/cookies',
-  },
-  {
-    text: 'Termeni și condiții',
-    href: '/termeni-si-conditii',
-  },
-]
 
 const languageUrls = [
   {
@@ -55,7 +32,7 @@ const languageUrls = [
   },
 ]
 
-export const Header: FC<HeaderProps> = ({ className }) => {
+export const Header: FC<HeaderProps> = ({ className, urls }) => {
   const [isHeaderDisplayed, setIsHeaderDisplayed] = useState(false)
   return (
     <>
@@ -65,6 +42,10 @@ export const Header: FC<HeaderProps> = ({ className }) => {
       <CircleShapeDouble
         isDisplayed={!isHeaderDisplayed}
         position={CircleShapePosition.TOP_RIGHT}
+      />
+      <CircleShapeDouble
+        isDisplayed={!isHeaderDisplayed}
+        position={CircleShapePosition.BOTTOM_LEFT}
       />
       <div
         onClick={() => setIsHeaderDisplayed(false)}
@@ -102,7 +83,12 @@ export const Header: FC<HeaderProps> = ({ className }) => {
             ))}
             <div className={classes.languageContainer}>
               {languageUrls.map((url) => (
-                <Link className={roboto.className} key={url.href} href={url.href}>
+                <Link
+                  locale={url.text.toLocaleLowerCase()}
+                  className={roboto.className}
+                  key={url.href}
+                  href={url.href}
+                >
                   {url.text}
                 </Link>
               ))}

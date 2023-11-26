@@ -1,16 +1,18 @@
+import { Holiday } from '@/enteties/holiday'
 import { CalendarCarousel } from '@/features/CalendarCarousel'
-import holidays from '@/jsonObj.json'
 import { HolidayCard } from '@/shared/ui/HolidayCard'
-import classes from './page.module.css'
+import { FC } from 'react'
 
-const Home = () => (
-  <main className={classes.main}>
+type HolidaysListProps = {
+  holidays: Holiday[]
+}
+export const HolidaysList: FC<HolidaysListProps> = ({ holidays }) => (
+  <>
     <CalendarCarousel />
     <div className='container'>
-      {holidays[0].holidays.slice(0, 5).map((holiday) => (
+      {holidays.map((holiday) => (
         <HolidayCard key={holiday.id} holiday={holiday} />
       ))}
     </div>
-  </main>
+  </>
 )
-export default Home

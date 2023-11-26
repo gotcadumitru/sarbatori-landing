@@ -41,6 +41,7 @@
   --white: #fff;
   --dark: #202328;
   --blue-light: #8fbae1;
+  --grey: #666666;
   --circleShape1: rgba(143, 186, 225, 0.44);
   --circleShape2: rgba(143, 186, 225, 0.8);
   --text-blue: #142b51;
@@ -103,6 +104,10 @@ footer,
 header,
 aside {
   display: block;
+}
+
+body {
+  position: relative;
 }
 
 html,

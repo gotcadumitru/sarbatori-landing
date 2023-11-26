@@ -1,5 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withNextIntl = require('next-intl/plugin')()
+
+const nextConfig = withNextIntl({
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+        port: '',
+        // pathname: '/account123/**',
+      },
+    ],
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'))
@@ -25,6 +37,6 @@ const nextConfig = {
 
     return config
   },
-}
+})
 
 module.exports = nextConfig

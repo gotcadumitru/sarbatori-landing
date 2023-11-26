@@ -1,8 +1,8 @@
 import { InfoPageContainer } from '@/shared/ui/InfoPageContainer/InfoPageContainer'
+import InfoNavbar from '@/widgets/InfoNavbar'
 import classNames from 'classnames'
 import type { Metadata } from 'next'
 import { FC, PropsWithChildren } from 'react'
-import InfoNavbar from '../../widgets/InfoNavbar'
 import classes from './layout.module.css'
 
 export const metadata: Metadata = {
