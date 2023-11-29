@@ -109,7 +109,8 @@ const generateImage = async (startIndex) => {
     },
     body: JSON.stringify({
       model: 'dall-e-3',
-      prompt: 'Сгенерируй картинку для этого праздника: День памяти былинного Ильи Муромца',
+      prompt:
+        'Am un prieten si el are un BMW E46 break, facelift, 3 series. Te rog sa imi generezi o imagine cum a incercat el sa faca drifturi pe zapada si sa blocat masina in zapada, iar un nissan qashqai j11 il scoate din zapada',
       n: 1,
       size: '1024x1024',
     }),
