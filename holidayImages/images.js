@@ -48,13 +48,30 @@ const fetchSomething = async (startIndex) => {
   let responseContent = responseJSON.choices[0].message.content
   responseContent = responseContent.split('\n').filter(Boolean)
 
+  const completeJSON = holidaysFromIndex.map((holiday) => {
+    const nameRO = responseContent.find((r) => r.startsWith(`[${holiday.id}].nameRO`))
+    const nameEN = responseContent.find((r) => r.startsWith(`[${holiday.id}].nameEN`))
+    const descriptionRO = responseContent.find((r) => r.startsWith(`[${holiday.id}].descriptionRO`))
+    const descriptionEN = responseContent.find((r) => r.startsWith(`[${holiday.id}].descriptionEN`))
+    const descriptionRU = responseContent.find((r) => r.startsWith(`[${holiday.id}].descriptionRU`))
+
+    return {
+      ...holiday,
+      namero: nameRO.split(`[${holiday.id}].nameRO`)[1],
+      nameen: nameEN.split(`[${holiday.id}].nameEN`)[1],
+      descriptionro: descriptionRO.split(`[${holiday.id}].descriptionRO`)[1],
+      descriptionen: descriptionEN.split(`[${holiday.id}].descriptionEN`)[1],
+      descriptionru: descriptionRU.split(`[${holiday.id}].descriptionRU`)[1],
+    }
+  })
+
   responseContent = responseContent.map((r, index) => `${index}__${r}`)
 
-  responseContent = JSON.stringify(responseContent, null, 2)
+  responseContent = JSON.stringify(completeJSON, null, 2)
   console.log(responseContent)
   fs.writeFileSync('./data.json', responseContent)
 }
-fetchSomething(0)
+// fetchSomething(0)
 
 // const o = require('../jsonObj.json')
 // const j = `{"timeAgo": "","nameru": "Новый год","nameen": "New Year's Day","namero": "Anul Nou","descriptionru": "Новый год – это праздник, который отмечают во всем мире в ночь с 31 декабря на 1 января. Это время веселья, праздничных украшений и фейерверков. Люди собираются с семьей и друзьями, чтобы вместе отпраздновать начало нового года. В России Новый год – один из самых любимых праздников. Традиционно подготовка к празднику начинается заранее: украшаются улицы и дома, наряжается новогодняя елка, готовятся подарки и праздничное застолье. В эту ночь принято загадывать желания, которые должны сбыться в новом году. В культуре России Новый год ассоциируется с Дедом Морозом и его внучкой Снегурочкой, которые приносят подарки детям.","descriptionen": "New Year's Day is a holiday celebrated all over the world on the night of December 31st to January 1st. It is a time of joy, festive decorations, and fireworks. People gather with family and friends to celebrate the start of the new year together. In Russia, New Year's Day is one of the most beloved holidays. Traditionally, preparations for the holiday begin in advance: streets and houses are decorated, a New Year's tree is dressed up, gifts are prepared, and a festive feast is arranged. It is customary to make wishes on this night, which are supposed to come true in the new year. In Russian culture, New Year's Day is associated with Grandfather Frost and his granddaughter Snow Maiden, who bring gifts to children.","descriptionro": "Anul Nou este o sărbătoare celebrată în întreaga lume în noaptea de 31 decembrie spre 1 ianuarie. Este un timp al bucuriei, al decorațiunilor festive și al focurilor de artificii. Oamenii se adună cu familia și prietenii pentru a sărbători împreună începutul noului an. În Rusia, Anul Nou este una dintre cele mai îndrăgite sărbători. Tradițional, pregătirile pentru sărbătoare încep din timp: străzile și casele sunt decorate, se împodobește bradul de Anul Nou, se pregătesc cadouri și se aranjează un ospăț festiv. În această noapte este obiceiul să se facă dorințe, care ar trebui să se împlinească în noul an. În cultura rusă, Anul Nou este asociat cu Moș Crăciun și nepoata sa, Snegurochka, care aduc cadouri copiilor.","imageURL": "","id": ""}`
@@ -82,3 +99,22 @@ fetchSomething(0)
 //   )
 // }
 // generateQueries(0)
+
+const generateImage = async (startIndex) => {
+  const response = await fetch('https://api.openai.com/v1/images/generations', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer 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`,
+    },
+    body: JSON.stringify({
+      model: 'dall-e-3',
+      prompt: 'Сгенерируй картинку для этого праздника: День памяти былинного Ильи Муромца',
+      n: 1,
+      size: '1024x1024',
+    }),
+  })
+  const responseJSON = await response.json()
+  console.log(JSON.stringify(responseJSON, null, 2))
+}
+generateImage(0)
