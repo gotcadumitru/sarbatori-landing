@@ -1,1 +1,2 @@
-export type { Holiday } from './types/holidayTypes'
+export type { Holiday, HolidayPageParams } from './types/holidayTypes'
+export * from './lib/utils'

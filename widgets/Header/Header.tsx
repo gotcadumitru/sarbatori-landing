@@ -1,11 +1,15 @@
 'use client'
 
 import { roboto } from '@/app/fonts'
+import { Link, usePathname } from '@/navigation'
 import VscMenu from '@/shared/assets/icons/VscMenu'
 import WebsiteLogo from '@/shared/assets/icons/WebsiteLogo'
+
+import { locales } from '@/shared/config/i18n/consts'
 import { CircleShapeDouble, CircleShapePosition } from '@/shared/ui/CircleShape'
+import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
-import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import { FC, useState } from 'react'
 import classes from './Header.module.css'
 
@@ -13,26 +17,13 @@ interface HeaderProps {
   className?: string
   urls: {
     text: string
-    href: string
+    href: any
   }[]
 }
 
-const languageUrls = [
-  {
-    text: 'RO',
-    href: '/ro',
-  },
-  {
-    text: 'RU',
-    href: '/ru',
-  },
-  {
-    text: 'EN',
-    href: '/en',
-  },
-]
-
 export const Header: FC<HeaderProps> = ({ className, urls }) => {
+  const pathname = usePathname().toString()
+  const params = useParams()
   const [isHeaderDisplayed, setIsHeaderDisplayed] = useState(false)
   return (
     <>
@@ -82,15 +73,15 @@ export const Header: FC<HeaderProps> = ({ className, urls }) => {
               </Link>
             ))}
             <div className={classes.languageContainer}>
-              {languageUrls.map((url) => (
-                <Link
-                  locale={url.text.toLocaleLowerCase()}
+              {locales.map((locale) => (
+                <NavigationLink
+                  locale={locale}
                   className={roboto.className}
-                  key={url.href}
-                  href={url.href}
+                  key={locale}
+                  href={{ pathname, params: { ...params, locale } } as any}
                 >
-                  {url.text}
-                </Link>
+                  {locale.toLocaleUpperCase()}
+                </NavigationLink>
               ))}
             </div>
           </div>

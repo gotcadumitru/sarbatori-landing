@@ -6,7 +6,7 @@ import { FC, PropsWithChildren } from 'react'
 import classes from './layout.module.css'
 
 export const metadata: Metadata = {
-  title: 'CarMaster',
+  title: 'Sarbatori',
   description: 'Jurnalul călătoriilor tale pe șosea, unde fiecare kilometru are o poveste.',
 }
 

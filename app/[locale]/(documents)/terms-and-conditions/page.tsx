@@ -1,6 +1,8 @@
+// import { PropsWithLocale } from '@/shared/config/i18n/config'
+import { FC } from 'react'
 import classes from '../page.module.css'
 
-const TermsAndConditions = () => (
+const TermsAndConditions: FC = () => (
   <div className={classes.page}>
     <h2>
       <strong className={classes.strong}>Termeni și Condiții</strong>

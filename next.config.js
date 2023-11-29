@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withNextIntl = require('next-intl/plugin')()
+const withNextIntl = require('next-intl/plugin')('./shared/config/i18n/i18n.tsx')
 
 const nextConfig = withNextIntl({
   images: {
@@ -8,7 +8,11 @@ const nextConfig = withNextIntl({
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
         port: '',
-        // pathname: '/account123/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'oaidalleapiprodscus.blob.core.windows.net',
+        port: '',
       },
     ],
   },

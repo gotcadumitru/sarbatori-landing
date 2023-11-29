@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sarbatori.net/
+
+# Sitemaps
+Sitemap: https://www.sarbatori.net/sitemap.xml

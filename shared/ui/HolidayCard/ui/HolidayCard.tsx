@@ -1,8 +1,9 @@
 import { roboto } from '@/app/fonts'
 import { Holiday } from '@/enteties/holiday'
 import ShareIcon from '@/shared/assets/icons/ShareIcon'
+import { AppRoutes } from '@/shared/config/i18n/routes'
+import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
-import Link from 'next/link'
 import { FC } from 'react'
 import classes from '../styles/holidayCard.module.css'
 
@@ -21,11 +22,15 @@ export const HolidayCard: FC<HolidayCardProps> = ({ holiday }) => (
     )}
     <div className={classes.holidayCardBody}>
       <div className={classes.holidayCardTitle}>
-        <Link href={`/sarbatoare/${holiday.id}`}>{holiday.nameRU}</Link>
+        <NavigationLink
+          href={{ pathname: `${AppRoutes.holiday}/[id]`, params: { id: holiday.id } } as any}
+        >
+          {holiday.name}
+        </NavigationLink>
         <ShareIcon />
       </div>
       <div className={classNames(roboto.className, classes.holidayCardDescription)}>
-        {holiday.nameRU} {holiday.nameRU} {holiday.nameRU} {holiday.nameRU}
+        {holiday.description}
       </div>
     </div>
   </div>

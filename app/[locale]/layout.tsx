@@ -1,6 +1,8 @@
 import { inter } from '@/app/fonts'
 import GoogleAnalytics from '@/features/GoogleAnalytics'
-import { locales } from '@/shared/config/i18n/config'
+
+import { locales } from '@/shared/config/i18n/consts'
+import { PropsWithLocale } from '@/shared/config/i18n/types'
 import { toastDefaultValues } from '@/shared/config/toastify'
 import { HeaderEntry } from '@/widgets/Header'
 import classNames from 'classnames'
@@ -17,10 +19,7 @@ export const metadata: Metadata = {
   description: 'Jurnalul călătoriilor tale pe șosea, unde fiecare kilometru are o poveste.',
 }
 
-type RootLayoutProps = {
-  params: { locale: string }
-}
-const RootLayout: FC<PropsWithChildren<RootLayoutProps>> = ({ children, params: { locale } }) => {
+const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params: { locale } }) => {
   if (!locales.includes(locale as any)) notFound()
   return (
     <html lang={locale}>
@@ -36,4 +35,4 @@ const RootLayout: FC<PropsWithChildren<RootLayoutProps>> = ({ children, params: 
   )
 }
 
-export default RootLayout
+export default LocaleLayout
