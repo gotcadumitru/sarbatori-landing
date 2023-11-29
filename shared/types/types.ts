@@ -9,7 +9,3 @@ export enum QueryParams {
   MODAL = 'modal',
   ID = 'id',
 }
-
-export type PropsWithParams<T> = {
-  params: T
-}

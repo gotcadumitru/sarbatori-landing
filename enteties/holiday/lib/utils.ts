@@ -1,8 +1,14 @@
 import holidaysJSON from '@/jsonObj.json'
 import { Locales } from '@/shared/config/i18n/consts'
-import { PropsWithLocale } from '@/shared/config/i18n/types'
+import { LocaleParams } from '@/shared/config/i18n/types'
 import { monthsWithNumber } from '@/shared/defaults/dates/dates'
-import { Holiday, HolidayJSON, HolidayPageParams } from '../types/holidayTypes'
+import {
+  Holiday,
+  HolidayDate,
+  HolidayJSON,
+  HolidayPageParams,
+  HolidaysWithDate,
+} from '../types/holidayTypes'
 
 export const convertHolidayFromJsonToHoliday = (
   holidaysFromJson: HolidayJSON[],
@@ -21,11 +27,12 @@ export const getDayOfMonth = (day: string | number) => {
   if (dayLocal.length > 1) return dayLocal
   return `0${dayLocal}`
 }
+
 export const getHolidaysByDayAndMonthParams = ({
   day,
   month,
   locale,
-}: PropsWithLocale<HolidayPageParams>['params']) => {
+}: LocaleParams & HolidayPageParams): HolidaysWithDate | null => {
   const monthWithNumber =
     month.length > 2
       ? monthsWithNumber.find((m) => m.name[Locales.en] === month)
@@ -37,7 +44,10 @@ export const getHolidaysByDayAndMonthParams = ({
       holiday.date.day === getDayOfMonth(day) && holiday.date.month === monthWithNumber.number,
   )
   if (!holidaysAndDate) return null
-  return convertHolidayFromJsonToHoliday(holidaysAndDate.holidays, locale)
+  return {
+    holidays: convertHolidayFromJsonToHoliday(holidaysAndDate.holidays, locale),
+    date: holidaysAndDate.date,
+  }
 }
 
 export const getHolidayById = (id: string, locale: Locales) => {
@@ -49,4 +59,26 @@ export const getHolidayById = (id: string, locale: Locales) => {
   if (!currentHoliday) return null
   const [holidayConverted] = convertHolidayFromJsonToHoliday([currentHoliday], locale)
   return holidayConverted
+}
+
+export const getNextDateByHolidayDate = (date: HolidayDate, locale: Locales) => {
+  const holidayWithDateIndex = holidaysJSON.findIndex(
+    (holidayWithNumber) =>
+      holidayWithNumber.date.day === date.day && holidayWithNumber.date.month === date.month,
+  )
+  const holidaysWithDateLength = holidaysJSON.length
+  const prevHolidaysAndDate =
+    holidaysJSON[(holidayWithDateIndex + holidaysWithDateLength - 1) % holidaysWithDateLength]
+
+  const nextHolidaysAndDate = holidaysJSON[(holidayWithDateIndex + 1) % holidaysWithDateLength]
+  return {
+    prevHolidaysAndDate: {
+      date: prevHolidaysAndDate.date,
+      holidays: convertHolidayFromJsonToHoliday(prevHolidaysAndDate.holidays, locale),
+    },
+    nextHolidaysAndDate: {
+      date: nextHolidaysAndDate.date,
+      holidays: convertHolidayFromJsonToHoliday(nextHolidaysAndDate.holidays, locale),
+    },
+  }
 }

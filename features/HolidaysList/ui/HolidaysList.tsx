@@ -1,16 +1,20 @@
-import { Holiday } from '@/enteties/holiday'
+import { HolidaysWithDate } from '@/enteties/holiday/types/holidayTypes'
 import { CalendarCarousel } from '@/features/CalendarCarousel'
+import { PropsWithLocale } from '@/shared/config/i18n/types'
 import { HolidayCard } from '@/shared/ui/HolidayCard'
 import { FC } from 'react'
 
 type HolidaysListProps = {
-  holidays: Holiday[]
+  holidaysWithDate: HolidaysWithDate
 }
-export const HolidaysList: FC<HolidaysListProps> = ({ holidays }) => (
+export const HolidaysList: FC<PropsWithLocale<HolidaysListProps>> = ({
+  holidaysWithDate,
+  params,
+}) => (
   <>
-    <CalendarCarousel />
+    <CalendarCarousel params={params} date={holidaysWithDate.date} />
     <div className='container'>
-      {holidays.map((holiday) => (
+      {holidaysWithDate.holidays.map((holiday) => (
         <HolidayCard key={holiday.id} holiday={holiday} />
       ))}
     </div>

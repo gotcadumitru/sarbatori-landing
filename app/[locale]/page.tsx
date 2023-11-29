@@ -5,15 +5,15 @@ import NotFound from '@/widgets/NotFound'
 import { FC } from 'react'
 import classes from './page.module.css'
 
-const Home: FC<PropsWithLocale> = ({ params: { locale } }) => {
+const Home: FC<PropsWithLocale> = ({ params }) => {
   const dateToday = new Date()
   const day = getDayOfMonth(dateToday.getDate())
   const month = getDayOfMonth(dateToday.getMonth() + 1)
-  const holidays = getHolidaysByDayAndMonthParams({ day, month, locale })
+  const holidays = getHolidaysByDayAndMonthParams({ day, month, locale: params.locale })
   if (!holidays) return <NotFound />
   return (
     <main className={classes.main}>
-      <HolidaysList holidays={holidays} />
+      <HolidaysList params={params} holidaysWithDate={holidays} />
     </main>
   )
 }

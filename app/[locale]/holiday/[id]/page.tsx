@@ -1,5 +1,5 @@
 import { getHolidayById } from '@/enteties/holiday'
-import { PropsWithLocale } from '@/shared/config/i18n/types'
+import { LocaleParams, PropsWithParams } from '@/shared/config/i18n/types'
 import NotFound from '@/widgets/NotFound'
 import Image from 'next/image'
 import { FC } from 'react'
@@ -8,7 +8,7 @@ import classes from './page.module.css'
 type HolidayPageProps = {
   id: string
 }
-const Page: FC<PropsWithLocale<HolidayPageProps>> = ({ params: { id, locale } }) => {
+const Page: FC<PropsWithParams<LocaleParams & HolidayPageProps>> = ({ params: { id, locale } }) => {
   const holiday = getHolidayById(id, locale)
   if (!holiday) return <NotFound />
   const [holidayDescriptionFirstPhrase, ...holidayRestOfTheDescription] =

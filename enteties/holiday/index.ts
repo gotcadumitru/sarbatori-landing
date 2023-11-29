@@ -1,2 +1,9 @@
-export type { Holiday, HolidayPageParams } from './types/holidayTypes'
+export type {
+  Holiday,
+  HolidayPageParams,
+  HolidayDate,
+  HolidaysWithDate,
+  HolidaysWithDateJSON,
+  HolidayJSON,
+} from './types/holidayTypes'
 export * from './lib/utils'

@@ -10,12 +10,27 @@ export type HolidayJSON = {
   id: string
 }
 
+export type HolidayDate = {
+  day: string
+  month: string
+}
+
+export type HolidaysWithDateJSON = {
+  date: HolidayDate
+  holidays: HolidayJSON[]
+}
+
 export type Holiday = {
   timeAgo: string
   name: string
   description: string
   imageURL: string
   id: string
+}
+
+export type HolidaysWithDate = {
+  date: HolidayDate
+  holidays: Holiday[]
 }
 
 export type HolidayPageParams = {
