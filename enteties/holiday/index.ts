@@ -7,3 +7,4 @@ export type {
   HolidayJSON,
 } from './types/holidayTypes'
 export * from './lib/utils'
+export { CalendarEventMaxLength } from './lib/holidayConsts'

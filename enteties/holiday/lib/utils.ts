@@ -8,6 +8,7 @@ import {
   HolidayJSON,
   HolidayPageParams,
   HolidaysWithDate,
+  HolidaysWithDateJSON,
 } from '../types/holidayTypes'
 
 export const convertHolidayFromJsonToHoliday = (
@@ -26,6 +27,13 @@ export const getDayOfMonth = (day: string | number) => {
   const dayLocal = day.toString()
   if (dayLocal.length > 1) return dayLocal
   return `0${dayLocal}`
+}
+
+export const getMonthNameByMonthNumber = (monthNumber: string | number, locale: Locales) => {
+  const monthNumberLocal = getDayOfMonth(monthNumber)
+  const month = monthsWithNumber.find((m) => m.number === monthNumberLocal)
+  if (!month) return null
+  return month.name[locale]
 }
 
 export const getHolidaysByDayAndMonthParams = ({
@@ -80,5 +88,21 @@ export const getNextDateByHolidayDate = (date: HolidayDate, locale: Locales) => 
       date: nextHolidaysAndDate.date,
       holidays: convertHolidayFromJsonToHoliday(nextHolidaysAndDate.holidays, locale),
     },
+    currentHolidaysAndDate: {
+      date: holidaysJSON[holidayWithDateIndex].date,
+      holidays: convertHolidayFromJsonToHoliday(
+        holidaysJSON[holidayWithDateIndex].holidays,
+        locale,
+      ),
+    },
   }
 }
+
+export const getCalendarEventsTextForDay = (
+  holidaysWithDateJson: HolidaysWithDateJSON,
+  locale: Locales,
+): string =>
+  holidaysWithDateJson.holidays.slice(0, 4).reduce((eventsText, holiday) => {
+    const [convertedHoliday] = convertHolidayFromJsonToHoliday([holiday], locale)
+    return `${eventsText}${eventsText ? '\n' : ''}•${convertedHoliday.name}`
+  }, '')

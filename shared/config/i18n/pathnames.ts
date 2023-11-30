@@ -1,23 +1,24 @@
 // A list of all locales that are supported
 
 import { Locales } from '@/shared/config/i18n/consts'
-import { AppRoutes } from '@/shared/config/i18n/routes'
+import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import type { PathNamesWithLocales } from '@/shared/config/i18n/types'
+import { ArchivePathnamesWithLocales } from '@/shared/config/i18n/types'
 import { monthsWithNumber } from '@/shared/defaults/dates/dates'
 
 // The `pathnames` object holds pairs of internal
 // and external paths, separated by locale.
 
-const archivePathnames: PathNamesWithLocales = monthsWithNumber.reduce(
-  (monthsPathNames: PathNamesWithLocales, month) => ({
+export const archivePathnames: ArchivePathnamesWithLocales = monthsWithNumber.reduce(
+  (monthsPathNames: ArchivePathnamesWithLocales, month) => ({
     ...monthsPathNames,
-    [`${[AppRoutes.archive]}/${month.name[Locales.en]}/[day]`]: {
-      en: `${[AppRoutes.archive]}/${month.name[Locales.en]}/[day]`,
-      ro: `/arhiva/${month.name[Locales.ro]}/[day]`,
-      ru: `/arhiv/${month.name[Locales.ru]}/[day]`,
+    [`${[AppRoutes.archive]}/${month.name[Locales.en]}/${AppParams.day}`]: {
+      en: `${[AppRoutes.archive]}/${month.name[Locales.en]}/${AppParams.day}`,
+      ro: `/arhiva/${month.name[Locales.ro]}/${AppParams.day}`,
+      ru: `/arhiv/${month.name[Locales.ru]}/${AppParams.day}`,
     },
   }),
-  {} as PathNamesWithLocales,
+  {} as ArchivePathnamesWithLocales,
 )
 export const pathnames = {
   // If all locales use the same pathname, a
@@ -39,21 +40,10 @@ export const pathnames = {
     [Locales.ro]: '/politica-de-confidentialitate',
     [Locales.ru]: '/politika-confidentialinosti',
   },
-  [`${AppRoutes.holiday}/[id]`]: {
-    [Locales.en]: `${AppRoutes.holiday}/[id]`,
-    [Locales.ro]: '/sarbatoare/[id]',
-    [Locales.ru]: '/prazdniki/[id]',
+  [`${AppRoutes.holiday}/${AppParams.id}`]: {
+    [Locales.en]: `${AppRoutes.holiday}/${AppParams.id}`,
+    [Locales.ro]: `/sarbatoare/${AppParams.id}`,
+    [Locales.ru]: `/prazdniki/${AppParams.id}`,
   },
-  // // Dynamic params are supported via square brackets
-  // '/news/[articleSlug]-[articleId]': {
-  //   en: '/news/[articleSlug]-[articleId]',
-  //   de: '/neuigkeiten/[articleSlug]-[articleId]',
-  // },
-  //
-  // // Also (optional) catch-all segments are supported
-  // '/categories/[...slug]': {
-  //   en: '/categories/[...slug]',
-  //   de: '/kategorien/[...slug]',
-  // },
   ...archivePathnames,
 } satisfies PathNamesWithLocales

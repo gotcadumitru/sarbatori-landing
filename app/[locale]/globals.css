@@ -40,6 +40,7 @@
   /* Colors */
   --white: #fff;
   --dark: #202328;
+  --blue: #4530b3;
   --blue-light: #8fbae1;
   --grey: #666666;
   --circleShape1: rgba(143, 186, 225, 0.44);
@@ -64,6 +65,11 @@
   /* Border radiuses */
   --br-8xs: 5px;
   --br-mini: 15px;
+
+  --fc-button-bg-color: transparent;
+  --fc-button-border-color: transparent;
+  --fc-button-text-color: var(--dark);
+  --fc-event-bg-color: var(--blue);
 }
 
 * {

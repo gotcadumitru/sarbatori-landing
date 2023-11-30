@@ -8,3 +8,7 @@ export const AppRoutes = {
   archive: '/archive',
   holiday: '/holiday',
 }
+export const AppParams = {
+  day: '[day]',
+  id: '[id]',
+}
