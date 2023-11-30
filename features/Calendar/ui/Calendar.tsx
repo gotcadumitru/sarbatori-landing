@@ -62,6 +62,7 @@ export const Calendar: FC<CalendarProps> = ({ className, locale }) => {
         editable={false}
         droppable={false}
         weekends
+        contentHeight='auto'
       />
     </div>
   )
