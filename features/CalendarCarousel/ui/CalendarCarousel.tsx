@@ -6,7 +6,7 @@ import {
 import AiOutlineLeft from '@/shared/assets/icons/AiOutlineLeft'
 import AiOutlineRight from '@/shared/assets/icons/AiOutlineRight'
 import { Locales } from '@/shared/config/i18n/consts'
-import { AppRoutes } from '@/shared/config/i18n/routes'
+import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import { PropsWithLocale } from '@/shared/config/i18n/types'
 import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
@@ -31,7 +31,7 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
       <NavigationLink
         href={
           {
-            pathname: `${AppRoutes.archive}/${prevMonthNameForPath}/[day]`,
+            pathname: `${AppRoutes.archive}/${prevMonthNameForPath}/${AppParams.day}`,
             params: {
               day: prevHolidaysAndDate.date.day,
             },
@@ -46,7 +46,7 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
       <NavigationLink
         href={
           {
-            pathname: `${AppRoutes.archive}/${nextMonthNameForPath}/[day]`,
+            pathname: `${AppRoutes.archive}/${nextMonthNameForPath}/${AppParams.day}`,
             params: {
               day: nextHolidaysAndDate.date.day,
             },

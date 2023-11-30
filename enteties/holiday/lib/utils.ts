@@ -16,8 +16,8 @@ export const convertHolidayFromJsonToHoliday = (
   locale: Locales,
 ): Holiday[] =>
   holidaysFromJson.map((holiday) => ({
-    name: holiday[`name${locale}`],
-    description: holiday[`description${locale}`],
+    name: holiday[`name${locale}`] || holiday.nameen || holiday.nameru,
+    description: holiday[`description${locale}`] || holiday.nameen || holiday.nameru,
     imageURL: holiday.imageURL,
     id: holiday.id,
     timeAgo: holiday.timeAgo,

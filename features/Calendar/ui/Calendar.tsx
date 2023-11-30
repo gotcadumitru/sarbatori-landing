@@ -4,7 +4,7 @@ import { getCalendarEventsTextForDay, getMonthNameByMonthNumber } from '@/enteti
 import holidaysJSON from '@/jsonObj.json'
 import { Locales } from '@/shared/config/i18n/consts'
 import { archivePathnames } from '@/shared/config/i18n/pathnames'
-import { AppRoutes } from '@/shared/config/i18n/routes'
+import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import { EventSourceInput } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
@@ -24,9 +24,9 @@ interface CalendarProps {
 export const Calendar: FC<CalendarProps> = ({ className, locale }) => {
   const events: EventSourceInput = holidaysJSON.map((holidayWithDateJson) => {
     const monthName = getMonthNameByMonthNumber(holidayWithDateJson.date.month, Locales.en)
-    const archivePathnameKey = `${[AppRoutes.archive]}/${monthName}/[day]`
+    const archivePathnameKey = `${[AppRoutes.archive]}/${monthName}/${AppParams.day}`
     const urlWithoutParams = archivePathnames[archivePathnameKey][locale]
-    const urlWithoutLocale = urlWithoutParams.replace('[day]', holidayWithDateJson.date.day)
+    const urlWithoutLocale = urlWithoutParams.replace(AppParams.day, holidayWithDateJson.date.day)
     const url = `/${locale}${urlWithoutLocale}`
     return {
       title: getCalendarEventsTextForDay(holidayWithDateJson, locale),
