@@ -1,5 +1,6 @@
 import holidaysJSON from '@/jsonObj.json'
 import { Locales } from '@/shared/config/i18n/consts'
+import { AppRoutes } from '@/shared/config/i18n/routes'
 import { LocaleParams } from '@/shared/config/i18n/types'
 import { monthsWithNumber } from '@/shared/defaults/dates/dates'
 import {
@@ -31,9 +32,11 @@ export const getDayOfMonth = (day: string | number) => {
 
 export const getMonthNameByMonthNumber = (monthNumber: string | number, locale: Locales) => {
   const monthNumberLocal = getDayOfMonth(monthNumber)
-  const month = monthsWithNumber.find((m) => m.number === monthNumberLocal)
-  if (!month) return null
-  return month.name[locale]
+  const month = monthsWithNumber.find((m) => m.number === monthNumberLocal)!
+  return {
+    monthNameForUrlUse: month.name[locale],
+    monthNameForDisplay: locale === Locales.ru ? month.name.ruKiril : month.name[locale],
+  }
 }
 
 export const getHolidaysByDayAndMonthParams = ({
@@ -106,3 +109,11 @@ export const getCalendarEventsTextForDay = (
     const [convertedHoliday] = convertHolidayFromJsonToHoliday([holiday], locale)
     return `${eventsText}${eventsText ? '\n' : ''}•${convertedHoliday.name}`
   }, '')
+
+export const checkIsRouteWithSearchInput = (pathname: string): Boolean => {
+  if (pathname === AppRoutes.main) return true
+
+  return !![AppRoutes.archive, AppRoutes.calendar, AppRoutes.holiday].find((route) =>
+    pathname.startsWith(route),
+  )
+}

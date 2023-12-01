@@ -44,6 +44,9 @@ body:has(.headerActive) {
 
 .headerMenuIconContainer {
   padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerContainer {

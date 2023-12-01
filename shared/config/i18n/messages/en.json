@@ -6,5 +6,8 @@
     "privacyPolicy": "Privacy Policy",
     "cookies": "Cookies",
     "termsAndConditions": "Terms and Conditions"
+  },
+  "holidays": {
+    "holidays": "Holidays"
   }
 }

@@ -1,11 +1,13 @@
 'use client'
 
 import { roboto } from '@/app/fonts'
+import { checkIsRouteWithSearchInput } from '@/enteties/holiday'
+import { SearchInputWithIcon } from '@/features/SearchInputWithIcon/ui/SearchInputWithIcon'
 import { Link, usePathname } from '@/navigation'
 import VscMenu from '@/shared/assets/icons/VscMenu'
 import WebsiteLogo from '@/shared/assets/icons/WebsiteLogo'
 
-import { locales } from '@/shared/config/i18n/consts'
+import { Locales, locales } from '@/shared/config/i18n/consts'
 import { CircleShapeDouble, CircleShapePosition } from '@/shared/ui/CircleShape'
 import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
@@ -25,10 +27,12 @@ export const Header: FC<HeaderProps> = ({ className, urls }) => {
   const pathname = usePathname().toString()
   const params = useParams()
   const [isHeaderDisplayed, setIsHeaderDisplayed] = useState(false)
+  const isSearchInputDisplayed = checkIsRouteWithSearchInput(pathname)
   return (
     <>
       <div className={classNames(classes.headerMenuIconContainer, 'container')}>
         <VscMenu className={classes.headerMenuIcon} onClick={() => setIsHeaderDisplayed(true)} />
+        {isSearchInputDisplayed && <SearchInputWithIcon locale={params.locale as Locales} />}
       </div>
       <CircleShapeDouble
         isDisplayed={!isHeaderDisplayed}

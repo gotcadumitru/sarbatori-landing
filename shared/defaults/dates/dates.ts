@@ -13,7 +13,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '01',
     name: {
-      ruKiril: 'январь',
+      ruKiril: 'января',
       [Locales.ru]: 'yanvar',
       [Locales.ro]: 'ianuarie',
       [Locales.en]: 'january',
@@ -22,7 +22,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '02',
     name: {
-      ruKiril: 'февраль',
+      ruKiril: 'февраля',
       [Locales.ru]: 'fevral',
       [Locales.ro]: 'februarie',
       [Locales.en]: 'february',
@@ -31,7 +31,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '03',
     name: {
-      ruKiril: 'март',
+      ruKiril: 'марта',
       [Locales.ru]: 'mart',
       [Locales.ro]: 'martie',
       [Locales.en]: 'march',
@@ -40,7 +40,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '04',
     name: {
-      ruKiril: 'апрель',
+      ruKiril: 'апреля',
       [Locales.ru]: 'aprel',
       [Locales.ro]: 'aprilie',
       [Locales.en]: 'april',
@@ -49,7 +49,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '05',
     name: {
-      ruKiril: 'май',
+      ruKiril: 'мая',
       [Locales.ru]: 'may',
       [Locales.ro]: 'mai',
       [Locales.en]: ':',
@@ -58,7 +58,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '06',
     name: {
-      ruKiril: 'июнь',
+      ruKiril: 'июня',
       [Locales.ru]: 'iyun',
       [Locales.ro]: 'iunie',
       [Locales.en]: 'june',
@@ -67,7 +67,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '07',
     name: {
-      ruKiril: 'июль',
+      ruKiril: 'июля',
       [Locales.ru]: 'iyul',
       [Locales.ro]: 'iulie',
       [Locales.en]: 'july',
@@ -76,7 +76,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '08',
     name: {
-      ruKiril: 'август',
+      ruKiril: 'августа',
       [Locales.ru]: 'avgust',
       [Locales.ro]: 'august',
       [Locales.en]: 'august',
@@ -85,7 +85,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '09',
     name: {
-      ruKiril: 'сентябрь',
+      ruKiril: 'сентября',
       [Locales.ru]: 'sentyabr',
       [Locales.ro]: 'septembrie',
       [Locales.en]: 'september',
@@ -94,7 +94,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '10',
     name: {
-      ruKiril: 'октябрь',
+      ruKiril: 'октября',
       [Locales.ru]: 'oktyabr',
       [Locales.ro]: 'octombrie',
       [Locales.en]: 'october',
@@ -103,7 +103,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '11',
     name: {
-      ruKiril: 'ноябрь',
+      ruKiril: 'ноября',
       [Locales.ru]: 'noyabr',
       [Locales.ro]: 'noiembrie',
       [Locales.en]: 'november',
@@ -112,7 +112,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
   {
     number: '12',
     name: {
-      ruKiril: 'декабрь',
+      ruKiril: 'декабря',
       [Locales.ru]: 'dekabr',
       [Locales.ro]: 'decembrie',
       [Locales.en]: 'december',

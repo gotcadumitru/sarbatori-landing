@@ -10,6 +10,7 @@ import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import { PropsWithLocale } from '@/shared/config/i18n/types'
 import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import { FC } from 'react'
 import classes from '../styles/calendarCarousel.module.css'
 
@@ -20,6 +21,7 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
   date,
   params: { locale },
 }) => {
+  const t = useTranslations('holidays')
   const { prevHolidaysAndDate, nextHolidaysAndDate, currentHolidaysAndDate } =
     getNextDateByHolidayDate(date, locale)
   const prevMonthNameForPath = getMonthNameByMonthNumber(prevHolidaysAndDate.date.month, Locales.en)
@@ -31,7 +33,7 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
       <NavigationLink
         href={
           {
-            pathname: `${AppRoutes.archive}/${prevMonthNameForPath}/${AppParams.day}`,
+            pathname: `${AppRoutes.archive}/${prevMonthNameForPath.monthNameForUrlUse}/${AppParams.day}`,
             params: {
               day: prevHolidaysAndDate.date.day,
             },
@@ -40,13 +42,13 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
       >
         <AiOutlineLeft className={classes.leftIcon} />
       </NavigationLink>
-      <NavigationLink className={classes.date} href='/'>
-        {currentMonthName}
+      <NavigationLink className={classes.date} href={AppRoutes.calendar}>
+        {t('holidays')} {+date.day} {currentMonthName.monthNameForDisplay}
       </NavigationLink>
       <NavigationLink
         href={
           {
-            pathname: `${AppRoutes.archive}/${nextMonthNameForPath}/${AppParams.day}`,
+            pathname: `${AppRoutes.archive}/${nextMonthNameForPath.monthNameForUrlUse}/${AppParams.day}`,
             params: {
               day: nextHolidaysAndDate.date.day,
             },

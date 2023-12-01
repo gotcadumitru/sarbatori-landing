@@ -23,8 +23,11 @@ interface CalendarProps {
 
 export const Calendar: FC<CalendarProps> = ({ className, locale }) => {
   const events: EventSourceInput = holidaysJSON.map((holidayWithDateJson) => {
-    const monthName = getMonthNameByMonthNumber(holidayWithDateJson.date.month, Locales.en)
-    const archivePathnameKey = `${[AppRoutes.archive]}/${monthName}/${AppParams.day}`
+    const { monthNameForUrlUse } = getMonthNameByMonthNumber(
+      holidayWithDateJson.date.month,
+      Locales.en,
+    )
+    const archivePathnameKey = `${[AppRoutes.archive]}/${monthNameForUrlUse}/${AppParams.day}`
     const urlWithoutParams = archivePathnames[archivePathnameKey][locale]
     const urlWithoutLocale = urlWithoutParams.replace(AppParams.day, holidayWithDateJson.date.day)
     const url = `/${locale}${urlWithoutLocale}`

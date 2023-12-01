@@ -1,10 +1,13 @@
 {
   "header": {
-    "holidaysToday": "Sarbatorile de astazi",
+    "holidaysToday": "Sărbătorile de astăzi",
     "calendar": "Calendar",
     "contact": "Contact",
     "privacyPolicy": "Politica de confidențialitate",
     "cookies": "Cookies",
     "termsAndConditions": "Termeni și condiții"
+  },
+  "holidays": {
+    "holidays": "Sărbatori"
   }
 }

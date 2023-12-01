@@ -1,0 +1,8 @@
+.searchInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--blue-light);
+}
