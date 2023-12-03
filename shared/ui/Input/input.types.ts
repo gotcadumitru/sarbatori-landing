@@ -20,6 +20,7 @@ export type OnChangeMinType<T = number | string | null> = {
 interface InputPropsType extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string
   containerClassName?: string
+  inputContainerClassName?: string
   className?: string
   disabled?: boolean
   valueFullType?: FormDataField<string>

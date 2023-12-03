@@ -1,8 +1,15 @@
 .searchInput {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 15px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--blue-light);
+  z-index: 1;
+}
+.searchIcon {
+  cursor: pointer;
+}
+.input {
+  border-radius: 20px;
+  background: var(--white);
+  height: 42px;
+  /*border: none;*/
+}
+.inputContainerClassName {
+  background-color: transparent;
 }

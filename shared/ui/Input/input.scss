@@ -1,6 +1,6 @@
 .input {
   padding: 12px;
-  border: 2px solid var(--input-border);
+  border: 2px solid var(--blue-light);
   border-radius: 4px;
   font-size: 18px;
   line-height: 20px;
@@ -25,10 +25,10 @@
   }
 
   &:focus {
-    border: 2px solid var(--blue-1);
+    border: 2px solid var(--blue-light);
     outline: none;
     margin: 0;
-    box-shadow: 0 0 0 1px var(--blue-1);
+    box-shadow: 0 0 0 1px var(--blue-light);
     transition: border 0.1s ease, box-shadow 0.1s ease;
   }
 

@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
+  @media (max-width: 768px) {
+    align-items: flex-end;
+  }
 
   &__content {
     position: relative;
@@ -16,6 +19,12 @@
     overflow: auto;
     border-radius: 12px;
     z-index: 12;
+    @media (max-width: 768px) {
+      height: 85vh;
+      width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
     &--confirm {
       text-align: center;
@@ -46,9 +55,11 @@
   }
 
   &__title {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: var(--inter);
+    margin-top: 25px;
+    text-align: center;
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 600;
   }
 
   &__body {
@@ -72,8 +83,13 @@
   }
 
   .modal__content {
-    opacity: 0;
-    transform: scale(0.5);
+    @media (min-width: 768px) {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    @media (max-width: 768px) {
+      bottom: -100%;
+    }
   }
 }
 
@@ -84,8 +100,13 @@
   }
 
   .modal__content {
-    opacity: 1;
-    transform: translateX(0);
+    @media (min-width: 768px) {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @media (max-width: 768px) {
+      bottom: 0;
+    }
     transition: all 0.2s;
   }
 }
@@ -96,7 +117,12 @@
   }
 
   .modal__content {
-    opacity: 1;
+    @media (min-width: 768px) {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      bottom: 0;
+    }
   }
 }
 
@@ -107,8 +133,14 @@
   }
 
   .modal__content {
-    opacity: 0;
-    transform: scale(0.5);
+    @media (min-width: 768px) {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    @media (max-width: 768px) {
+      bottom: -100%;
+    }
     transition: all 0.2s;
   }
 }
+

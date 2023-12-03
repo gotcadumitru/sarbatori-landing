@@ -14,6 +14,7 @@ const Input = forwardRef<HTMLInputElement, InputWithLabelProps>(
       label,
       errorMessage,
       containerClassName = '',
+      inputContainerClassName = '',
       className = '',
       disabled,
       value,
@@ -41,6 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputWithLabelProps>(
     const inputLabelClassName = classNames('input__label', {
       'input__label--top': valueLocal?.toString().length || isInputFocused || type === 'date',
     })
+    const inputContainerClassNameLocal = classNames('input__container', inputContainerClassName)
     const onInputFocus = (e: FocusEvent<HTMLInputElement>) => {
       setIsInputFocused(true)
       onFocus?.(e)
@@ -51,7 +53,7 @@ const Input = forwardRef<HTMLInputElement, InputWithLabelProps>(
     }
     return (
       <div className={containerClassNames}>
-        <span className='input__container'>
+        <span className={inputContainerClassNameLocal}>
           <input
             ref={ref}
             type={type}
