@@ -34,6 +34,11 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = async ({
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content={t('description')} />
         <meta name='keywords' content={t('keywords')} />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content={t('title')} />
+        <meta property='og:description' content={t('description')} />
+        <meta property='og:url' content='https://www.sarbatori.net/' />
+        <meta property='og:image' content='https://www.sarbatori.net/favicon.ico' />
       </Head>
       {/*<GoogleAnalytics GA_MEASUREMENT_ID='G-8PWXK5J089' />*/}
       <body className={classNames(inter.className)}>

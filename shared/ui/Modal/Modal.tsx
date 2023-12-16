@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { useModal } from '@/shared/lib/hooks/useModal/useModal'
 import AiOutlineClose from '@/shared/assets/icons/AiOutlineClose'
@@ -20,7 +20,9 @@ const Modal: FC<ModalPropsType> = ({
 
   const modalContentClassName = classNames('modal__content', className)
   const modalClassName = classNames('modal')
-
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto'
+  }, [isOpen])
   return (
     <Portal>
       <CSSTransition in={isOpen} timeout={200} classNames='modal-anim' unmountOnExit>
