@@ -5,6 +5,7 @@ import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/
 import { toastDefaultValues } from '@/shared/config/toastify'
 import { HeaderEntry } from '@/widgets/Header'
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
@@ -21,22 +22,19 @@ export async function generateMetadata({ params: { locale } }: PropsWithParams<L
   }
 }
 
-const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = async ({
-  children,
-  params: { locale },
-}) => {
-  const t = await getTranslations({ locale, namespace: 'metadata' })
-
+const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params: { locale } }) => {
+  // const t = useTranslations('metadata')
+  // console.log(t('title'))
   if (!locales.includes(locale as any)) notFound()
   return (
     <html lang={locale}>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='description' content={t('description')} />
-        <meta name='keywords' content={t('keywords')} />
+        {/*<meta name='description' content={t('description')} />*/}
+        {/*<meta name='keywords' content={t('keywords')} />*/}
         <meta property='og:type' content='website' />
-        <meta property='og:title' content={t('title')} />
-        <meta property='og:description' content={t('description')} />
+        {/*<meta property='og:title' content={t('title')} />*/}
+        {/*<meta property='og:description' content={t('description')} />*/}
         <meta property='og:url' content='https://www.sarbatori.net/' />
         <meta property='og:image' content='https://www.sarbatori.net/favicon.ico' />
       </Head>
