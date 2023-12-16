@@ -1,5 +1,4 @@
 import { inter } from '@/app/fonts'
-import GoogleAnalytics from '@/features/GoogleAnalytics'
 
 import { locales } from '@/shared/config/i18n/consts'
 import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/i18n/types'
