@@ -5,6 +5,7 @@ import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/
 import { toastDefaultValues } from '@/shared/config/toastify'
 import { HeaderEntry } from '@/widgets/Header'
 import classNames from 'classnames'
+import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
@@ -14,25 +15,25 @@ import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 import './skeleton.css'
 
-export async function generateMetadata({ params: { locale } }: PropsWithParams<LocaleParams>) {
+export async function generateMetadata({
+  params: { locale },
+}: PropsWithParams<LocaleParams>): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'metadata' })
   return {
     title: t('title'),
     keywords: t('keywords'),
-    viewport: 'width=device-width, initial-scale=1',
+    description: t('description'),
     openGraph: {
       type: 'website',
       title: t('title'),
       description: t('description'),
-      url: 'https://www.sarbatori.net/',
-      images: ['https://www.sarbatori.net/logo.png'],
+      url: process.env.SITE_URL,
+      images: [`${process.env.SITE_URL}logo.png`],
     },
   }
 }
 
 const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params: { locale } }) => {
-  // const t = useTranslations('metadata')
-  // console.log(t('title'))
   if (!locales.includes(locale as any)) notFound()
   return (
     <html lang={locale}>
