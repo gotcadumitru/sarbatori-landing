@@ -5,7 +5,7 @@ import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/
 import { toastDefaultValues } from '@/shared/config/toastify'
 import { HeaderEntry } from '@/widgets/Header'
 import classNames from 'classnames'
-import { useTranslations } from 'next-intl'
+// import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
