@@ -25,7 +25,7 @@ export async function generateMetadata({ params: { locale } }: PropsWithParams<L
       title: t('title'),
       description: t('description'),
       url: 'https://www.sarbatori.net/',
-      images: ['https://www.sarbatori.net/favicon.ico'],
+      images: ['https://www.sarbatori.net/logo.png'],
     },
   }
 }
