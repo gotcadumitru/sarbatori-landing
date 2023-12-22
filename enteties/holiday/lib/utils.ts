@@ -1,8 +1,10 @@
+import { SearchHolidayItem } from '@/features/SearchInputWithIcon'
 import holidaysJSON from '@/jsonObj.json'
 import { Locales } from '@/shared/config/i18n/consts'
 import { AppRoutes } from '@/shared/config/i18n/routes'
 import { LocaleParams } from '@/shared/config/i18n/types'
 import { monthsWithNumber } from '@/shared/defaults/dates/dates'
+import compareTwoStrings from '@/shared/lib/utils/compareTwoStrings'
 import {
   Holiday,
   HolidayDate,
@@ -110,7 +112,27 @@ export const getCalendarEventsTextForDay = (
     return `${eventsText}${eventsText ? '\n' : ''}•${convertedHoliday.name}`
   }, '')
 
-export const checkIsRouteWithSearchInput = (pathname: string): Boolean => {
+export const searchHolidays = (searchValue: string, locale: Locales): SearchHolidayItem[] => {
+  const allHolidaysConverted = convertHolidayFromJsonToHoliday(
+    holidaysJSON.reduce(
+      (holidays, holidaysWithDate) => [...holidays, ...holidaysWithDate.holidays],
+      [] as HolidayJSON[],
+    ),
+    locale,
+  )
+
+  return allHolidaysConverted
+    .map((holiday) => ({
+      name: holiday.name,
+      id: holiday.id,
+      similarityPercentage: compareTwoStrings(searchValue, holiday.name),
+    }))
+    .sort((holiday1, holiday2) => holiday2.similarityPercentage - holiday1.similarityPercentage)
+    .filter((holiday, index) => holiday.similarityPercentage && index < 16)
+    .map(({ similarityPercentage, ...holiday }) => holiday)
+}
+
+export const checkIsRouteWithSearchInput = (pathname: string): boolean => {
   if (pathname === AppRoutes.main) return true
 
   return !![AppRoutes.archive, AppRoutes.calendar, AppRoutes.holiday].find((route) =>

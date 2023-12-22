@@ -5,7 +5,9 @@
     "contact": "Contact",
     "privacyPolicy": "Privacy Policy",
     "cookies": "Cookies",
-    "termsAndConditions": "Terms and Conditions"
+    "termsAndConditions": "Terms and Conditions",
+    "searchPlaceholder": "Search...",
+    "searchTitle": "Search for holidays"
   },
   "holidays": {
     "holidays": "Holidays"

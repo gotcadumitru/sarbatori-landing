@@ -42,7 +42,7 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
       </Head>
       {/*<GoogleAnalytics GA_MEASUREMENT_ID='G-8PWXK5J089' />*/}
       <body className={classNames(inter.className)}>
-        <HeaderEntry />
+        <HeaderEntry locale={locale} />
         {children}
         {/*<Footer />*/}
         {/*<CookieBanner />*/}

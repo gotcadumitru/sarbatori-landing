@@ -5,7 +5,9 @@
     "contact": "Contact",
     "privacyPolicy": "Politica de confidențialitate",
     "cookies": "Cookies",
-    "termsAndConditions": "Termeni și condiții"
+    "termsAndConditions": "Termeni și condiții",
+    "searchPlaceholder": "Caută...",
+    "searchTitle": "Caută Sărbători"
   },
   "holidays": {
     "holidays": "Sărbatori"

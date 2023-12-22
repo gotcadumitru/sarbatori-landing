@@ -1,1 +1,2 @@
-export { SearchInputWithIcon } from './ui/SearchInputWithIcon'
+export { SearchInputWithIconEntry as default } from './ui/SearchInputWithIcon/SearchInputWithIconEntry'
+export type { SearchHolidayItem } from './types/SearchInputWithIconTypes'

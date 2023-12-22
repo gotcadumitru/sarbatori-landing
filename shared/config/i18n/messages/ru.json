@@ -5,7 +5,9 @@
     "contact": "Контакт",
     "privacyPolicy": "Политика конфиденциальности",
     "cookies": "Cookies",
-    "termsAndConditions": "Условия и положения"
+    "termsAndConditions": "Условия и положения",
+    "searchPlaceholder": "Поиск...",
+    "searchTitle": "Ищите праздники"
   },
   "holidays": {
     "holidays": "Праздники"
