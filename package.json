@@ -1,5 +1,5 @@
 {
-  "name": "sarbatori",
+  "name": "holidays",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --config \"./.prettierrc\"",
     "postbuild": "next-sitemap",
     "storybook": "storybook dev -p 6006 ./app",
     "build-storybook": "storybook build ./app"

@@ -9,8 +9,8 @@ const useOnClickOutside = (
     const listener = (event: MouseEvent | TouchEvent) => {
       const el = ref?.current
       const elementsToIgnore = classesToIgnore.map((c) => document.getElementsByClassName(c)[0])
-      const isElementToIgnoreClicked = elementsToIgnore.some((e) =>
-        e?.contains(event.target as Node),
+      const isElementToIgnoreClicked = elementsToIgnore.some(
+        (e) => e?.contains(event.target as Node),
       )
       if (!el || el.contains(event.target) || isElementToIgnoreClicked) {
         return
