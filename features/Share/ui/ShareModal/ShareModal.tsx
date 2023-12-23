@@ -21,6 +21,15 @@ export const ShareModal: FC<ShareModalType> = ({ isDisplayed, setIsDisplayed, ti
       >
         <Facebook />
       </a>
+
+      <a
+        className='twitter'
+        href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`}
+        target='blank'
+        title='twitter'
+      >
+        <Facebook />
+      </a>
     </div>
   </Modal>
 )

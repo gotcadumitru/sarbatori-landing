@@ -34,7 +34,7 @@ export const HolidayCard: FC<HolidayCardProps> = ({ holiday }) => (
         </NavigationLink>
         <Share
           title={holiday.name}
-          url={`${process.env.SITE_URL}/en${AppRoutes.holiday}/${holiday.id}`}
+          url={`${process.env.SITE_URL}en${AppRoutes.holiday}/${holiday.id}`}
         />
       </div>
       {holiday.description && (
