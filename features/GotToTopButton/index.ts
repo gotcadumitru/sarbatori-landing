@@ -1,1 +1,1 @@
-export { GotToTopButton } from 'features/GotToTopButton/ui/GotToTopButton'
+export { GotToTopButton } from './ui/GotToTopButton'

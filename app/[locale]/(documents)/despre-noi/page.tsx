@@ -1,4 +1,4 @@
-import classes from '../info.module.css'
+import classes from '../page.module.css'
 
 const AboutUs = () => (
   <div>

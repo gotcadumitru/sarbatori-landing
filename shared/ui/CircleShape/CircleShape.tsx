@@ -25,9 +25,11 @@ export const CircleShape: FC<PropsWithChildren<CircleShapeProps>> = ({
   isDisplayed,
 }) => {
   const [isCircleShapeDisplayed, setIsCircleShapeDisplayed] = useState(false)
+
   useEffect(() => {
     setIsCircleShapeDisplayed(!!isDisplayed)
   }, [isDisplayed])
+
   return (
     <div
       className={classNames(classes.circleShape, className, {

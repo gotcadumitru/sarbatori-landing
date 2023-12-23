@@ -50,6 +50,8 @@
   --menu-bg: #5451d6;
   --orange: #f88500;
   --header-bg: rgba(69, 48, 179, 0.6);
+  --form-box-shadow: 4px 4px 20px 0px rgba(84, 81, 214, 0.3);
+
   /* Gaps */
   --gap-5xs: 8px;
   --gap-10xs: 3px;

@@ -1,0 +1,50 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.header {
+  margin-top: 25px;
+  margin-bottom: 24px;
+  color: var(--blue);
+  font-size: 28px;
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+
+.description {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+  margin-bottom: 24px;
+}
+
+.contactInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 0 50px;
+  border: 1px solid var(--blue);
+  background: var(--white);
+  box-shadow: var(--form-box-shadow);
+  padding: 50px 30px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+}
+
+.contactIcon {
+  padding: 10px;
+}
