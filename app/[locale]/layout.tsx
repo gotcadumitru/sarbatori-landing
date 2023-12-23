@@ -1,4 +1,5 @@
 import { inter } from '@/app/fonts'
+import { GotToTopButton } from '@/features/GotToTopButton/ui/GotToTopButton'
 
 import { locales } from '@/shared/config/i18n/consts'
 import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/i18n/types'
@@ -47,6 +48,7 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
         {/*<Footer />*/}
         {/*<CookieBanner />*/}
         <ToastContainer position='bottom-center' {...toastDefaultValues} />
+        <GotToTopButton />
       </body>
     </html>
   )

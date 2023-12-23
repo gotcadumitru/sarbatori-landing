@@ -1,0 +1,9 @@
+.gotToTopButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: var(--blue);
+}
