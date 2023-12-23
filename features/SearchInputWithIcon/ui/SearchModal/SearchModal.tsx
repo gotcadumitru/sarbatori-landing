@@ -29,10 +29,14 @@ export const SearchModal: FC<SearchModalType> = ({
     if (isDisplayed && inputRef.current) {
       inputRef.current.focus()
     }
+    if (!isDisplayed) {
+      setSearchValue('')
+      setListOfHolidays([])
+    }
   }, [isDisplayed])
 
   useEffect(() => {
-    if (searchValue.length > 3) {
+    if (searchValue.length > 2) {
       const controller = new AbortController()
       axios
         .get<SearchHolidayItem[]>(`/${locale}/api/search-holiday?search=${searchValue}`, {
@@ -66,10 +70,12 @@ export const SearchModal: FC<SearchModalType> = ({
           placeholder={placeholder}
           icons={<SearchIcon />}
         />
-        <div>
+        <ul className={classes.holidayItems}>
           {listOfHolidays.map((holiday) => (
-            <div key={holiday.id}>
+            <li key={holiday.id}>
               <NavigationLink
+                className={classes.holidayItem}
+                onClick={() => setIsDisplayed(false)}
                 href={
                   {
                     pathname: `${AppRoutes.holiday}/${AppParams.id}`,
@@ -79,9 +85,9 @@ export const SearchModal: FC<SearchModalType> = ({
               >
                 {holiday.name}
               </NavigationLink>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Modal>
   )

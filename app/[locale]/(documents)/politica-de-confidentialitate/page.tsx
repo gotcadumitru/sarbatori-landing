@@ -131,10 +131,10 @@ const PrivacyPolicy = () => (
     <p className={styles.paragraph}>
       Serverele terților furnizori de publicitate sau rețelele de publicitate utilizează tehnologii
       precum cookie-uri, JavaScript sau Beacon-uri Web care sunt folosite în reclamele și link-urile
-      lor respective care apar pe DIMA'S SOFTWARE, care sunt trimise direct către browserul
-      utilizatorilor. Aceste tehnologii sunt utilizate pentru a măsura eficacitatea campaniilor lor
-      de publicitate și/sau pentru a personaliza conținutul de publicitate pe care îl vedeți pe
-      site-urile pe care le vizitați.
+      lor respective care apar, care sunt trimise direct către browserul utilizatorilor. Aceste
+      tehnologii sunt utilizate pentru a măsura eficacitatea campaniilor lor de publicitate și/sau
+      pentru a personaliza conținutul de publicitate pe care îl vedeți pe site-urile pe care le
+      vizitați.
     </p>
     <p className={styles.paragraph}>
       Rețineți că DIMA'S SOFTWARE nu are acces la aceste cookie-uri care sunt utilizate de reclamani

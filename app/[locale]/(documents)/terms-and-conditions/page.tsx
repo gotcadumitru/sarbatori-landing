@@ -10,11 +10,11 @@ const TermsAndConditions: FC = () => (
     <p className={classes.paragraph}>Bun venit la DIMA'S SOFTWARE!</p>
     <p className={classes.paragraph}>
       Acești termeni și condiții stabilesc regulile și regulamentele pentru utilizarea site-ului web
-      DIMA'S SOFTWARE, situat la adresa https://www.sarbatori365.info/.
+      al companiei DIMA'S SOFTWARE, situat la adresa https://www.sarbatori.net.
     </p>
     <p className={classes.paragraph}>
       Accesând acest site web, presupunem că acceptați acești termeni și condiții. Nu continuați să
-      utilizați DIMA'S SOFTWARE dacă nu sunteți de acord să respectați toți termenii și condițiile
+      utilizați site-ul dacă nu sunteți de acord să respectați toți termenii și condițiile
       menționate pe această pagină.
     </p>
     <p className={classes.paragraph}>
@@ -34,8 +34,8 @@ const TermsAndConditions: FC = () => (
       <strong className={classes.strong}>Cookie-uri</strong>
     </h3>
     <p className={classes.paragraph}>
-      Folosim cookie-uri. Accesând DIMA'S SOFTWARE, sunteți de acord să utilizați cookie-urile în
-      conformitate cu Politica de Confidențialitate a DIMA'S SOFTWARE.
+      Folosim cookie-uri. Accesând site-ul, sunteți de acord să utilizați cookie-urile în
+      conformitate cu Politica de Confidențialitate a site-ului.
     </p>
     <p className={classes.paragraph}>
       Majoritatea site-urilor web interactive folosesc cookie-uri pentru a ne permite să obținem
@@ -49,16 +49,15 @@ const TermsAndConditions: FC = () => (
     </h3>
     <p className={classes.paragraph}>
       În afară de cazul în care se specifică altfel, DIMA'S SOFTWARE și/sau licențiatorii săi dețin
-      drepturile de proprietate intelectuală asupra tuturor materialelor de pe DIMA'S SOFTWARE.
-      Toate drepturile de proprietate intelectuală sunt rezervate. Puteți accesa aceste materiale de
-      pe DIMA'S SOFTWARE în scopul dvs. personal, cu condițiile stabilite în acești termeni și
-      condiții.
+      drepturile de proprietate intelectuală asupra tuturor materialelor de pe site. Toate
+      drepturile de proprietate intelectuală sunt rezervate. Puteți accesa aceste materiale de pe
+      site în scopul dvs. personal, cu condițiile stabilite în acești termeni și condiții.
     </p>
     <p className={classes.paragraph}>Nu trebuie să:</p>
     <ul>
-      <li>Republicați materiale de pe DIMA'S SOFTWARE</li>
-      <li>Vindeți, închiriați sau sublicențați materiale de pe DIMA'S SOFTWARE</li>
-      <li>Reproduceți, duplicați sau copiați materiale de pe DIMA'S SOFTWARE</li>
+      <li>Republicați materiale de pe site</li>
+      <li>Vindeți, închiriați sau sublicențați materiale de pe site</li>
+      <li>Reproduceți, duplicați sau copiați materiale de pe site</li>
       <li>Redistribuiți conținutul de pe DIMA'S SOFTWARE</li>
     </ul>
     <p className={classes.paragraph}>Acest acord va începe la data prezentului</p>

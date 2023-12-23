@@ -13,3 +13,14 @@
 .inputContainerClassName {
   background-color: transparent;
 }
+.holidayItems {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.holidayItem {
+  color: var(--dark);
+  font-size: 18px;
+  font-weight: 600;
+}
