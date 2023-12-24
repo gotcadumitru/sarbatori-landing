@@ -23,7 +23,6 @@ export async function generateMetadata({
       type: 'article',
       title: holiday.name,
       description: holiday.description,
-      // url: `${process.env.SITE_URL}${locale}/holiday/${holiday.id}`,
       images: [holiday.imageURL || `${process.env.SITE_URL}logo.png`],
     },
   }

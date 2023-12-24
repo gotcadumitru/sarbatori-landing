@@ -1,6 +1,8 @@
 import type { ShareIconType } from '@/features/Share/ui/Share/Share'
 import Facebook from '@/shared/assets/icons/Facebook'
+import Twitter from '@/shared/assets/icons/Twitter'
 import Modal from '@/shared/ui/Modal/Modal'
+import NavigationLink from '@/shared/ui/NavigationLink'
 import { FC } from 'react'
 import classes from '../../styles/share.module.css'
 
@@ -9,27 +11,45 @@ interface ShareModalType extends ShareIconType {
   setIsDisplayed: (isDisplayed: boolean) => void
 }
 
-export const ShareModal: FC<ShareModalType> = ({ isDisplayed, setIsDisplayed, title, url }) => (
-  <Modal onClose={() => setIsDisplayed(false)} isOpen={isDisplayed} className={classes.searchModal}>
-    <h2 className='modal__title'>{title}</h2>
-    <div className='modal__body'>
-      <a
-        className='facebook'
-        href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
-        target='blank'
-        title='facebook'
-      >
-        <Facebook />
-      </a>
+export const ShareModal: FC<ShareModalType> = ({
+  isDisplayed,
+  setIsDisplayed,
+  holiday,
+  params,
+}) => {
+  const holidayUrl = `${process.env.SITE_URL}${params.locale}/holiday/${holiday.id}`
+  return (
+    <Modal
+      onClose={() => setIsDisplayed(false)}
+      isOpen={isDisplayed}
+      className={classes.searchModal}
+    >
+      <h2 className='modal__title'>{holiday.name}</h2>
+      <div className='modal__body'>
+        <NavigationLink
+          target='blank'
+          href={
+            {
+              pathname: `https://www.facebook.com/sharer/sharer.php?u=${holidayUrl}`,
+              params: { id: holiday.id },
+            } as any
+          }
+        >
+          <Facebook />
+        </NavigationLink>
 
-      <a
-        className='twitter'
-        href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`}
-        target='blank'
-        title='twitter'
-      >
-        <Facebook />
-      </a>
-    </div>
-  </Modal>
-)
+        <NavigationLink
+          target='blank'
+          href={
+            {
+              pathname: `https://twitter.com/intent/tweet?text=${holiday.name}&url=${holidayUrl}`,
+              params: { id: holiday.id },
+            } as any
+          }
+        >
+          <Twitter />
+        </NavigationLink>
+      </div>
+    </Modal>
+  )
+}

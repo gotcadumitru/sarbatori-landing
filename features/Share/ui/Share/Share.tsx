@@ -1,16 +1,17 @@
 'use client'
 
+import { Holiday } from '@/enteties/holiday'
 import ShareIcon from '@/shared/assets/icons/ShareIcon'
+import { PropsWithLocale } from '@/shared/config/i18n/types'
 import { FC, useState } from 'react'
 import classes from '../../styles/share.module.css'
 import { ShareModal } from '../ShareModal/ShareModal'
 
-export interface ShareIconType {
-  url: string
-  title: string
-}
+export type ShareIconType = PropsWithLocale<{
+  holiday: Holiday
+}>
 
-export const Share: FC<ShareIconType> = (props) => {
+export const Share: FC<PropsWithLocale<ShareIconType>> = (props) => {
   const [isDisplayed, setIsDisplayed] = useState(false)
 
   return (

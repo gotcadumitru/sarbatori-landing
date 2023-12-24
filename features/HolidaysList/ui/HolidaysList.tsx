@@ -15,7 +15,7 @@ export const HolidaysList: FC<PropsWithLocale<HolidaysListProps>> = ({
     <CalendarCarousel params={params} date={holidaysWithDate.date} />
     <div className='container'>
       {holidaysWithDate.holidays.map((holiday) => (
-        <HolidayCard key={holiday.id} holiday={holiday} />
+        <HolidayCard key={holiday.id} holiday={holiday} params={params} />
       ))}
     </div>
   </>
