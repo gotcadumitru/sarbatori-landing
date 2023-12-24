@@ -3,6 +3,7 @@
 import type { ShareIconType } from '@/features/Share/ui/Share/Share'
 import Facebook from '@/shared/assets/icons/Facebook'
 import Twitter from '@/shared/assets/icons/Twitter'
+import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import Modal from '@/shared/ui/Modal/Modal'
 import NavigationLink from '@/shared/ui/NavigationLink'
 import { FC } from 'react'
@@ -21,7 +22,7 @@ export const ShareModal: FC<ShareModalType> = ({
 }) => {
   const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
     params.locale
-  }/holiday/${holiday.id}`
+  }${AppRoutes.holiday}/${AppParams.id}`
   return (
     <Modal
       onClose={() => setIsDisplayed(false)}
