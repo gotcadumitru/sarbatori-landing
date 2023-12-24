@@ -13,7 +13,6 @@ export type ShareIconType = PropsWithLocale<{
 
 export const Share: FC<PropsWithLocale<ShareIconType>> = (props) => {
   const [isDisplayed, setIsDisplayed] = useState(false)
-
   return (
     <div className={classes.searchInput}>
       <ShareModal {...props} isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} />

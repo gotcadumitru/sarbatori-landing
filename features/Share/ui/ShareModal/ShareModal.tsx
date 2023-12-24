@@ -1,3 +1,5 @@
+'use client'
+
 import type { ShareIconType } from '@/features/Share/ui/Share/Share'
 import Facebook from '@/shared/assets/icons/Facebook'
 import Twitter from '@/shared/assets/icons/Twitter'
@@ -17,7 +19,9 @@ export const ShareModal: FC<ShareModalType> = ({
   holiday,
   params,
 }) => {
-  const holidayUrl = `${process.env.SITE_URL}${params.locale}/holiday/${holiday.id}`
+  const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
+    params.locale
+  }/holiday/${holiday.id}`
   return (
     <Modal
       onClose={() => setIsDisplayed(false)}
