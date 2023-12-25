@@ -2,6 +2,7 @@
 
 import type { ShareIconType } from '@/features/Share/ui/Share/Share'
 import Facebook from '@/shared/assets/icons/Facebook'
+import Reddit from '@/shared/assets/icons/Reddit'
 import Twitter from '@/shared/assets/icons/Twitter'
 import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import Modal from '@/shared/ui/Modal/Modal'
@@ -20,9 +21,8 @@ export const ShareModal: FC<ShareModalType> = ({
   holiday,
   params,
 }) => {
-  const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
-    params.locale
-  }${AppRoutes.holiday}/${AppParams.id}`
+  // const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
+  const holidayUrl = `https://sarbatori.net/${params.locale}${AppRoutes.holiday}/${AppParams.id}`
   return (
     <Modal
       onClose={() => setIsDisplayed(false)}
@@ -53,6 +53,17 @@ export const ShareModal: FC<ShareModalType> = ({
           }
         >
           <Twitter />
+        </NavigationLink>
+        <NavigationLink
+          target='blank'
+          href={
+            {
+              pathname: `https://www.reddit.com/submit?title=${holiday.name}&url=${holidayUrl}`,
+              params: { id: holiday.id },
+            } as any
+          }
+        >
+          <Reddit />
         </NavigationLink>
       </div>
     </Modal>
