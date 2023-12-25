@@ -22,7 +22,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'article',
       title: holiday.name,
-      url: 'https://sarbatori.net/',
+      url: `${process.env.SITE_URL}en/holiday/${holiday.id}`,
       description: holiday.description,
       images: [holiday.imageURL || `${process.env.SITE_URL}logo.png`],
     },

@@ -4,10 +4,9 @@ import type { ShareIconType } from '@/features/Share/ui/Share/Share'
 import Facebook from '@/shared/assets/icons/Facebook'
 import Reddit from '@/shared/assets/icons/Reddit'
 import Twitter from '@/shared/assets/icons/Twitter'
-import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 import Modal from '@/shared/ui/Modal/Modal'
 import NavigationLink from '@/shared/ui/NavigationLink'
-import { FC } from 'react'
+import React, { FC } from 'react'
 import classes from '../../styles/share.module.css'
 
 interface ShareModalType extends ShareIconType {
@@ -21,8 +20,9 @@ export const ShareModal: FC<ShareModalType> = ({
   holiday,
   params,
 }) => {
+  console.log(params)
   // const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
-  const holidayUrl = `https://sarbatori.net/${params.locale}${AppRoutes.holiday}/${AppParams.id}`
+  const holidayUrl = `https://www.sarbatori.net/en/holiday/${holiday.id}`
   return (
     <Modal
       onClose={() => setIsDisplayed(false)}
@@ -31,12 +31,32 @@ export const ShareModal: FC<ShareModalType> = ({
     >
       <h2 className='modal__title'>{holiday.name}</h2>
       <div className='modal__body'>
+        <a
+          target='_blank'
+          href={`https://www.facebook.com/sharer/sharer.php?u=${holidayUrl}`}
+          rel='noreferrer'
+        >
+          Facebook
+        </a>
+        <NavigationLink
+          target='blank'
+          href={
+            {
+              pathname: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                holidayUrl,
+              )}`,
+              // params: { id: holiday.id },
+            } as any
+          }
+        >
+          <Facebook />
+        </NavigationLink>
         <NavigationLink
           target='blank'
           href={
             {
               pathname: `https://www.facebook.com/sharer/sharer.php?u=${holidayUrl}`,
-              params: { id: holiday.id },
+              // params: { id: holiday.id },
             } as any
           }
         >
