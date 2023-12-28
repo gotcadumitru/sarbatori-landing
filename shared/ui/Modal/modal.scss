@@ -39,9 +39,10 @@
     box-sizing: content-box;
     background-color: var(--white);
     border-radius: 50%;
-    font-size: 32px;
     padding: 5px;
     color: black;
+    width: 24px;
+    height: 24px;
   }
 
   &__header {

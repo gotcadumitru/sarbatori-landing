@@ -20,5 +20,10 @@
   "contact": {
     "header": "Contact Us",
     "description": "We encourage you to share your experience with us and tell us how we can better serve and assist you."
+  },
+  "notFount": {
+    "title": "Not Found",
+    "description": "Could not find requested resource",
+    "return": "Return Home"
   }
 }

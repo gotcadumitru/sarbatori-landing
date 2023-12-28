@@ -1,5 +1,5 @@
+import { Link } from '@/navigation'
 import classNames from 'classnames'
-import Link from 'next/link'
 import { FC, PropsWithChildren } from 'react'
 import './button.scss'
 import {

@@ -1,4 +1,4 @@
-import { LinkProps } from 'next/link'
+import { Link } from '@/navigation'
 import { ButtonHTMLAttributes, DetailedHTMLProps, HTMLProps, ReactNode } from 'react'
 
 export enum ButtonCategoryType {
@@ -31,7 +31,7 @@ export type ButtonConditionalPropsType = {
     } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>)
   | ({
       category: ButtonCategoryType.LINK
-    } & LinkProps)
+    } & Parameters<typeof Link>[0])
   | ({
       category: ButtonCategoryType.EXTERNAL_LINK
     } & HTMLProps<HTMLAnchorElement>)

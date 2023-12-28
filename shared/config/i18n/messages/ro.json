@@ -20,5 +20,10 @@
   "contact": {
     "header": "Contactați-ne",
     "description": "Vă încurajăm să împărtășiți experiența dvs. cu noi și să ne spuneți cum putem să vă servim și să vă ajutăm mai bine."
+  },
+  "notFount": {
+    "title": "Nu a fost găsit",
+    "description": "Nu s-a putut găsi resursa solicitată",
+    "return": "Înapoi la Pagina Principală"
   }
 }

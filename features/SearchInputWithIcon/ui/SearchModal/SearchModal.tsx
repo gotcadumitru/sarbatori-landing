@@ -58,6 +58,7 @@ export const SearchModal: FC<SearchModalType> = ({
       onClose={() => setIsDisplayed(false)}
       isOpen={isDisplayed}
       className={classes.searchModal}
+      isCloseIconShow
     >
       <h2 className='modal__title'>{title}</h2>
       <div className='modal__body'>
