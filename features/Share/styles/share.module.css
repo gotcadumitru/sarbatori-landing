@@ -1,2 +1,11 @@
 .shareIcon {
 }
+.modalBody {
+  display: flex;
+  justify-content: space-between;
+}
+
+.moreIcon {
+  font-size: 48px;
+  cursor: pointer;
+}

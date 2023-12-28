@@ -2,11 +2,13 @@
 
 import type { ShareIconType } from '@/features/Share/ui/Share/Share'
 import Facebook from '@/shared/assets/icons/Facebook'
+import More from '@/shared/assets/icons/More'
 import Reddit from '@/shared/assets/icons/Reddit'
 import Twitter from '@/shared/assets/icons/Twitter'
 import { AppRoutes } from '@/shared/config/i18n/routes'
 import Modal from '@/shared/ui/Modal/Modal'
-import { FC } from 'react'
+import classNames from 'classnames'
+import { FC, useEffect, useMemo } from 'react'
 import classes from '../../styles/share.module.css'
 
 interface ShareModalType extends ShareIconType {
@@ -23,6 +25,25 @@ export const ShareModal: FC<ShareModalType> = ({
   const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
     params.locale
   }${AppRoutes.holiday}/${holiday.id}`
+  const dataToShare: ShareData = {
+    title: holiday.name,
+    text: holiday.description,
+    url: holidayUrl,
+  }
+
+  const isWebShareAvailable = useMemo(
+    () => typeof navigator !== 'undefined' && navigator.canShare && navigator.canShare(dataToShare),
+    [],
+  )
+  useEffect(() => {}, [])
+
+  const onMoreIconClick = async () => {
+    try {
+      await navigator.share(dataToShare)
+    } catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <Modal
       onClose={() => setIsDisplayed(false)}
@@ -30,7 +51,7 @@ export const ShareModal: FC<ShareModalType> = ({
       className={classes.searchModal}
     >
       <h2 className='modal__title'>{holiday.name}</h2>
-      <div className='modal__body'>
+      <div className={classNames('modal__body', classes.modalBody)}>
         <a target='blank' href={`https://www.facebook.com/sharer/sharer.php?u=${holidayUrl}`}>
           <Facebook />
         </a>
@@ -47,6 +68,7 @@ export const ShareModal: FC<ShareModalType> = ({
         >
           <Reddit />
         </a>
+        {isWebShareAvailable && <More onClick={onMoreIconClick} className={classes.moreIcon} />}
       </div>
     </Modal>
   )
