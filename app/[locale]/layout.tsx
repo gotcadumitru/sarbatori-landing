@@ -73,7 +73,6 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
       <body className={classNames(inter.className)}>
         <HeaderEntry locale={locale} />
         {children}
-        {/*<Footer />*/}
         {/*<CookieBanner />*/}
         <ToastContainer position='bottom-center' {...toastDefaultValues} />
         <GotToTopButton />
