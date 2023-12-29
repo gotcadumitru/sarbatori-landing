@@ -58,16 +58,16 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
         <link
           rel='apple-touch-startup-image'
           media='(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)'
-          href='icons/splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_landscape.png'
+          href='/icons/splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_landscape.png'
         />
         <link
           rel='apple-touch-startup-image'
           media='(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'
-          href='icons/splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png'
+          href='/icons/splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png'
         />
 
-        <link rel='icon' href='icons/favicon.svg' type='image/svg+xml' />
-        <link rel='apple-touch-icon' href='icons/apple-touch-icon.png' />
+        <link rel='icon' type='image/png' sizes='196x196' href='/icons/apple-touch-icon.png' />
+        <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
       </Head>
       {/*<GoogleAnalytics GA_MEASUREMENT_ID='G-8PWXK5J089' />*/}
       <body className={classNames(inter.className)}>
