@@ -83,7 +83,7 @@ const PrivacyPolicyRO = () => (
       <strong className={classes.strong}> Cookies și Beacon-uri Web</strong>
     </h2>
     <p className={classes.paragraph}>
-      La fel ca oricare alt site web, DIMA'S SOFTWARE folosește "cookie-uri". Aceste cookie-uri sunt
+      La fel ca oricare alt site web, HoliDays folosește "cookie-uri". Aceste cookie-uri sunt
       utilizate pentru a stoca informații, inclusiv preferințele vizitatorilor și paginile de pe
       site-ul web pe care vizitatorul le-a accesat sau le-a vizitat. Informațiile sunt utilizate
       pentru a optimiza experiența utilizatorilor prin personalizarea conținutului paginii noastre
@@ -144,10 +144,10 @@ const PrivacyPolicyRO = () => (
       <strong className={classes.strong}> Politici de Confidențialitate ale Terților</strong>
     </h2>
     <p className={classes.paragraph}>
-      Politica de Confidențialitate a DIMA'S SOFTWARE nu se aplică altor reclamanți sau site-uri
-      web. Prin urmare, vă sfătuim să consultați Politicile de Confidențialitate corespunzătoare ale
-      acestor servere de publicitate terțe pentru informații mai detaliate. Aceasta poate include
-      practicile lor și instrucțiunile referitoare la modul de renunțare la anumite opțiuni.
+      Politica de Confidențialitate a HoliDays nu se aplică altor reclamanți sau site-uri web. Prin
+      urmare, vă sfătuim să consultați Politicile de Confidențialitate corespunzătoare ale acestor
+      servere de publicitate terțe pentru informații mai detaliate. Aceasta poate include practicile
+      lor și instrucțiunile referitoare la modul de renunțare la anumite opțiuni.
     </p>
     <p className={classes.paragraph}>
       Puteți alege să dezactivați cookie-urile prin intermediul opțiunilor individuale ale

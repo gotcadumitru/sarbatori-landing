@@ -79,11 +79,10 @@ const PrivacyPolicyEN = () => (
       <strong className={classes.strong}>Cookies and Web Beacons</strong>
     </h2>
     <p className={classes.paragraph}>
-      Like any other website, DIMA'S SOFTWARE uses "cookies". These cookies are used to store
-      information, including visitors' preferences and the pages on the website that the visitor
-      accessed or visited. The information is used to optimize the users' experience by
-      personalizing the content of our web page based on the visitor's browser type and/or other
-      information.
+      Like any other website, HoliDays uses "cookies". These cookies are used to store information,
+      including visitors' preferences and the pages on the website that the visitor accessed or
+      visited. The information is used to optimize the users' experience by personalizing the
+      content of our web page based on the visitor's browser type and/or other information.
     </p>
     <h2>
       <strong className={classes.strong}> Google DoubleClick DART Cookie</strong>
@@ -144,10 +143,10 @@ const PrivacyPolicyEN = () => (
       <strong className={classes.strong}>Third-Party Privacy Policies</strong>
     </h2>
     <p className={classes.paragraph}>
-      The privacy policy of DIMA'S SOFTWARE does not apply to other advertisers or websites.
-      Therefore, we advise you to consult the respective Privacy Policies of these third-party ad
-      servers for more detailed information. This may include their practices and instructions on
-      how to opt-out of certain options.
+      The privacy policy of HoliDays does not apply to other advertisers or websites. Therefore, we
+      advise you to consult the respective Privacy Policies of these third-party ad servers for more
+      detailed information. This may include their practices and instructions on how to opt-out of
+      certain options.
     </p>
     <p className={classes.paragraph}>
       You can choose to disable cookies through your individual browser options. For more detailed

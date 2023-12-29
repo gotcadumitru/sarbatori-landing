@@ -6,7 +6,7 @@ const TermsAndConditionsRU: FC = () => (
     <h2>
       <strong className={classes.strong}>Условия и положения</strong>
     </h2>
-    <p className={classes.paragraph}>Добро пожаловать в DIMA'S SOFTWARE!</p>
+    <p className={classes.paragraph}>Добро пожаловать в HoliDays!</p>
     <p className={classes.paragraph}>
       Эти условия и положения определяют правила и регуляции для использования веб-сайта компании
       DIMA'S SOFTWARE, расположенного по адресу https://www.sarbatori.net.
@@ -56,7 +56,7 @@ const TermsAndConditionsRU: FC = () => (
       <li>Перепубликовывать материалы с сайта</li>
       <li>Продавать, сдавать в аренду или предоставлять материалы с сайта в сублицензию</li>
       <li>Воспроизводить, дублировать или копировать материалы с сайта</li>
-      <li>Перераспределять контент DIMA'S SOFTWARE</li>
+      <li>Перераспределять контент HoliDays</li>
     </ul>
     <p className={classes.paragraph}>Это соглашение начинает действовать с даты его подписания.</p>
     <p className={classes.paragraph}>
@@ -169,8 +169,8 @@ const TermsAndConditionsRU: FC = () => (
       </li>
     </ul>
     <p className={classes.paragraph}>
-      Использование логотипа DIMA'S SOFTWARE или других элементов графики для ссылки не допускается
-      без соглашения о лицензии на товарный знак.
+      Использование логотипа HoliDays или других элементов графики для ссылки не допускается без
+      соглашения о лицензии на товарный знак.
     </p>
     <h3>
       <strong className={classes.strong}>iFrames</strong>

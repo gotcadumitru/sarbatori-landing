@@ -6,7 +6,7 @@ const TermsAndConditionsRO: FC = () => (
     <h2>
       <strong className={classes.strong}>Termeni și Condiții</strong>
     </h2>
-    <p className={classes.paragraph}>Bun venit la DIMA'S SOFTWARE!</p>
+    <p className={classes.paragraph}>Bun venit la HoliDays!</p>
     <p className={classes.paragraph}>
       Acești termeni și condiții stabilesc regulile și regulamentele pentru utilizarea site-ului web
       al companiei DIMA'S SOFTWARE, situat la adresa https://www.sarbatori.net.
@@ -57,7 +57,7 @@ const TermsAndConditionsRO: FC = () => (
       <li>Republicați materiale de pe site</li>
       <li>Vindeți, închiriați sau sublicențați materiale de pe site</li>
       <li>Reproduceți, duplicați sau copiați materiale de pe site</li>
-      <li>Redistribuiți conținutul de pe DIMA'S SOFTWARE</li>
+      <li>Redistribuiți conținutul de pe HoliDays</li>
     </ul>
     <p className={classes.paragraph}>Acest acord va începe la data prezentului</p>
     <p className={classes.paragraph}>
@@ -172,8 +172,8 @@ const TermsAndConditionsRO: FC = () => (
       </li>
     </ul>
     <p className={classes.paragraph}>
-      Nu se va permite utilizarea logo-ului DIMA'S SOFTWARE sau a altor elemente grafice pentru link
-      fără un acord de licență de marcă comercială.
+      Nu se va permite utilizarea logo-ului HoliDays sau a altor elemente grafice pentru link fără
+      un acord de licență de marcă comercială.
     </p>
     <h3>
       <strong className={classes.strong}>iFrames</strong>
