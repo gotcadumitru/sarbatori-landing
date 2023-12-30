@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useEffect, useState } from 'react'
+import { FC, ReactNode, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 interface PortalProps {
@@ -8,7 +8,7 @@ interface PortalProps {
   element?: HTMLElement
 }
 
-export const Portal = (props: PortalProps) => {
+export const Portal: FC<PortalProps> = (props) => {
   const [isMounted, setIsMounted] = useState(false)
   useEffect(() => {
     setIsMounted(true)
@@ -18,5 +18,5 @@ export const Portal = (props: PortalProps) => {
 
   const { children, element = document.body } = props
 
-  return createPortal(children, element)
+  return createPortal(children as any, element)
 }

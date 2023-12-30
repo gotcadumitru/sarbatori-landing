@@ -5,7 +5,7 @@ import { createPopper, Instance } from '@popperjs/core'
 import { FC, useEffect, useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import Button, { ButtonTheme } from '../Button'
-import 'shared/ui/Popup/popup.css'
+import './popup.css'
 import type { PopupPropsType } from './popup.types'
 
 const Popup: FC<PopupPropsType> = ({
