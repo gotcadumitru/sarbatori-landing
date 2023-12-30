@@ -9,23 +9,23 @@
   "description": "Explora\u021bi lista de sarbatori religioase, nationale si neoficiale din Moldova. Afla\u021bi detalii despre evenimentele importante din calendarul sarbatorilor moldovenesti.",
   "icons": [
     {
-      "src": "/icons/192x192.png",
+      "src": "/icons/192x192_black.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/512x512.png",
+      "src": "/icons/512x512_pink.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/icons/192x192.png",
+      "src": "/icons/192x192_green.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icons/512x512.png",
+      "src": "/icons/512x512_red.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
