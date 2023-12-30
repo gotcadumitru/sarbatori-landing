@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 import './skeleton.css'
+import iconss from '../../public/icons/splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png'
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
@@ -43,6 +44,14 @@ export async function generateMetadata({
     },
     manifest: '/manifest.json',
     authors: [{ name: `DIMA'S${' '}SOFTWARE` }],
+    other: {
+      'application-name': 'HoliDays',
+      'apple-mobile-web-app-capable': 'yes',
+      'apple-mobile-web-app-status-bar-style': 'default',
+      'apple-mobile-web-app-title': 'HoliDays',
+      'format-detection': 'telephone=no',
+      'mobile-web-app-capable': 'yes',
+    },
   }
 }
 
@@ -51,14 +60,6 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
   return (
     <html lang={locale}>
       <Head>
-        <meta name='application-name' content='HoliDays' />
-        <meta name='apple-mobile-web-app-capable' content='yes' />
-        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-        <meta name='apple-touch-fullscreen' content='yes' />
-        <meta name='apple-mobile-web-app-title' content='HoliDays' />
-        <meta name='format-detection' content='telephone=no' />
-        <meta name='mobile-web-app-capable' content='yes' />
-
         <link
           rel='apple-touch-startup-image'
           media='(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)'
@@ -67,11 +68,8 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
         <link
           rel='apple-touch-startup-image'
           media='(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'
-          href='/icons/splash_screens/iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png'
+          href={`${iconss}`}
         />
-
-        <link rel='icon' type='image/png' href='/icons/splash_screens/icon.png' />
-        <link rel='apple-touch-icon' href='/icons/192x192.png' />
       </Head>
       {/*<GoogleAnalytics GA_MEASUREMENT_ID='G-8PWXK5J089' />*/}
       <body className={classNames(inter.className)}>
