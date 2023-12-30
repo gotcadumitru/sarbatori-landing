@@ -2,9 +2,11 @@ import { getDayOfMonth, getHolidaysByDayAndMonthParams } from '@/enteties/holida
 import { HolidaysList } from '@/features/HolidaysList'
 import { PropsWithLocale } from '@/shared/config/i18n/types'
 import NotFound from '@/widgets/NotFound'
+import { Metadata } from 'next'
 import { FC } from 'react'
 import classes from './page.module.css'
 
+export const metadata: Metadata = {}
 const Home: FC<PropsWithLocale> = ({ params }) => {
   const dateToday = new Date()
   const day = getDayOfMonth(dateToday.getDate())

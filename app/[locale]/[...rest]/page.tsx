@@ -1,4 +1,7 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
+export const metadata: Metadata = {}
 
 const CatchAll = () => {
   // `not-found` currently only renders when triggered by the `notFound` function
