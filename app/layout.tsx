@@ -1,5 +1,3 @@
-'use client'
-
 import { FC, PropsWithChildren } from 'react'
 
 // Even though this component is just passing its children through, the presence
