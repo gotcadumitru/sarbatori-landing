@@ -1,1 +1,0 @@
-export { InfoNavLink } from './InfoNavLink'

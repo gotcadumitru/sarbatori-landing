@@ -1,7 +1,5 @@
-/* eslint-disable react/no-invalid-html-attribute */
 import { inter } from '@/app/fonts'
 import { GotToTopButton } from '@/features/GotToTopButton/ui/GotToTopButton'
-
 import { locales } from '@/shared/config/i18n/consts'
 import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/i18n/types'
 import { toastDefaultValues } from '@/shared/config/toastify'
@@ -26,6 +24,7 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 }
 
+// todo display install prompt for PWA
 export const generateMetadata = async ({
   params: { locale },
 }: PropsWithParams<LocaleParams>): Promise<Metadata> => {
@@ -220,9 +219,12 @@ export const generateMetadata = async ({
         },
       ],
     },
+    applicationName: 'HoliDays',
+    formatDetection: {
+      telephone: false,
+    },
+
     other: {
-      'application-name': 'HoliDays',
-      'format-detection': 'telephone=no',
       'mobile-web-app-capable': 'yes',
     },
   }

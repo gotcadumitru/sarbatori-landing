@@ -1,2 +1,2 @@
-export { default } from './PopupWithSuspense'
+export { default } from './Popup'
 export type { PopupPropsType } from './popup.types'
