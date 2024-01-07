@@ -4,18 +4,11 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   outDir: './public',
-  alternateRefs: [
-    {
-      href: `${process.env.SITE_URL}/en`,
-      hreflang: 'en',
-    },
-    {
-      href: `${process.env.SITE_URL}/ro`,
-      hreflang: 'ro',
-    },
-    {
-      href: `${process.env.SITE_URL}/ru`,
-      hreflang: 'ru',
-    },
-  ],
+  exclude: ['/server-sitemap-index.xml'], // <= exclude here
+  robotsTxtOptions:{
+    additionalSitemaps:[
+        `${process.env.SITE_URL}server-sitemap-index.xml`
+    ]
+  }
+
 }

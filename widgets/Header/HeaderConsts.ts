@@ -1,5 +1,4 @@
 import { AppRoutes } from '@/shared/config/i18n/routes'
-
 export const headerUrls = [
   {
     i18nKey: 'holidaysToday',
@@ -23,7 +22,7 @@ export const headerUrls = [
   },
   {
     i18nKey: 'termsAndConditions',
-    href: AppRoutes.terms_and_conditions,
+    href: AppRoutes.termsAndConditions,
   },
 ]
 

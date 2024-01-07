@@ -1,6 +1,6 @@
 export const AppRoutes = {
   main: '/',
-  terms_and_conditions: '/terms-and-conditions',
+  termsAndConditions: '/terms-and-conditions',
   calendar: '/calendar',
   contact: '/contact',
   cookies: '/cookies',
