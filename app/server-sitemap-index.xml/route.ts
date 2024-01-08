@@ -43,41 +43,6 @@ export async function GET() {
   )
   sitemapItems.push(...holidaysPage)
 
-  sitemapItems.push({
-    loc: AppRoutes.main,
-    lastmod: new Date().toISOString(),
-  })
-
-  sitemapItems.push({
-    loc: `${AppRoutes.main}${Locales.en}`,
-    lastmod: new Date().toISOString(),
-    alternateRefs: [
-      {
-        href: `${AppRoutes.main}${Locales.ro}`,
-        hreflang: Locales.ro,
-      },
-      {
-        href: `${AppRoutes.main}${Locales.ru}`,
-        hreflang: Locales.ru,
-      },
-    ],
-  })
-
-  sitemapItems.push({
-    loc: `/${Locales.en}${AppRoutes.calendar}`,
-    lastmod: new Date().toISOString(),
-    alternateRefs: [
-      {
-        href: `/${Locales.ro}${AppRoutes.calendar}`,
-        hreflang: Locales.ro,
-      },
-      {
-        href: `/${Locales.ru}${AppRoutes.calendar}`,
-        hreflang: Locales.ru,
-      },
-    ],
-  })
-
   const headerUrlsForSitemap = headerUrls.map((url) => ({
     loc: getHeaderUrl(Locales.en, url.href),
     lastmod: new Date().toISOString(),
