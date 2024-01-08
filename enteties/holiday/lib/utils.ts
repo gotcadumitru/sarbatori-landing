@@ -14,9 +14,14 @@ import {
   HolidaysWithDateJSON,
 } from '../types/holidayTypes'
 
-export const getHolidaysWithDate = ()=>{
+export const getHolidaysWithDate = () => holidaysJSON
 
-}
+export const getAllHolidays = () =>
+  getHolidaysWithDate().reduce(
+    (holidays, holidaysWithDate) => [...holidays, ...holidaysWithDate.holidays],
+    [] as HolidayJSON[],
+  )
+
 export const convertHolidayFromJsonToHoliday = (
   holidaysFromJson: HolidayJSON[],
   locale: Locales,
@@ -114,12 +119,6 @@ export const getCalendarEventsTextForDay = (
     const [convertedHoliday] = convertHolidayFromJsonToHoliday([holiday], locale)
     return `${eventsText}${eventsText ? '\n' : ''}•${convertedHoliday.name}`
   }, '')
-
-export const getAllHolidays = () =>
-  holidaysJSON.reduce(
-    (holidays, holidaysWithDate) => [...holidays, ...holidaysWithDate.holidays],
-    [] as HolidayJSON[],
-  )
 
 export const searchHolidays = (searchValue: string, locale: Locales): SearchHolidayItem[] => {
   const allHolidaysConverted = convertHolidayFromJsonToHoliday(
