@@ -1,4 +1,6 @@
 import { inter } from '@/app/fonts'
+import CookieBanner from '@/features/CookieBanner';
+import GoogleAnalytics from '@/features/GoogleAnalytics';
 import { GotToTopButton } from '@/features/GotToTopButton/ui/GotToTopButton'
 import { locales } from '@/shared/config/i18n/consts'
 import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/i18n/types'
@@ -234,11 +236,11 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
   if (!locales.includes(locale as any)) notFound()
   return (
     <html lang={locale}>
-      {/*<GoogleAnalytics GA_MEASUREMENT_ID='G-8PWXK5J089' />*/}
+      <GoogleAnalytics GA_MEASUREMENT_ID={process.env.GA_MEASUREMENT_ID!} />
       <body className={classNames(inter.className)}>
         <HeaderEntry locale={locale} />
         {children}
-        {/*<CookieBanner />*/}
+        <CookieBanner />
         <ToastContainer position='bottom-center' {...toastDefaultValues} />
         <GotToTopButton />
       </body>
