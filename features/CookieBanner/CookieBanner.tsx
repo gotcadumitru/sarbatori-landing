@@ -1,18 +1,17 @@
 'use client'
 
+import useDidUpdateEffect from '@/shared/lib/hooks/useDidUpdateEffect/useDidUpdateEffect';
 import Button, { ButtonTheme } from '@/shared/ui/Button'
+import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import classes from './CookieBanner.module.css'
 import { getLocalStorage, setLocalStorage } from './utils/CookieBannerUtils'
 
 const CookieBanner = () => {
-  const [cookieConsent, setCookieConsent] = useState<boolean | string | null>(
-    getLocalStorage('cookie_consent', null),
-  )
+  const [cookieConsent, setCookieConsent] = useState<boolean | string | null>(false)
 
-  useEffect(() => {
+  useDidUpdateEffect(() => {
     const newValue = cookieConsent ? 'granted' : 'denied'
 
     window.gtag('consent', 'update', {
@@ -23,6 +22,9 @@ const CookieBanner = () => {
     //For Testing
   }, [cookieConsent])
 
+  useEffect(() => {
+    setCookieConsent(getLocalStorage('cookie_consent', null))
+  }, [])
   return (
     <div
       className={classNames(classes.cookieBanner, {
@@ -30,18 +32,18 @@ const CookieBanner = () => {
       })}
     >
       <div className='text-center'>
-        <Link className={classes.cookiesLink} href='/cookies'>
+        <NavigationLink className={classes.cookiesLink} href='/cookies'>
           <p>
             We use <strong>cookies</strong> on our site.
           </p>
-        </Link>
+        </NavigationLink>
       </div>
 
       <div className={classes.buttons}>
         <Button theme={ButtonTheme.EMPTY} onClick={() => setCookieConsent(false)}>
           Decline
         </Button>
-        <Button theme={ButtonTheme.OUTLINE_RED} onClick={() => setCookieConsent(true)}>
+        <Button theme={ButtonTheme.OUTLINE_BLUE} onClick={() => setCookieConsent(true)}>
           Allow Cookies
         </Button>
       </div>

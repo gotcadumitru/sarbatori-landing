@@ -1,7 +1,7 @@
 'use client'
 
 export const getLocalStorage = (key: string, defaultValue: any) => {
-  const stickyValue = typeof localStorage !== 'undefined' && localStorage.getItem(key)
+  const stickyValue = localStorage.getItem(key)
 
   return stickyValue && stickyValue !== 'undefined' ? JSON.parse(stickyValue) : defaultValue
 }
