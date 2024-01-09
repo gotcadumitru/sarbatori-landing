@@ -40,13 +40,17 @@ const downloadImage = async (url, filename) => {
   })
 }
 const fetchHolidayDescription = async (url) => {
-  const response = await axios.get(url, options)
-  const dom = new jsdom.JSDOM(response.data)
-  const text = [
-    ...dom.window.document.querySelectorAll('p[style="line-height: 25px; text-align: left;"]'),
-  ]
-  const description = text.map((c) => c.textContent).join('\n')
-  return description || ''
+  try {
+    const response = await axios.get(url, options)
+    const dom = new jsdom.JSDOM(response.data)
+    const text = [
+      ...dom.window.document.querySelectorAll('p[style="line-height: 25px; text-align: left;"]'),
+    ]
+    const description = text.map((c) => c.textContent).join('\n')
+    return description || ''
+  } catch (err) {
+    return ''
+  }
 }
 const selectHolidaysFromPage = async (domString) => {
   const dom = new jsdom.JSDOM(domString)
@@ -116,22 +120,17 @@ const fetchPage = async (url, i, j) => {
     holidays.push({
       date: {
         day: i > 9 ? `${i}` : `0${i}`,
-        month: j > 9 ? `${i}` : `0${j}`,
+        month: j > 9 ? `${j}` : `0${j}`,
       },
       alsoThisDay: alsoThisDayHolidays,
-      // id,
-      // href,
-      // title,
-      // shortDescription,
-      // imageSrc: id + '.jpg',
       holidays: holidaysWithDescriptionAndHrefFormatted.map((h) => ({
         timeAgo: '',
         nameru: h.title,
         nameen: '',
         namero: '',
-        shortDescriptionru: '',
+        shortDescriptionru: h.shortDescription,
         descriptionru: h.description,
-        shortDescriptionen: h.shortDescription,
+        shortDescriptionen: '',
         descriptionen: '',
         shortDescriptionro: '',
         descriptionro: '',
@@ -139,31 +138,31 @@ const fetchPage = async (url, i, j) => {
         id: h.id,
       })),
     })
-
     fs.writeFileSync('./holidaysv2.json', JSON.stringify(holidays, null, 2))
 
-    debugger
   } catch (err) {
     console.log(err)
   }
 }
-const fetchMonth = async () => {
-  const geturl = [
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-janvare/LKKLK-janvarja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-fevrale/LKKLK-fevralja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-marte/LKKLK-marta',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-aprele/LKKLK-aprelja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-mae/LKKLK-maja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-ijune/LKKLK-ijunja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-ijule/LKKLK-ijulja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-avguste/LKKLK-avgusta',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-sentjabre/LKKLK-sentjabrja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-oktjabre/LKKLK-oktjabrja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-nojabre/LKKLK-nojabrja',
-    'https://kakoj-segodnja-prazdnik.com/prazdniki/v-dekabre/LKKLK-dekabrja',
-  ]
 
-  const arr = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+const geturl = [
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-janvare/LKKLK-janvarja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-fevrale/LKKLK-fevralja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-marte/LKKLK-marta',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-aprele/LKKLK-aprelja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-mae/LKKLK-maja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-ijune/LKKLK-ijunja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-ijule/LKKLK-ijulja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-avguste/LKKLK-avgusta',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-sentjabre/LKKLK-sentjabrja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-oktjabre/LKKLK-oktjabrja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-nojabre/LKKLK-nojabrja',
+  'https://kakoj-segodnja-prazdnik.com/prazdniki/v-dekabre/LKKLK-dekabrja',
+]
+
+const arr = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+fetchPage('https://kakoj-segodnja-prazdnik.com/prazdniki/v-avguste/3-avgusta', 3, 8)
+const fetchMonth = async () => {
   for (let j = 0; j < arr.length; j += 1) {
     const days = arr[j]
     for (let i = 1; i <= days; i += 1) {
@@ -171,6 +170,12 @@ const fetchMonth = async () => {
     }
   }
 }
-
+// arr.reduce((tot, n, index) => {
+//   for (let i = 1; i <= n; i += 1) {
+//     console.log(tot+i-1)
+//     holidays[tot+i-1].date.month = index + 1 > 9 ? `${index + 1}` : `0${index + 1}`
+//   }
+//   return tot + n
+// }, 0)
 // fetchMonth()
-console.log(JSON.stringify(require('./holidaysv2.json')))
+// fs.writeFileSync('./holidaysv2.json', JSON.stringify(holidays, null, 2))
