@@ -17,7 +17,7 @@ export const HolidayCard: FC<PropsWithLocale<HolidayCardProps>> = ({ holiday, pa
       <div
         className={classes.holidayCardImage}
         style={{
-          backgroundImage: `url(${holiday.imageURL})`,
+          backgroundImage: `url(/images/${holiday.imageURL})`,
         }}
       />
     )}

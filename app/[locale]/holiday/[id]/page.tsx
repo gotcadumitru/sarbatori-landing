@@ -24,7 +24,11 @@ export async function generateMetadata({
       title: holiday.name,
       url: `${process.env.SITE_URL}en/holiday/${holiday.id}`,
       description: holiday.description,
-      images: [holiday.imageURL || `${process.env.SITE_URL}logo.png`],
+      images: [
+        holiday.imageURL
+          ? `${process.env.SITE_URL}images/${holiday.imageURL}`
+          : `${process.env.SITE_URL}logo.png`,
+      ],
     },
   }
 }
@@ -41,7 +45,7 @@ const Page: FC<PropsWithParams<LocaleParams & HolidayPageProps>> = ({ params: { 
         {holidayDescriptionFirstPhrase}
         <Image
           className={classes.holidayImage}
-          src={holiday.imageURL}
+          src={`/images/${holiday.imageURL}`}
           alt={holiday.name}
           width={130}
           height={130}
