@@ -28,6 +28,7 @@ export type Holiday = {
   timeAgo: string
   name: string
   description: string
+  shortDescription: string
   imageURL: string | null
   id: string
 }

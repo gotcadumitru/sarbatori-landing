@@ -50,4 +50,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 145%; /* 18.85px */
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 7;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
 }

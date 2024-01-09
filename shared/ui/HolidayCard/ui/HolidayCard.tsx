@@ -11,35 +11,39 @@ import classes from '../styles/holidayCard.module.css'
 type HolidayCardProps = {
   holiday: Holiday
 }
-export const HolidayCard: FC<PropsWithLocale<HolidayCardProps>> = ({ holiday, params }) => (
-  <div className={classes.holidayCard}>
-    {holiday.imageURL && (
-      <div
-        className={classes.holidayCardImage}
-        style={{
-          backgroundImage: `url(/images/${holiday.imageURL})`,
-        }}
-      />
-    )}
-    <div className={classes.holidayCardBody}>
-      <div className={classes.holidayCardTitle}>
-        <NavigationLink
-          href={
-            {
-              pathname: `${AppRoutes.holiday}/${AppParams.id}`,
-              params: { id: holiday.id },
-            } as any
-          }
-        >
-          {holiday.name}
-        </NavigationLink>
-        <Share holiday={holiday} params={params} />
-      </div>
-      {holiday.description && (
-        <div className={classNames(roboto.className, classes.holidayCardDescription)}>
-          {holiday.description}
-        </div>
+
+export const HolidayCard: FC<PropsWithLocale<HolidayCardProps>> = ({ holiday, params }) => {
+  const description = holiday.shortDescription || holiday.description
+  return (
+    <div className={classes.holidayCard}>
+      {holiday.imageURL && (
+        <div
+          className={classes.holidayCardImage}
+          style={{
+            backgroundImage: `url(/images/${holiday.imageURL})`,
+          }}
+        />
       )}
+      <div className={classes.holidayCardBody}>
+        <div className={classes.holidayCardTitle}>
+          <NavigationLink
+            href={
+              {
+                pathname: `${AppRoutes.holiday}/${AppParams.id}`,
+                params: { id: holiday.id },
+              } as any
+            }
+          >
+            {holiday.name}
+          </NavigationLink>
+          <Share holiday={holiday} params={params} />
+        </div>
+        {description && (
+          <div className={classNames(roboto.className, classes.holidayCardDescription)}>
+            {description}
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-)
+  )
+}
