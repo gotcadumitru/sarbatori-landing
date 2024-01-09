@@ -65,10 +65,11 @@ const selectHolidaysFromPage = async (domString) => {
     -1,
   )
   const holidaysWithDescriptionHolidays = holidaysWithDescription.map((ch) => {
+    if(!ch.querySelector('a')) return null
     const href = ch.querySelector('a').href
     const shortDescription = [...ch.querySelectorAll('span')].at(-1).textContent
     return { href, shortDescription }
-  })
+  }).filter(Boolean)
 
   const [alsoThisDayTitle, ...alsoThisDay] = [
     ...tableBodyChildren.at(-3).querySelector('td').children,
@@ -111,13 +112,13 @@ const selectHolidaysFromPage = async (domString) => {
   ).filter((h) => h.title)
   return { holidaysWithDescriptionAndHrefFormatted, alsoThisDayHolidays }
 }
-const fetchPage = async (url, i, j) => {
+const fetchPage = async (url, i, j,index) => {
   try {
     const response = await axios.get(url, options)
     const { holidaysWithDescriptionAndHrefFormatted, alsoThisDayHolidays } =
       await selectHolidaysFromPage(response.data)
     console.log(holidaysWithDescriptionAndHrefFormatted)
-    holidays.push({
+    holidays[index]={
       date: {
         day: i > 9 ? `${i}` : `0${i}`,
         month: j > 9 ? `${j}` : `0${j}`,
@@ -137,7 +138,7 @@ const fetchPage = async (url, i, j) => {
         imageURL: h.imageSrc,
         id: h.id,
       })),
-    })
+    }
     fs.writeFileSync('./holidaysv2.json', JSON.stringify(holidays, null, 2))
 
   } catch (err) {
@@ -161,7 +162,7 @@ const geturl = [
 ]
 
 const arr = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-// fetchPage('https://kakoj-segodnja-prazdnik.com/prazdniki/v-avguste/3-avgusta', 3, 8)
+fetchPage('https://kakoj-segodnja-prazdnik.com/prazdniki/v-dekabre/14-dekabrja', 14, 12,348)
 // fetchMonth()
 const fetchMonth = async () => {
   for (let j = 0; j < arr.length; j += 1) {
@@ -175,13 +176,12 @@ const fetchMissing = async () => {
   for (let i = 0; i < holidays.length; i += 1) {
     const hol = holidays[i]
     if(hol.holidays.length === 0){
-      await fetchPage(geturl[(+hol.date.month)-1].replace('LKKLK', i.toString()), +hol.date.day, +hol.date.month)
+      await fetchPage(geturl[(+hol.date.month)-1].replace('LKKLK', +hol.date.day), +hol.date.day, +hol.date.month,i)
     }
   }
 }
 
-console.log(holidays.length)
-fetchMissing()
+// fetchMissing()
 // arr.reduce((tot, n, index) => {
 //   for (let i = 1; i <= n; i += 1) {
 //     console.log(tot+i-1)
@@ -190,3 +190,4 @@ fetchMissing()
 //   return tot + n
 // }, 0)
 // fs.writeFileSync('./holidaysv2.json', JSON.stringify(holidays, null, 2))
+console.log(holidays.findIndex(h=>+h.date.month ===12 && +h.date.day === 14 ))
