@@ -6,7 +6,10 @@ export type HolidayJSON = {
   descriptionru: string
   descriptionen: string
   descriptionro: string
-  imageURL: string
+  shortDescriptionru: string
+  shortDescriptionen: string
+  shortDescriptionro: string
+  imageURL: string | null
   id: string
 }
 
@@ -17,6 +20,7 @@ export type HolidayDate = {
 
 export type HolidaysWithDateJSON = {
   date: HolidayDate
+  alsoThisDay: string[]
   holidays: HolidayJSON[]
 }
 
@@ -24,7 +28,7 @@ export type Holiday = {
   timeAgo: string
   name: string
   description: string
-  imageURL: string
+  imageURL: string | null
   id: string
 }
 
