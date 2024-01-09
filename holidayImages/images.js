@@ -161,7 +161,8 @@ const geturl = [
 ]
 
 const arr = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-fetchPage('https://kakoj-segodnja-prazdnik.com/prazdniki/v-avguste/3-avgusta', 3, 8)
+// fetchPage('https://kakoj-segodnja-prazdnik.com/prazdniki/v-avguste/3-avgusta', 3, 8)
+// fetchMonth()
 const fetchMonth = async () => {
   for (let j = 0; j < arr.length; j += 1) {
     const days = arr[j]
@@ -170,6 +171,17 @@ const fetchMonth = async () => {
     }
   }
 }
+const fetchMissing = async () => {
+  for (let i = 0; i < holidays.length; i += 1) {
+    const hol = holidays[i]
+    if(hol.holidays.length === 0){
+      await fetchPage(geturl[(+hol.date.month)-1].replace('LKKLK', i.toString()), +hol.date.day, +hol.date.month)
+    }
+  }
+}
+
+console.log(holidays.length)
+fetchMissing()
 // arr.reduce((tot, n, index) => {
 //   for (let i = 1; i <= n; i += 1) {
 //     console.log(tot+i-1)
@@ -177,5 +189,4 @@ const fetchMonth = async () => {
 //   }
 //   return tot + n
 // }, 0)
-// fetchMonth()
 // fs.writeFileSync('./holidaysv2.json', JSON.stringify(holidays, null, 2))
