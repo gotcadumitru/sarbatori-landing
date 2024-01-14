@@ -20,7 +20,9 @@ export type HolidayDate = {
 
 export type HolidaysWithDateJSON = {
   date: HolidayDate
-  alsoThisDay: string[]
+  alsoThisDayru: string[]
+  alsoThisDayro: string[]
+  alsoThisDayen: string[]
   holidays: HolidayJSON[]
 }
 

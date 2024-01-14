@@ -13,7 +13,7 @@ import {
   HolidaysWithDateJSON,
 } from '../types/holidayTypes'
 
-export const getHolidaysWithDate = () => holidaysJSON
+export const getHolidaysWithDate = ():HolidaysWithDateJSON[] => holidaysJSON as HolidaysWithDateJSON[]
 
 export const getAllHolidays = () =>
   getHolidaysWithDate().reduce(
@@ -60,7 +60,7 @@ export const getHolidaysByDayAndMonthParams = ({
       : monthsWithNumber.find((m) => m.number === month)
 
   if (!monthWithNumber) return null
-  const holidaysAndDate = holidaysJSON.find(
+  const holidaysAndDate = getHolidaysWithDate().find(
     (holiday) =>
       holiday.date.day === getDayOfMonth(day) && holiday.date.month === monthWithNumber.number,
   )
@@ -72,7 +72,7 @@ export const getHolidaysByDayAndMonthParams = ({
 }
 
 export const getHolidayById = (id: string, locale: Locales) => {
-  const currentHolidaysAndDate = holidaysJSON.find((holidaysAndDate) =>
+  const currentHolidaysAndDate = getHolidaysWithDate().find((holidaysAndDate) =>
     holidaysAndDate.holidays.find((holiday) => holiday.id === id),
   )
   if (!currentHolidaysAndDate) return null
@@ -83,15 +83,15 @@ export const getHolidayById = (id: string, locale: Locales) => {
 }
 
 export const getNextDateByHolidayDate = (date: HolidayDate, locale: Locales) => {
-  const holidayWithDateIndex = holidaysJSON.findIndex(
+  const holidayWithDateIndex = getHolidaysWithDate().findIndex(
     (holidayWithNumber) =>
       holidayWithNumber.date.day === date.day && holidayWithNumber.date.month === date.month,
   )
-  const holidaysWithDateLength = holidaysJSON.length
+  const holidaysWithDateLength = getHolidaysWithDate().length
   const prevHolidaysAndDate =
-    holidaysJSON[(holidayWithDateIndex + holidaysWithDateLength - 1) % holidaysWithDateLength]
+    getHolidaysWithDate()[(holidayWithDateIndex + holidaysWithDateLength - 1) % holidaysWithDateLength]
 
-  const nextHolidaysAndDate = holidaysJSON[(holidayWithDateIndex + 1) % holidaysWithDateLength]
+  const nextHolidaysAndDate = getHolidaysWithDate()[(holidayWithDateIndex + 1) % holidaysWithDateLength]
   return {
     prevHolidaysAndDate: {
       date: prevHolidaysAndDate.date,
@@ -102,9 +102,9 @@ export const getNextDateByHolidayDate = (date: HolidayDate, locale: Locales) => 
       holidays: convertHolidayFromJsonToHoliday(nextHolidaysAndDate.holidays, locale),
     },
     currentHolidaysAndDate: {
-      date: holidaysJSON[holidayWithDateIndex].date,
+      date: getHolidaysWithDate()[holidayWithDateIndex].date,
       holidays: convertHolidayFromJsonToHoliday(
-        holidaysJSON[holidayWithDateIndex].holidays,
+        getHolidaysWithDate()[holidayWithDateIndex].holidays,
         locale,
       ),
     },
@@ -122,7 +122,7 @@ export const getCalendarEventsTextForDay = (
 
 export const searchHolidays = (searchValue: string, locale: Locales): SearchHolidayItem[] => {
   const allHolidaysConverted = convertHolidayFromJsonToHoliday(
-    holidaysJSON.reduce(
+      getHolidaysWithDate().reduce(
       (holidays, holidaysWithDate) => [...holidays, ...holidaysWithDate.holidays],
       [] as HolidayJSON[],
     ),
