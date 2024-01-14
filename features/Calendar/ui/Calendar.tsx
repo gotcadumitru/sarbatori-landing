@@ -1,7 +1,7 @@
 'use client'
 
 import { getCalendarEventsTextForDay, getMonthNameByMonthNumber } from '@/enteties/holiday'
-import holidaysJSON from '@/jsonObj.json'
+import holidaysJSON from '@/holidaysDatabase.json'
 import { Locales } from '@/shared/config/i18n/consts'
 import { archivePathnames } from '@/shared/config/i18n/pathnames'
 import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'

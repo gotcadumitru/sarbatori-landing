@@ -1,5 +1,5 @@
 import { SearchHolidayItem } from '@/features/SearchInputWithIcon'
-import holidaysJSON from '@/jsonObj.json'
+import holidaysJSON from '@/holidaysDatabase.json'
 import { Locales } from '@/shared/config/i18n/consts'
 import { LocaleParams } from '@/shared/config/i18n/types'
 import { monthsWithNumber } from '@/shared/defaults/dates/dates'
