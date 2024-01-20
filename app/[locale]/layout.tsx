@@ -1,6 +1,6 @@
 import { inter } from '@/app/fonts'
-import CookieBanner from '@/features/CookieBanner';
-import GoogleAnalytics from '@/features/GoogleAnalytics';
+import CookieBanner from '@/features/CookieBanner'
+import GoogleAnalytics from '@/features/GoogleAnalytics'
 import { GotToTopButton } from '@/features/GotToTopButton/ui/GotToTopButton'
 import { locales } from '@/shared/config/i18n/consts'
 import { LocaleParams, PropsWithLocale, PropsWithParams } from '@/shared/config/i18n/types'
@@ -8,8 +8,9 @@ import { toastDefaultValues } from '@/shared/config/toastify'
 import { HeaderEntry } from '@/widgets/Header'
 import classNames from 'classnames'
 import { Metadata, Viewport } from 'next'
-import { getTranslations, } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import { FC, PropsWithChildren } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -244,6 +245,11 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
         <ToastContainer position='bottom-center' {...toastDefaultValues} />
         <GotToTopButton />
       </body>
+      <Script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADSENSE_CLIENT}`}
+        crossOrigin='anonymous'
+      />
     </html>
   )
 }
