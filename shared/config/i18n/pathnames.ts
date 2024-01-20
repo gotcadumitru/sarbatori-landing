@@ -105,10 +105,10 @@ export const pathnames = {
     [Locales.ro]: pathnamePaths[AppRoutes.privacyPolicy][Locales.ro],
     [Locales.ru]: pathnamePaths[AppRoutes.privacyPolicy][Locales.ru],
   },
-  [`${AppRoutes.holiday}/${AppParams.id}`]: {
-    [Locales.en]: `${pathnamePaths[AppRoutes.holiday][Locales.en]}/${AppParams.id}`,
-    [Locales.ro]: `${pathnamePaths[AppRoutes.holiday][Locales.ro]}/${AppParams.id}`,
-    [Locales.ru]: `${pathnamePaths[AppRoutes.holiday][Locales.ru]}/${AppParams.id}`,
+  [`${AppRoutes.holiday}/${AppParams.holidayUrl}`]: {
+    [Locales.en]: `${pathnamePaths[AppRoutes.holiday][Locales.en]}/${AppParams.holidayUrl}`,
+    [Locales.ro]: `${pathnamePaths[AppRoutes.holiday][Locales.ro]}/${AppParams.holidayUrl}`,
+    [Locales.ru]: `${pathnamePaths[AppRoutes.holiday][Locales.ru]}/${AppParams.holidayUrl}`,
   },
   ...archivePathnames,
 } satisfies PathNamesWithLocales

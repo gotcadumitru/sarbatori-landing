@@ -24,7 +24,7 @@ export const ShareModal: FC<ShareModalType> = ({
 }) => {
   const holidayUrl = `https://${typeof window !== 'undefined' && window.location.hostname}/${
     params.locale
-  }${AppRoutes.holiday}/${holiday.id}`
+  }${AppRoutes.holiday}/${holiday.url}`
   const dataToShare: ShareData = {
     title: holiday.name,
     text: holiday.description,

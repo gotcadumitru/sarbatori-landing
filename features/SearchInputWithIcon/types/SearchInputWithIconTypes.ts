@@ -1,4 +1,5 @@
 export type SearchHolidayItem = {
-  id: string
-  name: string
+  url: string
+  name: string,
+  similarityPercentage?:number
 }

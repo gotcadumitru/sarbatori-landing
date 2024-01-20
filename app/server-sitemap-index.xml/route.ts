@@ -11,8 +11,8 @@ import { headerUrls } from '@/widgets/Header/HeaderConsts'
 import { getServerSideSitemap } from 'next-sitemap'
 import { ISitemapField } from 'next-sitemap/dist/@types/interface'
 
-const getHolidayUrl = (locale: Locales, id: Holiday['id']) =>
-  `${process.env.SITE_URL}${locale}${pathnamePaths[AppRoutes.holiday][locale]}/${id}`
+const getHolidayUrl = (locale: Locales, url: Holiday['url']) =>
+  `${process.env.SITE_URL}${locale}${pathnamePaths[AppRoutes.holiday][locale]}/${url}`
 
 const getHeaderUrl = (locale: Locales, pathname: string) =>
   `${process.env.SITE_URL}${locale}${pathnamePaths[pathname][locale]}`
@@ -27,15 +27,15 @@ export async function GET() {
   const sitemapItems: ISitemapField[] = []
   const holidaysPage = getAllHolidays().map(
     (holiday): ISitemapField => ({
-      loc: getHolidayUrl(Locales.en, holiday.id),
+      loc: getHolidayUrl(Locales.en, holiday.urlen),
       lastmod: new Date().toISOString(),
       alternateRefs: [
         {
-          href: getHolidayUrl(Locales.ro, holiday.id),
+          href: getHolidayUrl(Locales.ro, holiday.urlro),
           hreflang: Locales.ro,
         },
         {
-          href: getHolidayUrl(Locales.ru, holiday.id),
+          href: getHolidayUrl(Locales.ru, holiday.urlru),
           hreflang: Locales.ru,
         },
       ],

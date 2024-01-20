@@ -1,4 +1,4 @@
-import { getHolidayById } from '@/enteties/holiday'
+import { getHolidayByHolidayUrl } from '@/enteties/holiday'
 import { LocaleParams, PropsWithParams } from '@/shared/config/i18n/types'
 import NotFound from '@/widgets/NotFound'
 import { Metadata } from 'next'
@@ -7,13 +7,13 @@ import { FC } from 'react'
 import classes from './page.module.css'
 
 type HolidayPageProps = {
-  id: string
+  holidayUrl: string
 }
 
 export async function generateMetadata({
-  params: { id, locale },
+  params: { holidayUrl, locale },
 }: PropsWithParams<LocaleParams & HolidayPageProps>): Promise<Metadata> {
-  const holiday = getHolidayById(id, locale)
+  const holiday = getHolidayByHolidayUrl(holidayUrl, locale)
   if (!holiday) return {}
 
   return {
@@ -22,7 +22,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'article',
       title: holiday.name,
-      url: `${process.env.SITE_URL}en/holiday/${holiday.id}`,
+      url: `${process.env.SITE_URL}en/holiday/${holiday.url}`,
       description: holiday.description,
       images: [
         holiday.imageURL
@@ -33,8 +33,8 @@ export async function generateMetadata({
   }
 }
 
-const Page: FC<PropsWithParams<LocaleParams & HolidayPageProps>> = ({ params: { id, locale } }) => {
-  const holiday = getHolidayById(id, locale)
+const Page: FC<PropsWithParams<LocaleParams & HolidayPageProps>> = ({ params: { holidayUrl, locale } }) => {
+  const holiday = getHolidayByHolidayUrl(holidayUrl, locale)
   if (!holiday) return <NotFound />
   const [holidayDescriptionFirstPhrase, ...holidayRestOfTheDescription] =
     holiday.description.split('.')

@@ -29,8 +29,8 @@ export const HolidayCard: FC<PropsWithLocale<HolidayCardProps>> = ({ holiday, pa
           <NavigationLink
             href={
               {
-                pathname: `${AppRoutes.holiday}/${AppParams.id}`,
-                params: { id: holiday.id },
+                pathname: `${AppRoutes.holiday}/${AppParams.holidayUrl}`,
+                params: { holidayUrl: holiday.url },
               } as any
             }
           >

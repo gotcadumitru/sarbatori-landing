@@ -10,5 +10,5 @@ export const AppRoutes = {
 }
 export const AppParams = {
   day: '[day]',
-  id: '[id]',
+  holidayUrl: '[holidayUrl]',
 }

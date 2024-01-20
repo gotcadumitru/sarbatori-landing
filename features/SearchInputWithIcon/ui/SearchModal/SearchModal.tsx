@@ -72,19 +72,19 @@ export const SearchModal: FC<SearchModalType> = ({
           icons={<SearchIcon />}
         />
         <ul className={classes.holidayItems}>
-          {listOfHolidays.map((holiday) => (
-            <li key={holiday.id}>
+          {listOfHolidays.map((holidayFromSearchList) => (
+            <li key={holidayFromSearchList.url}>
               <NavigationLink
                 className={classes.holidayItem}
                 onClick={() => setIsDisplayed(false)}
                 href={
                   {
-                    pathname: `${AppRoutes.holiday}/${AppParams.id}`,
-                    params: { id: holiday.id },
+                    pathname: `${AppRoutes.holiday}/${AppParams.holidayUrl}`,
+                    params: { holidayUrl: holidayFromSearchList.url },
                   } as any
                 }
               >
-                {holiday.name}
+                {holidayFromSearchList.name}
               </NavigationLink>
             </li>
           ))}

@@ -13,7 +13,8 @@ import {
   HolidaysWithDateJSON,
 } from '../types/holidayTypes'
 
-export const getHolidaysWithDate = ():HolidaysWithDateJSON[] => holidaysJSON as HolidaysWithDateJSON[]
+export const getHolidaysWithDate = (): HolidaysWithDateJSON[] =>
+  holidaysJSON as HolidaysWithDateJSON[]
 
 export const getAllHolidays = () =>
   getHolidaysWithDate().reduce(
@@ -30,6 +31,7 @@ export const convertHolidayFromJsonToHoliday = (
     description: holiday[`description${locale}`] || holiday.nameen || holiday.nameru,
     shortDescription: holiday[`shortDescription${locale}`] || holiday.nameen || holiday.nameru,
     imageURL: holiday.imageURL,
+    url: holiday[`url${locale}`],
     id: holiday.id,
     timeAgo: holiday.timeAgo,
   }))
@@ -71,14 +73,17 @@ export const getHolidaysByDayAndMonthParams = ({
   }
 }
 
-export const getHolidayById = (id: string, locale: Locales) => {
-  const currentHolidaysAndDate = getHolidaysWithDate().find((holidaysAndDate) =>
-    holidaysAndDate.holidays.find((holiday) => holiday.id === id),
-  )
-  if (!currentHolidaysAndDate) return null
-  const currentHoliday = currentHolidaysAndDate.holidays.find((holiday) => holiday.id === id)
-  if (!currentHoliday) return null
-  const [holidayConverted] = convertHolidayFromJsonToHoliday([currentHoliday], locale)
+export const getHolidayByHolidayUrl = (holidayUrl: string, locale: Locales) => {
+  let holiday: null | HolidayJSON = null
+  getHolidaysWithDate().find((holidaysAndDate) => {
+    const h = holidaysAndDate.holidays.find((holidayJson) =>
+      [holidayJson.urlen, holidayJson.urlru, holidayJson.urlro].includes(holidayUrl),
+    )
+    if (h) holiday = h
+    return h
+  })
+  if (!holiday) return null
+  const [holidayConverted] = convertHolidayFromJsonToHoliday([holiday], locale)
   return holidayConverted
 }
 
@@ -89,9 +94,12 @@ export const getNextDateByHolidayDate = (date: HolidayDate, locale: Locales) => 
   )
   const holidaysWithDateLength = getHolidaysWithDate().length
   const prevHolidaysAndDate =
-    getHolidaysWithDate()[(holidayWithDateIndex + holidaysWithDateLength - 1) % holidaysWithDateLength]
+    getHolidaysWithDate()[
+      (holidayWithDateIndex + holidaysWithDateLength - 1) % holidaysWithDateLength
+    ]
 
-  const nextHolidaysAndDate = getHolidaysWithDate()[(holidayWithDateIndex + 1) % holidaysWithDateLength]
+  const nextHolidaysAndDate =
+    getHolidaysWithDate()[(holidayWithDateIndex + 1) % holidaysWithDateLength]
   return {
     prevHolidaysAndDate: {
       date: prevHolidaysAndDate.date,
@@ -120,22 +128,34 @@ export const getCalendarEventsTextForDay = (
     return `${eventsText}${eventsText ? '\n' : ''}•${convertedHoliday.name}`
   }, '')
 
-export const searchHolidays = (searchValue: string, locale: Locales): SearchHolidayItem[] => {
-  const allHolidaysConverted = convertHolidayFromJsonToHoliday(
-      getHolidaysWithDate().reduce(
-      (holidays, holidaysWithDate) => [...holidays, ...holidaysWithDate.holidays],
-      [] as HolidayJSON[],
-    ),
-    locale,
-  )
+const getHolidaySearchItemForLocale = (
+  holiday: HolidayJSON,
+  searchValue: string,
+  locale: Locales,
+) => ({
+  name: holiday[`name${locale}`],
+  url: holiday[`url${locale}`],
+  similarityPercentage: compareTwoStrings(searchValue, holiday[`name${locale}`]),
+})
 
-  return allHolidaysConverted
-    .map((holiday) => ({
-      name: holiday.name,
-      id: holiday.id,
-      similarityPercentage: compareTwoStrings(searchValue, holiday.name),
-    }))
-    .sort((holiday1, holiday2) => holiday2.similarityPercentage - holiday1.similarityPercentage)
+const removeDuplicates = (holidaysArray: SearchHolidayItem[]) =>
+  holidaysArray.filter((value, index, self) => index === self.findIndex((t) => t.url === value.url))
+
+export const searchHolidays = (searchValue: string): SearchHolidayItem[] => {
+  const allHolidays = getAllHolidays()
+
+  return removeDuplicates(
+    allHolidays.reduce(
+      (holidayListEveryLanguage, holiday) => [
+        ...holidayListEveryLanguage,
+        getHolidaySearchItemForLocale(holiday, searchValue, Locales.en),
+        getHolidaySearchItemForLocale(holiday, searchValue, Locales.ro),
+        getHolidaySearchItemForLocale(holiday, searchValue, Locales.ru),
+      ],
+      [] as SearchHolidayItem[],
+    ),
+  )
+    .sort((holiday1, holiday2) => holiday2.similarityPercentage! - holiday1.similarityPercentage!)
     .filter((holiday, index) => holiday.similarityPercentage && index < 16)
     .map(({ similarityPercentage, ...holiday }) => holiday)
 }

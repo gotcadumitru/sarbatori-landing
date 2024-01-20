@@ -10,6 +10,9 @@ export type HolidayJSON = {
   shortDescriptionen: string
   shortDescriptionro: string
   imageURL: string | null
+  urlru: string
+  urlen: string
+  urlro: string
   id: string
 }
 
@@ -32,6 +35,7 @@ export type Holiday = {
   description: string
   shortDescription: string
   imageURL: string | null
+  url: string
   id: string
 }
 
