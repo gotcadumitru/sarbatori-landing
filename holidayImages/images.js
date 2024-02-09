@@ -4,7 +4,42 @@ const fs = require('fs')
 const cyrillicToTranslit = new CyrillicToTranslit()
 
 cyrillicToTranslit.transform('Какая-то строка')
-
+const generateSomething = async () => {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer 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`,
+        },
+        body: JSON.stringify({
+            model: 'gpt-4',
+            messages: [
+                {
+                    role: 'user',
+                    content: `
+                    Am nevoie de descrierea profilului meu de pe upwork pentru a atrage cat mai multi clienti si a deveni cat mai popular atunci cand clientii cauta dezvoltatori. Deci am nevoie de o descriere asemanatoare cu a celor mai buni freelanceri.
+Putin despre mine:
+Ma numesc Dumitru, am mult timp liber pentru a contribui la proiecte, am 5 ani de experienta in domeniu front-end utilizand tehnologii precum React js, Next js, React-Native,Redux, Typescript.
+De asemenea pot sa creez un design in figma in caz ca clientul are nevoie.
+Pentru mine este foarte important clientul, de aceea poti sa adaugi ceva puncte care sa arate acest lucru.
+Am nevoie ca descrierea sa fie in engleza, te rog sa adaugi si emojiuri ca sa arate mai atragator
+            `,
+                },
+            ],
+            temperature: 1.0,
+            top_p: 0.7,
+            n: 1,
+            stream: false,
+            presence_penalty: 0,
+            frequency_penalty: 0,
+        }),
+    })
+    const responseJSON = await response.json()
+    let responseContent = responseJSON.choices[0].message.content
+    console.log(responseContent)
+    fs.writeFileSync('./work.txt', responseContent)
+}
+generateSomething()
 const getAllHolidays = () =>
   holidaysJson.reduce(
     (holidays, holidaysWithDate) => [...holidays, ...holidaysWithDate.holidays],
@@ -41,52 +76,17 @@ const removeDuplicates = (holidaysArray) =>
     return isUniq
   })
 
-removeDuplicates(getAllHolidays())
+// removeDuplicates(getAllHolidays())
 
-fs.writeFileSync(
-  './formatted.json',
-  JSON.stringify(
-    holidaysJson,
-    null,
-    2,
-  ),
-)
+// fs.writeFileSync(
+//   './formatted.json',
+//   JSON.stringify(
+//     holidaysJson,
+//     null,
+//     2,
+//   ),
+// )
 
-//
-//
-// const translateTo = async () => {
-//   for (let i = 0; i < holidaysFull.length; i += 1) {
-//     const { date, alsoThisDay, holidays } = holidaysFull[i]
-//
-//     holidaysFull[i] = {
-//       date,
-//       alsoThisDayru: alsoThisDay,
-//       alsoThisDayro: ro[i].alsoThisDay,
-//       alsoThisDayen: en[i].alsoThisDay,
-//       holidays: holidays.map((h, index) => ({
-//         ...h,
-//         namero: ro[i].holidays[index].nameru,
-//         shortDescriptionro: ro[i].holidays[index].shortDescriptionru,
-//         descriptionro: ro[i].holidays[index].descriptionru,
-//         nameen: en[i].holidays[index].nameru,
-//         shortDescriptionen: en[i].holidays[index].shortDescriptionru,
-//         descriptionen: en[i].holidays[index].descriptionru,
-//       })),
-//     }
-//   }
-// }
-// // translateTo()
-//
-// const formatted = newFormatted.map(h=>({
-//   ...h,
-//   holidays:h.holidays.map(hol=>({
-//     ...hol,
-//     namero:hol.namero === "--" ? "" : hol.namero,
-//     shortDescriptionro:hol.shortDescriptionro === "--" ? "" : hol.shortDescriptionro,
-//     descriptionro:hol.descriptionro === "--" ? "" : hol.descriptionro,
-//     nameen:hol.nameen === "--" ? "" : hol.nameen,
-//     shortDescriptionen:hol.shortDescriptionen === "--" ? "" : hol.shortDescriptionen,
-//     descriptionen:hol.descriptionen === "--" ? "" : hol.descriptionen,
-//   }))
-// }))
-// fs.writeFileSync('./formatted.json', JSON.stringify(formatted, null, 2))
+const translateHoliday = (holiday) => {
+  holiday
+}
