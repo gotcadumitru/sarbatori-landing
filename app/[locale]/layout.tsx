@@ -237,7 +237,14 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
   if (!locales.includes(locale as any)) notFound()
   return (
     <html lang={locale}>
+    <head>
       <GoogleAnalytics GA_MEASUREMENT_ID={process.env.GA_MEASUREMENT_ID!} />
+      <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADSENSE_CLIENT}`}
+          crossOrigin='anonymous'
+      />
+    </head>
       <body className={classNames(inter.className)}>
         <HeaderEntry locale={locale} />
         {children}
@@ -245,11 +252,6 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
         <ToastContainer position='bottom-center' {...toastDefaultValues} />
         <GotToTopButton />
       </body>
-      <Script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADSENSE_CLIENT}`}
-        crossOrigin='anonymous'
-      />
     </html>
   )
 }
