@@ -1,15 +1,6 @@
-Hello there! 👋
-
-I'm Dumitru, a passionate and dedicated front-end developer with 5 years of professional experience. I specialize in building robust, user-friendly applications using React.js, Next.js, React-Native, Redux, and Typescript. 🚀
-
-I am committed to creating visually appealing and intuitive websites. With my strong problem-solving skills and a knack for design, I can create an eye-catching design in Figma if required. 🎨
-
-I am a believer in the "client-first" approach. Your needs and satisfaction are my top priority. I am always ready to go the extra mile to ensure the best results. 🏆
-
-I have a flexible schedule, which allows me to dedicate a significant amount of time to your projects. ⏰
-
-I am not just about getting the job done; I am about building long-lasting relationships with my clients. I am always open to feedback and willing to make necessary adjustments to deliver a product that not only meets but exceeds your expectations. 🤝
-
-In a nutshell, if you're looking for a reliable, experienced, and client-oriented front-end developer, I'm your guy! Feel free to reach out to me. Let's create something amazing together! 🚀🎯🔥
-
-Looking forward to working with you! 😊
+1. React.js and Next.js Mastery
+2. Proficiency in TypeScript
+3. E-commerce Platform Development
+4. Agile Methodology and Jira
+5. Git and CI/CD Pipelines Expertise
+6. React-Native and Redux Skills
