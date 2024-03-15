@@ -1,6 +1,6 @@
-1. React.js and Next.js Mastery
-2. Proficiency in TypeScript
-3. E-commerce Platform Development
-4. Agile Methodology and Jira
-5. Git and CI/CD Pipelines Expertise
-6. React-Native and Redux Skills
+1. Front-End Development Expertise
+2. Proficiency in JavaScript, HTML, CSS
+3. Strong Knowledge of Typescript, React
+4. Web Design & UX Best Practices
+5. Proficiency in Agile Methodologies
+6. Experience with Docker and Linux
