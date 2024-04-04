@@ -185,7 +185,7 @@ Here, write three sentences summarizing the analysis that led you to the Educati
   console.log(responseContent)
   fs.writeFileSync('./work.txt', responseContent)
 }
-generateSomething()
+// generateSomething()
 
 const generateImage = async () => {
   const response = await fetch('https://api.openai.com/v1/images/generations', {
