@@ -9,15 +9,14 @@ const generateSomething = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer `,
     },
     body: JSON.stringify({
-      model: 'gpt-4',
+      model: 'gpt-4-0125-preview',
       messages: [
         {
           role: 'user',
           content: `
-As we get started, here are some general instructions for you to follow.
 Custom Instructions for Forms
 Here are some instructions for you:
 - You are an expert on all subject matters
@@ -42,141 +41,134 @@ Here are some instructions for you:
 - When filling out a form or template, follow the instructions exactly as you're asked to do in the form or template.
 - Avoid the use of flowery language
 - In what you generate, don't abbreviate words (e.g. don't shorten "collaborate" to "collab."
-Now you're going to find two example job descriptions (hereafter, "the Example Descriptions").
-Now, in between the <jd1> and <jd2> tags respectively, you'll find the text from two job descriptions indicative of the kind of jobs I'm targeting (hereafter collectively "My Job Descriptions" and individually "My Job Description"). 
+In between the <description> tags below, you'll find a job description (hereafter, the "Description").
 
-<jd1>
-Peaple Talent has partnered with a dynamic and rapidly growing retail/ecommerce company based in the heart of London, our client is looking to recruit a talented Front End Developer with experience of either Big Commerce or shopify to join their busy technology team and play a crucial role in the development and maintenance of their web applications.
+<description>
+Abtrace is a health tech company based in London, with a team of doctors, researchers, developers and data scientists that bring together software engineering, machine learning expertise and medical experience to build clinical algorithms for primary care clinicians.
 
 
-If you are a passionate Developer with experience in ecommerce technologies such as shopify or BigCommerce, React, TypeScript, and Javascript, HTML, CSS and are eager to contribute to the growth of a dynamic retail/ecommerce company in London, we encourage you to apply and be a key player in shaping the future of online shopping experiences.
+The team is dedicated to creating digital health software to deliver Population Health interventions individualized to patients. This involves continuous scanning the entire health record of a patient to detect signals of deterioration, early onset of new disease and opportunities for preventative interventions working with over 250 primary care practices covering 2.5 million patients.
+
+
+About the role:
+
+We are looking for a Front End developer (Mid/Senior) to join our team who works well in a fast moving team and communicates effectively with non-technical team members.
+
+
+The core duty of the position will be developing the user-facing elements of our applications. These include web applications as well as an Electron-based desktop application. The ideal candidate will be proficient in modern web development technologies (Typescript, React, Redux, HTML5 and CSS) and have experience with Node.js.
 
 
 Responsibilities:
-Collaborate with cross-functional teams to design, develop, and implement robust and scalable web applications for ecommerce platforms.
-Work on both the frontend and backend development, ensuring a seamless integration between the user interface and server-side logic.
-Implement responsive and user-friendly interfaces using React, TypeScript, and JavaScript, HTML, CSS on the frontend.
-Participate in code reviews, identify areas for improvement, and adhere to coding standards to maintain code quality.
-Collaborate with UX/UI designers to ensure a visually appealing and intuitive user experience.
-Troubleshoot and debug issues, perform testing, and provide timely resolutions to reported problems.
-Stay up-to-date with industry trends and advancements, and actively contribute ideas to enhance the overall development process.
-Requirements:
-Proven experience as a Front End Developer or similar role in a retail/ecommerce environment.
-Strong Understanding of Python and Flask for backend development.
-Solid experience in frontend development using React, TypeScript, and JavaScript, HTML, CSS.
-Knowledge of modern web development practices and technologies.
-Experience with version control systems, preferably Git.
-Previous experience working in an ecommerce or retail-focused company.
-Knowledge of CI/CD pipelines and automated testing practices.
-Excellent problem-solving and communication skills.
-Ability to work collaboratively in a fast-paced environment.
-</jd1>
 
-<jd2>
-Frontend Developer – Tech for Good 🚀
+Development of an Electron-based application using React, Javascript/Typescript and Node.js
+Work with a small, close knit, diverse multi-disciplinary team of developers, data scientists and doctors
 
 
+Required skills:
 
-💰 £60,000 plus bonus up to 10%
-🏡 Hybrid working – 2 days per week in Leeds
-💻 Tech Stack – Vue.js or React.js, TypeScript, Node.js and React Native – flexibility on whether you
-have commercial experience in each tech stack as there’s a great opportunity to learn new technologies!
+Proficiency in React and Javascript/Typescript
 
 
-Are you looking to progress further in your career and want to join a Tech for Good business who are building platforms that are having a positive impact on people’s lives?
+Company Benefits
+
+Private Pension
+Share Options scheme
+Generous sick and maternity/paternity leave
+Flexi working & possibility for remote working
+Company's office in Paddington - easy commute and comfortable surroundings
+Motivated, highly functioning, multi-disciplinary team
+Stellar coffee ☕
 
 
+Interview Process
 
-We’re working with an exciting business in Leeds who are currently building a new platform and they are looking for passionate and committed Frontend Developers to join the team.
+Video call with tech team
+Video call with founders and 2nd tech review
+Offer!
 
+</description>
+In between the <resume> tags, you'll find a resume (hereafter, "the Resume") submitted by a candidate applying for the job described in the Description.
 
-We’re partnered with the business over the last few years and have been part of their journey and helped hire a number of developers into the team who all share the same feedback – great place to work and they have a fantastic learning and development process in place to help you progress further in your career!
+<resume>
+ DUMITRU GOTCA dum.gotca@gmail.com | LinkedIn® Profile | +40 790 386 718 (RO)
+   EXECUTIVE SUMMARY
+A dynamic Front-End and Mobile Developer with 4 years of expertise in React.js, Next.js, and React-Native. Proven success in enhancing web technologies, team mentorship, and project innovation. Drives quality and efficiency in software development.
+FUNCTIONAL EXPERTISE
+● React.js, Next.js Proficiency
+● React-Native Development
+● Expert in Redux & TypeScript
+FUNCTIONAL EXPERTISE DEMONSTRATED
+● Git, Jira, CI/CD Pipeline
+● Agile Methodology
+● Unit, E2E, Cypress, RTL, Enzyme
+ASSIST SOFTWARE
+March 2021 – Current
+A software development firm with more than 350 employees, ~$20 million in revenues, and clients/partners like ZeroBounce , English Attack!, and Seaplify from USA, Germany, Australia, Romania, France and all over the world.
+Front-End Developer
+Enhancing client projects through advanced web technologies and team mentorship.
+● React.js & Next.js Proficiency: Implemented CI/CD pipelines using Github/Bamboo for
+testing/building/deploying. On the front-end side we enhanced the quality of calls using technologies like WebRTC and WebSocket. Our team managed to solve most of the significant issues reported, motivating several clients who were considering leaving to continue using our client's services. Moreover, many clients decided to increase the number of licenses they purchased. We defined what a modern web application should look like, including requirements such as: A minimum of 80% unit test coverage. Mandatory Storybook, Visual tests, Typescript, Feature Sliced Design architecture for every new project. UI component library used across all projects, and many other aspects that dramatically improved code quality and made the client's project ecosystem much easier to maintain. Additionally, the onboarding time for new developers joining the team decreased by 2.5 times since most projects followed a single standard.
+● React-Native: Developed a Call & SMS communication platform with React-Native, broadening client communication channels and boosting revenue. We implemented and maintained CI/CD pipelines for the React Native application using the Bitrise platform. This has effectively boosted the productivity of developers and QA engineers since they no longer had to manually run builds and tests. Moreover, it has simplified and streamlined the process through which the application reaches the App Store / Google Play Market. Another React Native experience involved updating the version from 0.61.5 to the latest available version, 0.73.x. Following the update, task completion became faster, and the application
+ 
+ itself saw a speed increase of approximately 32% due to the new technologies introduced in the latest versions of React Native.
+RELEVANT PROJECTS
+HoliDays (sarbatori.net): A personal project developed with Next.js, SEO optimized and added to Google Search and Google AdSense. The project contains more than 6200 holidays and helps people be more informed about the holidays of each day.
+Reportify: A cross-platform project that supports the web part with React, and iOS and Android with React-Native. With a back-end developed by me in express.js and a MongoDB database. The project helps in reporting problems encountered in society and saves time for citizens and authorities in solving these issues.
+iMedic: Developed with technologies such as React, Java Spring Boot, PostgreSQL, Firebase, it helps doctors and patients communicate through chat with messages and through audio/video calls implemented with WebSocket and WebRTC.
+EDUCATION
+Bachelor in Computer Science, Stefan cel Mare University
+A top university in Romania, where I studied Database Fundamentals, Web Development, Mobile, Java, C++, C, Algorithms, microcontroller programming, and a variety of technologies related to IT.
+MENTORING
+Frequently assumed the role of mentor. This involved providing guidance and support over periods ranging from 1 to 3 months. I offered tailored assistance, sharing insights, and facilitating their integration into the team and industry. My approach emphasized fostering a supportive learning environment, ensuring mentees gained practical skills and confidence in their roles. This experience honed my ability to communicate complex concepts in accessible ways and adapt my mentoring style to individual needs, contributing to the overall success of the team.
+CERTIFICATIONS
+CIW JavaScript Specialist (1D0-735) ↗: This certification validates expertise in utilizing JavaScript to enhance website interactivity and functionality. Demonstrating proficiency in essential concepts such as programming fundamentals, DOM manipulation, and event handling, this certification signifies a comprehensive understanding of JavaScript's role in web development and its application to create dynamic, responsive, and user-friendly web solutions.
+     
+ OTHER RELEVANT INFORMATION
+Additional Languages: Romanian (native fluency), Russian (native fluency)
+Technology: HTML/CSS, JavaScript, Typescript, React.js, React-Native, Next.js, Redux Toolkit, JavaScript, Webpack, Eslint, Git, Bitbucket, Github Actions, CI/CD pipelines, Node.js, Express.js, Java Spring Boot, MongoDB, PostgreSQL, Firebase, Firestore, Websocket, WebRTC, React Testing Library, Enzyme, Eslint, Prettier, SEO, Hooks
+Technical Skills: Software, software, software, Excel (level)
+Awards:
+● 1 place | FIICode- Student Contest: Web/Mobile/Back-End Reportify project
+● 1 place | FIICode - Student Contest: Web/Back-End iMedic project
+● 1 place | Interactive Digital Media Student Contest
+● Best use of Google Cloud | UniHack Student Contest
+● 3 place | Sibiu Innovative Days:
+Personal Website: dumitru-gotca.com Github: gotcadumitru
+  
+</resume>
+Resume Screen Form
+Next, consider the Resume and Description and generate scores for the following elements (hereafter, collectively "the Elements" or individually, "Element"), enabling each Element to be scored with 20 points maximum:
+1. Skills Match: Here, give a higher score if the content of the Resume more-closely matches the skills required for the job as described in the Description. Award more points if the Resume demonstrates match with skills listed higher in the hierarchy of skills required for the job in the Description. Later, this score will be referred to as the "Skills Score".
+2. Domain / Industry Knowledge: Here, generate a score that combines (a) up to 10 points max if the Resume describes previous work experience in the functional job area described in the Description and (b) up to 10 points max if the Resume describes previous work experience that's in the same industry as the work described in the Description. Later, this score will be referred to as the "Domain Score".
+3. Tenure: Here, give a higher score if the Resume describes previous work experiences where the candidate worked at the same position(s) for 2+ years. Use today's date to help you calculate the length of time someone was or has been at a position you see in the Resume if you need to. Later, this score will be referred to as the "Tenure Score".
+4. Professional Network: Here use your training data to estimate whether or not the Resume describes work experiences that would imply that the candidate has a professional network that would meaningfully enable them to be successful in the role described in the Description, then award more points based on this. Later, this score will be referred to as the "Network Score".
+5. Education: Here, award more points if the Resume describes educational achievements that meet or exceed what is described as needed by the Description. Later, this score will be referred to as the "Education Score".
 
+Tally the total of the the Skills Score, Domain Score, Tenure Score, Network Score, and Education Score generate a Total Score (hereafter, the "Total Score"). 
 
-Their product is making a real difference and due to the success of their current product, they are now building a new platform to continue on with their journey of success and positive impact.
+Now, I want you to consider the Resume and Description and fill out the following form:
 
+# Alignment Score: {{Total Score}}
+## Overview
+Here I generate a three-sentence overview of how well-aligned the candidate appears to be for the job described in the Description based on their Resume. In the first sentence, give a brief overview that describes the Total Score. In the second sentence, generate a sentence that describes which Elements made the biggest impact on adding to the Total Score. In the third sentence, generate a sentence that describes which Elements reduced their Total Score.
 
-The Frontend team currently develop within Vue.js, but they have recently introduced React.js and React Native projects, so they are flexible on framework experience so long as your happy develop with either framework – it’s also a great opportunity to develop your skills in new technologies!
+## Analysis
 
+### Here, generate a title that's less than 40 characters that summarizes the analysis that led you to the Skills Score
+Here, write three sentences summarizing the analysis that led you to the Skills Score you estimated above. In the first sentence, enumerate the Skills Score you estimated. In the second sentence, describe the elements of your analysis that led to increases in the Skills Score. In the third sentence, describe the elements of your analysis that led to decreases in the Skills Score you estimated.
 
-What’s in it for you ⭐
+### Here, generate a title that's less than 40 characters that summarizes the analysis that led you to the Domain Score
+Here, write three sentences summarizing the analysis that led you to the Domain Score you estimated above. In the first sentence, enumerate the Domain Score you estimated. In the second sentence, describe the elements of your analysis that led to increases in the Domain Score. In the third sentence, describe the elements of your analysis that led to decreases in the Domain Score you estimated.
 
+### Here, generate a title that's less than 40 characters that summarizes the analysis that led you to the Tenure Score
+Here, write three sentences summarizing the analysis that led you to the Tenure Score you estimated above. In the first sentence, enumerate the Tenure Score you estimated. In the second sentence, describe the elements of your analysis that led to increases in the Tenure Score. In the third sentence, describe the elements of your analysis that led to decreases in the Tenure Score you estimated.
 
-Opportunity to further develop in your career – they offer a fantastic L&D programme where you can learn new technologies or develop your current skill set
-Work on exciting new projects that are having a positive impact
-Join a passionate team who love what they do and the culture that the business has created – CTO remains hands-on and is passionate about developing people’s careers
-£50,000 plus a bonus up to 10%
-Hybrid working – based in Leeds and believe that face-to-face team interaction is a great way to learn and develop
+### Here, generate a title that's less than 40 characters that summarizes the analysis that led you to the Network Score
+Here, write three sentences summarizing the analysis that led you to the Network Score you estimated above. In the first sentence, enumerate the Network Score you estimated. In the second sentence, describe the elements of your analysis that led to increases in the Network Score. In the third sentence, describe the elements of your analysis that led to decreases in the Network Score you estimated.
 
-
-This is a great opportunity to join a business and a team who are renowned for what they do and if you want to take the next step in your career – this roles for you!
-
-
-If you want to find out more, reach out to me on charlotte@burnssheehan.co.uk
-</jd2>
-
-<jd3>
-Pets at Home, the UK's leading pet care business, is seeking a talented Senior Frontend Developer to join our pawsome in-house team. We are currently undergoing an exhilarating digital transformation, and we need passionate developers like you to help us reinvent the digital experiences of pets and their owners.
-
-
-About Pets at Home: At Pets at Home, we're dedicated to making life easier for pets and their owners. With a modern tech stack and cutting-edge platforms like Optimizely CMS and other e-commerce tools, we're building custom front-end applications to deliver exceptional user experiences. This is your chance to unleash your creativity and contribute to something truly special!
-
-
-Responsibilities: As a Senior Frontend Developer, you will be a crucial member of our cross-functional product teams. Your role will involve guiding front-end decisions and leveraging your technical expertise to enhance our customer-facing platform. 
-
-
-
-Your responsibilities will include:
-Developing applications using TypeScript and React (ideally Next.js)
-Creating semantic HTML and SCSS modules while adhering to accessible web standards
-Utilizing automated testing tools such as Jest and React Testing Library
-Conducting end-to-end testing using tools like Playwright or Cypress
-Working within an agile environment following the Scrum methodology
-Setting high standards for code quality and maintaining thorough documentation
-Applying your problem-solving skills to enhance our products and improve user experiences
-Collaborating with the front-end team to create delightful interfaces and scalable architecture
-Mentoring fellow developers and engaging in pair programming
-Collaborating with stakeholders and product managers to shape project requirements
-Demonstrating excellent communication skills to effectively convey ideas and solutions
-Remaining curious and staying updated on the latest web development technologies
-Knowledge of Azure DevOps and CI/CD is a plus, but not essential
-
-
-Requirements: To be successful in this role, you should possess the following skills and qualifications:
-Proven experience developing with TypeScript and React (Next.js preferred)
-Proficiency in SCSS modules, semantic HTML, and knowledge of accessible web standards
-Strong automated testing skills with Jest and React Testing Library
-Familiarity with end-to-end testing using Playwright or Cypress
-Agile mindset and experience working within a Scrum framework
-Commitment to high coding standards and thorough documentation
-Passion for problem-solving and a love for pets
-Sound knowledge of front-end architecture and user experience principles
-Experience mentoring team members and working collaboratively
-Excellent communication skills and ability to engage with stakeholders
-Curiosity and eagerness to learn and explore new technologies
-Familiarity with Azure DevOps and CI/CD is a plus
-
-
-Join our Pack: This is a unique opportunity to be part of our talented team and make pet care history. If you're ready to wag your tail with excitement and create something truly extraordinary, we invite you to apply now. Embark on an adventure that will leave a lasting paw print in the digital world!
-
-
-Only shortlisted candidates will be contacted.
-</jd3>
-
-Now, if I have any that I want to include, I'm going to list some of my unique talents (hereafter "Unique Talents") in between the <talents> tags.
-
-<talents>
-Proficient in React.js, Next.js, React-Native, Redux, and Typescript, Git, jira, agile, task estimation, CI/CD pipelines for web and mobile
-</talents>
-Now, I want you to help me develop six skills (hereafter, "the Skills" or individually "the Skill") around which I can build a resume and the text content within my LinkedIn profile. Each Skill you generate should be: 
-1. developed to align with the skills enumerated in My Job Descriptions with priority given to skills listed higher in My Job Descriptions (often, these skills are enumerated in sections called "required qualifications" or "ideal candidate" or similar)
-2. be no longer than 27 characters
-3. if you find any Unique Talents, integrate those into what you generate too
-
-Collectively, the Skills you generate should represent a candidate that possesses a set of professional skills that aligns with My Job Descriptions.
-
-Please generate the Skills for me.
-            `,
+### Here, generate a title that's less than 40 characters that summarizes the analysis that led you to the Education Score
+Here, write three sentences summarizing the analysis that led you to the Education Score you estimated above. In the first sentence, enumerate the Education Score you estimated. In the second sentence, describe the elements of your analysis that led to increases in the Education Score. In the third sentence, describe the elements of your analysis that led to decreases in the Education Score you estimated.
+`
         },
       ],
       temperature: 1.0,
@@ -188,22 +180,23 @@ Please generate the Skills for me.
     }),
   })
   const responseJSON = await response.json()
+  debugger
   let responseContent = responseJSON.choices[0].message.content
   console.log(responseContent)
   fs.writeFileSync('./work.txt', responseContent)
 }
-generateSomething()
+// generateSomething()
 
 const generateImage = async () => {
   const response = await fetch('https://api.openai.com/v1/images/generations', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer `,
     },
     body: JSON.stringify({
       model: 'dall-e-3',
-      prompt: `React-native multistep form with step 1, step 2, step 3....`,
+      prompt: `Napoleon Bonaparte eating cake napoleon`,
       n: 1,
       size: '1024x1024',
     }),
@@ -211,6 +204,7 @@ const generateImage = async () => {
   const responseJSON = await response.json()
   console.log(responseJSON)
 }
+// generateImage()
 // generateImage()
 const getAllHolidays = () =>
   holidaysJson.reduce(
