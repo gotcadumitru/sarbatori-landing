@@ -50,7 +50,18 @@ export const getMonthNameByMonthNumber = (monthNumber: string | number, locale: 
     monthNameForDisplay: locale === Locales.ru ? month.name.ruKiril : month.name[locale],
   }
 }
+export const getHolidaysByMonthParams = (month:string): HolidaysWithDateJSON[] | null => {
+  const monthWithNumber =
+    month.length > 2
+      ? monthsWithNumber.find((m) => m.name[Locales.en] === month)
+      : monthsWithNumber.find((m) => m.number === month)
 
+  if (!monthWithNumber) return null
+  const holidaysAndDate = getHolidaysWithDate().filter(
+    (holiday) => holiday.date.month === monthWithNumber.number,
+  )
+  return holidaysAndDate || null
+}
 export const getHolidaysByDayAndMonthParams = ({
   day,
   month,
