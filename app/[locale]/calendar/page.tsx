@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import {
   getCalendarEventsTextForDay,
   getHolidaysWithDate,
@@ -16,6 +17,7 @@ import {
 } from '@/shared/config/i18n/types'
 import { EventSourceInput } from '@fullcalendar/core'
 import classNames from 'classnames'
+import { unstable_setRequestLocale } from 'next-intl/server'
 import { FC } from 'react'
 import classes from './page.module.css'
 
@@ -23,6 +25,8 @@ export const generateStaticParams = () => [...locales]
 const Page: FC<PropsWithParams<LocaleParams, PropsWithSearchParams<MonthSearchParams>>> = ({
   params: { locale },
 }) => {
+  unstable_setRequestLocale(locale)
+
   const holidaysWithDateJson = getHolidaysWithDate()
   // getHolidaysByMonthParams(
   //   searchParams.month ||

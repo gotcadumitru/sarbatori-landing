@@ -3,13 +3,18 @@ import ArrowIcon from '@/shared/assets/icons/ArrowIcon'
 import MessageIcon from '@/shared/assets/icons/MessageIcon'
 import PhoneIcon from '@/shared/assets/icons/PhoneIcon'
 import { locales } from '@/shared/config/i18n/consts'
+import { PropsWithLocale } from '@/shared/config/i18n/types'
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
+// eslint-disable-next-line camelcase
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { FC } from 'react'
 import classes from './contact.module.css'
 
-export const generateStaticParams = () => [...locales]
+export const generateStaticParams = () => locales.map((locale) => ({ locale }))
 
-const Feedback = () => {
+const Contact: FC<PropsWithLocale> = ({ params: { locale } }) => {
+  unstable_setRequestLocale(locale)
   const t = useTranslations('contact')
 
   return (
@@ -40,4 +45,4 @@ const Feedback = () => {
     </div>
   )
 }
-export default Feedback
+export default Contact

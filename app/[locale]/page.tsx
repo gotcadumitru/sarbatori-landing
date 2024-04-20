@@ -7,6 +7,8 @@ import { FC } from 'react'
 import classes from './page.module.css'
 
 export const metadata: Metadata = {}
+export const dynamic = 'force-dynamic'
+
 const Home: FC<PropsWithLocale> = ({ params }) => {
   const dateToday = new Date()
   const day = getDayOfMonth(dateToday.getDate())

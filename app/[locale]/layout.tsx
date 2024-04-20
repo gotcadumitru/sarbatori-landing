@@ -8,7 +8,8 @@ import { toastDefaultValues } from '@/shared/config/toastify'
 import { HeaderEntry } from '@/widgets/Header'
 import classNames from 'classnames'
 import { Metadata, Viewport } from 'next'
-import { getTranslations } from 'next-intl/server'
+// eslint-disable-next-line camelcase
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
 import { FC, PropsWithChildren } from 'react'
@@ -26,6 +27,8 @@ export const viewport: Viewport = {
   userScalable: false,
   viewportFit: 'cover',
 }
+
+export const generateStaticParams = () => locales.map((locale) => ({ locale }))
 
 // todo display install prompt for PWA
 export const generateMetadata = async ({
@@ -234,17 +237,18 @@ export const generateMetadata = async ({
 }
 
 const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params: { locale } }) => {
+  unstable_setRequestLocale(locale)
   if (!locales.includes(locale as any)) notFound()
   return (
     <html lang={locale}>
-    <head>
-      <GoogleAnalytics GA_MEASUREMENT_ID={process.env.GA_MEASUREMENT_ID!} />
-      <Script
+      <head>
+        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.GA_MEASUREMENT_ID!} />
+        <Script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADSENSE_CLIENT}`}
           crossOrigin='anonymous'
-      />
-    </head>
+        />
+      </head>
       <body className={classNames(inter.className)}>
         <HeaderEntry locale={locale} />
         {children}
