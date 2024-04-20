@@ -12,7 +12,7 @@ import { Metadata, Viewport } from 'next'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
-import { FC, PropsWithChildren } from 'react'
+import { FC, PropsWithChildren, Suspense } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
@@ -242,7 +242,9 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
   return (
     <html lang={locale}>
       <head>
-        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.GA_MEASUREMENT_ID!} />
+        <Suspense fallback='LOADING GoogleAnalytics'>
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.GA_MEASUREMENT_ID!} />
+        </Suspense>
         <Script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADSENSE_CLIENT}`}
@@ -250,11 +252,19 @@ const LocaleLayout: FC<PropsWithChildren<PropsWithLocale>> = ({ children, params
         />
       </head>
       <body className={classNames(inter.className)}>
-        <HeaderEntry locale={locale} />
+        <Suspense fallback='LOADING HeaderEntry'>
+          <HeaderEntry locale={locale} />
+        </Suspense>
         {children}
-        <CookieBanner />
-        <ToastContainer position='bottom-center' {...toastDefaultValues} />
-        <GotToTopButton />
+        <Suspense fallback='LOADING CookieBanner'>
+          <CookieBanner />
+        </Suspense>
+        <Suspense fallback='LOADING ToastContainer'>
+          <ToastContainer position='bottom-center' {...toastDefaultValues} />
+        </Suspense>
+        <Suspense fallback='LOADING GotToTopButton'>
+          <GotToTopButton />
+        </Suspense>
       </body>
     </html>
   )
