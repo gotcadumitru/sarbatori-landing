@@ -2,9 +2,12 @@ import { inter, roboto } from '@/app/fonts'
 import ArrowIcon from '@/shared/assets/icons/ArrowIcon'
 import MessageIcon from '@/shared/assets/icons/MessageIcon'
 import PhoneIcon from '@/shared/assets/icons/PhoneIcon'
+import { locales } from '@/shared/config/i18n/consts'
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import classes from './contact.module.css'
+
+export const generateStaticParams = () => [...locales]
 
 const Feedback = () => {
   const t = useTranslations('contact')

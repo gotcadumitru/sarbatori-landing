@@ -1,9 +1,11 @@
-import { Locales } from '@/shared/config/i18n/consts'
+import { locales, Locales } from '@/shared/config/i18n/consts'
 import { PropsWithLocale } from '@/shared/config/i18n/types'
 import { FC } from 'react'
 import TermsAndConditionsRO from './TermsAndConditionsRO'
 import TermsAndConditionsEN from './TermsAndConditionsEN'
 import TermsAndConditionsRU from './TermsAndConditionsRU'
+
+export const generateStaticParams = () => [...locales]
 
 const TermsAndConditions: FC<PropsWithLocale> = ({ params: { locale } }) => {
   if (locale === Locales.ru) return <TermsAndConditionsRU />

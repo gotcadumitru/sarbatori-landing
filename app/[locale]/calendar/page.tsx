@@ -4,7 +4,7 @@ import {
   getMonthNameByMonthNumber,
 } from '@/enteties/holiday'
 import { Calendar } from '@/features/Calendar'
-import { Locales } from '@/shared/config/i18n/consts'
+import { locales, Locales } from '@/shared/config/i18n/consts'
 import { archivePathnames } from '@/shared/config/i18n/pathnames'
 import { AppParams, AppRoutes } from '@/shared/config/i18n/routes'
 
@@ -19,6 +19,7 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import classes from './page.module.css'
 
+export const generateStaticParams = () => [...locales]
 const Page: FC<PropsWithParams<LocaleParams, PropsWithSearchParams<MonthSearchParams>>> = ({
   params: { locale },
 }) => {
