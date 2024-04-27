@@ -1,6 +1,6 @@
 'use client'
 
-import useDidUpdateEffect from '@/shared/lib/hooks/useDidUpdateEffect/useDidUpdateEffect';
+import useDidUpdateEffect from '@/shared/lib/hooks/useDidUpdateEffect/useDidUpdateEffect'
 import Button, { ButtonTheme } from '@/shared/ui/Button'
 import NavigationLink from '@/shared/ui/NavigationLink'
 import classNames from 'classnames'
@@ -43,7 +43,7 @@ const CookieBanner = () => {
         <Button theme={ButtonTheme.EMPTY} onClick={() => setCookieConsent(false)}>
           Decline
         </Button>
-        <Button theme={ButtonTheme.OUTLINE_BLUE} onClick={() => setCookieConsent(true)}>
+        <Button theme={ButtonTheme.EMPTY} onClick={() => setCookieConsent(true)}>
           Allow Cookies
         </Button>
       </div>

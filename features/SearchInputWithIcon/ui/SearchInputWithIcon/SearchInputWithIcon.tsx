@@ -18,7 +18,6 @@ export const SearchInputWithIcon: FC<SearchInputWithIconType> = (props) => {
     <div className={classes.searchInput}>
       <SearchModal {...props} isDisplayed={isDisplayed} setIsDisplayed={setIsDisplayed} />
       <SearchIcon className={classes.searchIcon} onClick={() => setIsDisplayed(true)} />
-      {/*)}*/}
     </div>
   )
 }

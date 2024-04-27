@@ -10,7 +10,9 @@
     "searchTitle": "Caută Sărbători"
   },
   "holidays": {
-    "holidays": "Sărbatori"
+    "holidays": "Sărbatori",
+    "nextPage": "Pagina urmatoare",
+    "prevPage": "Pagina precedentă"
   },
   "metadata": {
     "title": "Calendar Sarbatori in Moldova | Sarbatori Religioase si Nationale",

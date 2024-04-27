@@ -62,7 +62,12 @@ export const Header: FC<HeaderProps> = ({ className, urls, searchInput }) => {
             isDisplayed={isHeaderDisplayed}
             position={CircleShapePosition.BOTTOM_LEFT}
           />
-          <Link onClick={() => setIsHeaderDisplayed(false)} href='/' className={classes.logoLink}>
+          <Link
+            onClick={() => setIsHeaderDisplayed(false)}
+            href='/'
+            aria-label='HoliDays'
+            className={classes.logoLink}
+          >
             <WebsiteLogo />
           </Link>
           <div className={classes.urlsContainer}>

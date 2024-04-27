@@ -10,7 +10,9 @@
     "searchTitle": "Search for holidays"
   },
   "holidays": {
-    "holidays": "Holidays"
+    "holidays": "Holidays",
+    "nextPage": "Next Page",
+    "prevPage": "Previous Page"
   },
   "metadata": {
     "title": "Holiday Calendar in Moldova | Religious and National Holidays",

@@ -21,11 +21,7 @@ import './skeleton.css'
 export const viewport: Viewport = {
   themeColor: '#ffffff',
   width: 'device-width',
-  minimumScale: 1,
-  maximumScale: 1,
   initialScale: 1,
-  userScalable: false,
-  viewportFit: 'cover',
 }
 
 export const generateStaticParams = () => locales.map((locale) => ({ locale }))

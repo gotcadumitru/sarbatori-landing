@@ -39,6 +39,7 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
             },
           } as any
         }
+        aria-label={t('prevPage')}
       >
         <AiOutlineLeft className={classes.leftIcon} />
       </NavigationLink>
@@ -54,6 +55,7 @@ export const CalendarCarousel: FC<PropsWithLocale<CalendarCarouselProps>> = ({
             },
           } as any
         }
+        aria-label={t('nextPage')}
       >
         <AiOutlineRight className={classes.rightIcon} />
       </NavigationLink>
