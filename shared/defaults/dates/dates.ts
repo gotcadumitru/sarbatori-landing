@@ -52,7 +52,7 @@ export const monthsWithNumber: MonthWithNumber[] = [
       ruKiril: 'мая',
       [Locales.ru]: 'may',
       [Locales.ro]: 'mai',
-      [Locales.en]: ':',
+      [Locales.en]: 'may',
     },
   },
   {
